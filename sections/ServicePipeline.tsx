@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import {
   ShieldCheck,
   Stamp,
@@ -75,10 +76,11 @@ const services: Service[] = [
     id: "fingerprinting",
     icon: Fingerprint,
     title: "Fingerprinting Solutions",
+    image: "/fingerprinting.jpg",
     summary:
       "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and other major cities across China.",
     details: [
-      "FBI-compliant live scan fingerprinting",
+      "FBI-compliant fingerprinting",
       "Traditional ink-based fingerprinting",
       "Available in Shanghai, Beijing, Chengdu",
       "Other cities by appointment — inquire",
@@ -156,29 +158,23 @@ export default function ServicePipeline() {
           {services.map((service, index) => {
             const Icon = service.icon;
             const isOpen = openId === service.id;
-            return (
-              <motion.article
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group bg-hive-surface border border-hive-border rounded-2xl overflow-hidden hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-[1.02]"
-              >
+            const isFingerprinting = service.id === "fingerprinting";
+            const cardContent = (
+              <>
                 {service.image && (
                   <div className="relative h-48 w-full overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-hive-surface via-hive-surface/60 to-transparent" />
                   </div>
                 )}
-                <button
-                  onClick={() => setOpenId(isOpen ? null : service.id)}
-                  className="w-full p-6 text-left flex items-start gap-4"
+                <div
+                  className={`w-full p-6 text-left flex items-start gap-4 ${isFingerprinting ? "" : "cursor-pointer"}`}
+                  onClick={isFingerprinting ? undefined : () => setOpenId(isOpen ? null : service.id)}
                 >
                   <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
                     <Icon className="w-5 h-5 text-red-500" />
@@ -190,54 +186,83 @@ export default function ServicePipeline() {
                     <p className="text-hive-muted text-sm leading-relaxed">
                       {service.summary}
                     </p>
+                    {isFingerprinting && (
+                      <span className="inline-flex items-center gap-1 text-red-400 text-xs font-semibold mt-2 group-hover:gap-2 transition-all">
+                        Learn more <span aria-hidden="true">→</span>
+                      </span>
+                    )}
                   </div>
-                  <ChevronDown
-                    className={`w-5 h-5 text-hive-dim shrink-0 mt-1 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 pt-0">
-                        {service.id === "china-pcc" && (
-                          <div className="bg-hive-elevated rounded-xl p-4 mb-4 border border-hive-border">
-                            <h4 className="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2">
-                              Requirements
-                            </h4>
-                            <p className="text-hive-muted text-sm">
-                              Applicant must provide proof of time spent living
-                              in China under a valid visa with residence permit
-                              proof.
+                  {!isFingerprinting && (
+                    <ChevronDown
+                      className={`w-5 h-5 text-hive-dim shrink-0 mt-1 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  )}
+                </div>
+                {!isFingerprinting && (
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 pt-0">
+                          {service.id === "china-pcc" && (
+                            <div className="bg-hive-elevated rounded-xl p-4 mb-4 border border-hive-border">
+                              <h4 className="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2">
+                                Requirements
+                              </h4>
+                              <p className="text-hive-muted text-sm">
+                                Applicant must provide proof of time spent living
+                                in China under a valid visa with residence permit
+                                proof.
+                              </p>
+                            </div>
+                          )}
+                          <ul className="space-y-2.5">
+                            {service.details.map((detail, i) => (
+                              <li
+                                key={i}
+                                className="flex items-start gap-3 text-sm text-hive-muted"
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0" />
+                                {detail}
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="mt-5 pt-4 border-t border-hive-border">
+                            <p className="text-hive-dim text-xs">
+                              Pricing varies by document volume and destination.
+                              Contact us for a tailored quote.
                             </p>
                           </div>
-                        )}
-                        <ul className="space-y-2.5">
-                          {service.details.map((detail, i) => (
-                            <li
-                              key={i}
-                              className="flex items-start gap-3 text-sm text-hive-muted"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0" />
-                              {detail}
-                            </li>
-                          ))}
-                        </ul>
-                        <div className="mt-5 pt-4 border-t border-hive-border">
-                          <p className="text-hive-dim text-xs">
-                            Pricing varies by document volume and destination.
-                            Contact us for a tailored quote.
-                          </p>
                         </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </>
+            );
+            return isFingerprinting ? (
+              <Link
+                key={service.id}
+                href="/shanghai-fingerprinting/"
+                className="group bg-hive-surface border border-hive-border rounded-2xl overflow-hidden hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-[1.02] block"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <motion.article
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="group bg-hive-surface border border-hive-border rounded-2xl overflow-hidden hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-[1.02]"
+              >
+                {cardContent}
               </motion.article>
             );
           })}
