@@ -6,11 +6,11 @@ import { ArrowRight, MapPin, Clock, Shield, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Fingerprinting Services — Shanghai, Beijing, Chengdu | Hive Digital",
   description:
-    "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and across China. FBI-compliant live scan and ink-based fingerprinting for background checks, visa applications, and employment screening.",
+    "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and across China. FBI-compliant electronic and ink-based fingerprinting for background checks, visa applications, and employment screening.",
   openGraph: {
     title: "Fingerprinting Services — Shanghai, Beijing, Chengdu | Hive Digital",
     description:
-      "Professional fingerprinting solutions across China. Live scan and ink-based for FBI checks, visas, and employment.",
+      "Professional fingerprinting solutions across China. Electronic and ink-based for FBI checks, visas, and employment.",
   },
 };
 
@@ -29,7 +29,7 @@ const useCases = [
   {
     title: "FBI Background Checks",
     description:
-      "Live scan fingerprinting for FBI Identity History Summary Checks. Electronic submission directly to FBI CJIS.",
+      "Fingerprinting for FBI Identity History Summary Checks. Electronic submission directly to FBI CJIS.",
   },
   {
     title: "China Visa & Work Permit",
@@ -75,7 +75,7 @@ export default function FingerprintingPage() {
           <p className="text-hive-muted text-lg max-w-3xl leading-relaxed mb-8">
             Fast, convenient, and accurate fingerprinting solutions in
             <strong className="text-white"> Shanghai, Beijing, Chengdu</strong>,
-            and other major cities across China. FBI-compliant live scan and
+            and other major cities across China. FBI-compliant electronic and
             traditional ink-based fingerprinting for all your documentation
             needs.
           </p>
@@ -168,7 +168,7 @@ export default function FingerprintingPage() {
               {
                 step: "2",
                 title: "On-Site Fingerprinting",
-                text: "Our technician captures your fingerprints using FBI-compliant live scan or ink method.",
+                text: "Our technician captures your fingerprints using FBI-compliant electronic or ink method.",
               },
               {
                 step: "3",
