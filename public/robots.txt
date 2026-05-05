@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.hiverelo.com/sitemap.xml
