@@ -34,17 +34,17 @@ const useCases = [
   {
     title: "China Visa & Work Permit",
     description:
-      "Fingerprinting required for Z-Visa applications, residence permits, and work authorization documentation.",
+      "Fingerprinting required for Z-Visa applications, residence permits, and work authorization documentation. Some cities — including Suzhou, Kunshan, Ningbo, and Xiamen — may require fingerprint-based reports. HR departments may also enforce stricter internal due diligence policies.",
   },
   {
-    title: "Employment Screening",
+    title: "PR Card: Permanent Residence",
     description:
-      "Corporate fingerprinting services for international schools, financial institutions, and government contractors.",
+      "Fingerprinting services for Canadian and U.S. permanent residence applicants as part of their immigration documentation requirements.",
   },
   {
     title: "Police Clearance (PCC)",
     description:
-      "Fingerprint capture for Police Clearance Certificates from the US, Canada, UK, Australia, and other jurisdictions.",
+      "Fingerprint capture for Police Clearance Certificates from the US, Canada, and other jurisdictions.",
   },
 ];
 
@@ -52,7 +52,6 @@ export default function FingerprintingPage() {
   return (
     <main className="pt-24 pb-16 px-6 lg:px-12 bg-hive-bg min-h-screen">
       <div className="max-w-5xl mx-auto">
-        {/* Breadcrumb */}
         <nav className="mb-8">
           <Link
             href="/services/"
@@ -62,7 +61,6 @@ export default function FingerprintingPage() {
           </Link>
         </nav>
 
-        {/* Hero */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
@@ -96,7 +94,6 @@ export default function FingerprintingPage() {
           </div>
         </div>
 
-        {/* Cities Grid */}
         <div className="bg-hive-surface border border-hive-border rounded-2xl p-6 lg:p-8 mb-12">
           <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight flex items-center gap-3">
             <MapPin className="w-6 h-6 text-red-500" />
@@ -128,7 +125,6 @@ export default function FingerprintingPage() {
           </div>
         </div>
 
-        {/* Use Cases */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight flex items-center gap-3">
             <Shield className="w-6 h-6 text-red-500" />
@@ -152,7 +148,6 @@ export default function FingerprintingPage() {
           </div>
         </div>
 
-        {/* Process */}
         <div className="bg-hive-surface border border-hive-border rounded-2xl p-6 lg:p-8 mb-12">
           <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight flex items-center gap-3">
             <Clock className="w-6 h-6 text-red-500" />
@@ -187,7 +182,6 @@ export default function FingerprintingPage() {
           </div>
         </div>
 
-        {/* CTA */}
         <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-3">
             Ready to Book Your Appointment?
