@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Hive Digital | Document Apostille & Authentication for 21+ Countries",
+  title: "Apostille & Document Authentication for China, Vietnam, Korea, Thailand & Japan | Hive Digital",
   description: "Fast apostille, background check, and visa document services for China, Vietnam, Thailand, Korea, Japan & 21+ countries. 15+ years experience. 4.9/5 Trustpilot.",
   keywords: ["apostille China","document authentication Vietnam","background check Thailand","work permit documents Korea","FBI background check apostille","China business registration","document legalization","notarization","visa documentation"],
   metadataBase: new URL("https://www.hiverelo.com"),
