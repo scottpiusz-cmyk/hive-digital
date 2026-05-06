@@ -1,7 +1,17 @@
-"use client";
+
 
 import Link from "next/link";
 import { ArrowRight, FileText, Clock, Shield, CheckCircle } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vietnam Document Authentication & Legalization Services | Hive Digital",
+  description: "Vietnam document authentication and legalization services for Americans. Embassy legalization pre-Sept 2025, Apostille post-Sept 2025. Degrees, teaching certificates, corporate documents.",
+  openGraph: {
+    title: "Vietnam Document Authentication & Legalization Services | Hive Digital",
+    description: "Expert Vietnam document authentication for Americans. Embassy legalization and Apostille services.",
+  },
+};
 
 export default function VietnamAuthenticationPage() {
   return (

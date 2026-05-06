@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/shanghai-fingerprinting/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0~3iw.u._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0flanuz._.js")
 R.c("server/chunks/ssr/024d_next_dist_0feg326._.js")
 R.c("server/chunks/ssr/024d_next_dist_esm_build_templates_app-page_0sjh9ag.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0trkkx0._.js")

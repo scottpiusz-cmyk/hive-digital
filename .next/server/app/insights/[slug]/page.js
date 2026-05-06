@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/insights/[slug]/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0b46q5.._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__11h.5in._.js")
 R.c("server/chunks/ssr/024d_lucide-react_dist_esm_icons_calendar_mjs_01wp4b-._.js")
 R.c("server/chunks/ssr/024d_next_dist_esm_build_templates_app-page_0bn1_0l.js")
 R.c("server/chunks/ssr/024d_next_dist_0feg326._.js")

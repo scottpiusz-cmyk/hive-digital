@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/korea-apostille/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0xm8~r.._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0iy~1gs._.js")
 R.c("server/chunks/ssr/024d_next_dist_0feg326._.js")
 R.c("server/chunks/ssr/024d_next_dist_esm_build_templates_app-page_0bbldc6.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0trkkx0._.js")
