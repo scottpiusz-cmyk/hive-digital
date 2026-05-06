@@ -6,8 +6,10 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/insights/[slug]/page": "app/insights/[slug]/page.js",
   "/insights/page": "app/insights/page.js",
+  "/korea-apostille/page": "app/korea-apostille/page.js",
   "/page": "app/page.js",
   "/services/[slug]/page": "app/services/[slug]/page.js",
   "/services/page": "app/services/page.js",
-  "/shanghai-fingerprinting/page": "app/shanghai-fingerprinting/page.js"
+  "/shanghai-fingerprinting/page": "app/shanghai-fingerprinting/page.js",
+  "/vietnam-authentication/page": "app/vietnam-authentication/page.js"
 }

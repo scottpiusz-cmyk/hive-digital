@@ -6,8 +6,10 @@
   "/favicon.ico/route": "/favicon.ico",
   "/insights/[slug]/page": "/insights/[slug]",
   "/insights/page": "/insights",
+  "/korea-apostille/page": "/korea-apostille",
   "/page": "/",
   "/services/[slug]/page": "/services/[slug]",
   "/services/page": "/services",
-  "/shanghai-fingerprinting/page": "/shanghai-fingerprinting"
+  "/shanghai-fingerprinting/page": "/shanghai-fingerprinting",
+  "/vietnam-authentication/page": "/vietnam-authentication"
 }
