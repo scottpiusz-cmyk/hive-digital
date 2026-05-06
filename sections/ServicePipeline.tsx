@@ -8,6 +8,7 @@ import {
   Stamp,
   FileText,
   Fingerprint,
+  Globe,
   Plane,
   Building2,
   ChevronDown,
@@ -21,6 +22,7 @@ interface Service {
   icon: LucideIcon;
   title: string;
   image?: string;
+  link?: string;
   summary: string;
   details: string[];
 }
@@ -86,6 +88,38 @@ const services: Service[] = [
       "Other cities by appointment — inquire",
       "Digital delivery within 24 hours",
       "Hard copies via secure courier",
+    ],
+  },
+  {
+    id: "vietnam",
+    icon: Globe,
+    title: "Vietnam Document Authentication",
+    image: "/fingerprinting.jpg",
+    link: "/vietnam-authentication/",
+    summary: "Vietnam document authentication and legalization services. Embassy legalization pre-September 2025, Apostille post-September 2025. Decree 219/2025/ND-CP compliance.",
+    details: [
+      "Vietnam Embassy authentication (pre-Sept 2025)",
+      "Hague Apostille (post-Sept 2025)",
+      "Decree 219/2025/ND-CP compliance guidance",
+      "Degrees, teaching certificates, corporate docs",
+      "Notarized Vietnamese translation coordination",
+      "End-to-end processing and delivery",
+    ],
+  },
+  {
+    id: "korea",
+    icon: Globe,
+    title: "Korea Document Apostille",
+    image: "/fingerprinting.jpg",
+    link: "/korea-apostille/",
+    summary: "Korea apostille services for Americans. Hague Apostille processing for E-2 visas, teaching positions, and corporate documents. Korea member since 2007.",
+    details: [
+      "Hague Apostille for all Korean-bound documents",
+      "E-2 visa document packages for teachers",
+      "FBI check apostille for Korea immigration",
+      "Degree and certificate apostille",
+      "Korean translation coordination",
+      "State-level and federal apostille processing",
     ],
   },
   {
@@ -159,6 +193,7 @@ export default function ServicePipeline() {
             const Icon = service.icon;
             const isOpen = openId === service.id;
             const isFingerprinting = service.id === "fingerprinting";
+            const hasLink = service.link !== undefined;
             const cardContent = (
               <>
                 {service.image && (
@@ -245,10 +280,10 @@ export default function ServicePipeline() {
                 )}
               </>
             );
-            return isFingerprinting ? (
+            return hasLink ? (
               <Link
                 key={service.id}
-                href="/shanghai-fingerprinting/"
+                href={service.link!}
                 className="group bg-hive-surface border border-hive-border rounded-2xl overflow-hidden hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-[1.02] block"
               >
                 {cardContent}
