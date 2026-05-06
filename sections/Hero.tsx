@@ -19,12 +19,12 @@ export default function Hero() {
           <span className="text-[10px] sm:text-xs font-medium tracking-widest uppercase text-hive-muted">Documentation Services for 21+ Countries</span>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.3 }} className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-[-0.04em] uppercase leading-[0.88] mb-8">
-          <span className="block">Documents</span>
-          <span className="block text-hive-accent">Authenticated</span>
-          <span className="block">&amp; Delivered</span>
+          <span className="block">Apostille &amp;</span>
+          <span className="block text-hive-accent">Document Authentication</span>
+          <span className="block">for China, Vietnam, Korea, Thailand &amp; Japan</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.55 }} className="text-base sm:text-lg text-hive-muted max-w-xl mx-auto mb-12 leading-relaxed">
-          We handle apostilles, background checks, and authentication for China, Vietnam, Thailand, Korea, Japan &amp; 21+ countries. Trusted by thousands.
+          Vietnam Authentication • Korea Apostille • Thailand Authentication • China Apostille • Japan Apostille — and 21+ countries. Trusted by thousands for document apostille, authentication, compliance, fingerprinting, and China PCC services.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.75 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/contact/" className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-hive-accent hover:bg-hive-accent-hover text-hive-bg text-sm font-semibold tracking-wide transition-all hover:shadow-glow">
