@@ -1,12 +1,12 @@
 [
   {
     "route": "/",
-    "firstLoadUncompressedJsBytes": 730528,
+    "firstLoadUncompressedJsBytes": 730530,
     "firstLoadChunkPaths": [
       ".next/static/chunks/14kxb_7w3bre9.js",
       ".next/static/chunks/0g2yyfwvf~mdi.js",
       ".next/static/chunks/06fwfrelb5ors.js",
-      ".next/static/chunks/0t4shg0dpjv~d.js",
+      ".next/static/chunks/09s.kk.az_wp..js",
       ".next/static/chunks/14x7yxx9ki0y7.js",
       ".next/static/chunks/0.9es1_tu~xcb.js",
       ".next/static/chunks/07fa~1dynag0j.js",
@@ -96,6 +96,19 @@
     ]
   },
   {
+    "route": "/japan-apostille",
+    "firstLoadUncompressedJsBytes": 524275,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/14kxb_7w3bre9.js",
+      ".next/static/chunks/0g2yyfwvf~mdi.js",
+      ".next/static/chunks/14x7yxx9ki0y7.js",
+      ".next/static/chunks/0.9es1_tu~xcb.js",
+      ".next/static/chunks/07fa~1dynag0j.js",
+      ".next/static/chunks/0kf252owdbu9e.js",
+      ".next/static/chunks/turbopack-12q778j0j9-6_.js"
+    ]
+  },
+  {
     "route": "/korea-apostille",
     "firstLoadUncompressedJsBytes": 524275,
     "firstLoadChunkPaths": [
@@ -123,6 +136,19 @@
   },
   {
     "route": "/shanghai-fingerprinting",
+    "firstLoadUncompressedJsBytes": 524275,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/14kxb_7w3bre9.js",
+      ".next/static/chunks/0g2yyfwvf~mdi.js",
+      ".next/static/chunks/14x7yxx9ki0y7.js",
+      ".next/static/chunks/0.9es1_tu~xcb.js",
+      ".next/static/chunks/07fa~1dynag0j.js",
+      ".next/static/chunks/0kf252owdbu9e.js",
+      ".next/static/chunks/turbopack-12q778j0j9-6_.js"
+    ]
+  },
+  {
+    "route": "/thailand-authentication",
     "firstLoadUncompressedJsBytes": 524275,
     "firstLoadChunkPaths": [
       ".next/static/chunks/14kxb_7w3bre9.js",

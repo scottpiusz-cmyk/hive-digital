@@ -218,6 +218,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/japan-apostille": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/japan-apostille",
+      "dataRoute": "/japan-apostille.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/korea-apostille": {
       "experimentalBypassFor": [
         {
@@ -425,6 +449,30 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/shanghai-fingerprinting",
       "dataRoute": "/shanghai-fingerprinting.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/thailand-authentication": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/thailand-authentication",
+      "dataRoute": "/thailand-authentication.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",

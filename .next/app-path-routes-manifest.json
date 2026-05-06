@@ -5,10 +5,12 @@
   "/contact/page": "/contact",
   "/insights/[slug]/page": "/insights/[slug]",
   "/insights/page": "/insights",
+  "/japan-apostille/page": "/japan-apostille",
   "/korea-apostille/page": "/korea-apostille",
   "/page": "/",
   "/services/[slug]/page": "/services/[slug]",
   "/services/page": "/services",
   "/shanghai-fingerprinting/page": "/shanghai-fingerprinting",
+  "/thailand-authentication/page": "/thailand-authentication",
   "/vietnam-authentication/page": "/vietnam-authentication"
 }

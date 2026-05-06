@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/thailand-authentication/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0ysp-77._.js")
+R.c("server/chunks/ssr/024d_next_dist_esm_build_templates_app-page_0k6sj3w.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0pt3l8y._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0spfstl._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__07biytt._.js")
+R.c("server/chunks/ssr/024d_next_dist_client_components_0jj2zii._.js")
+R.c("server/chunks/ssr/024d_next_dist_client_components_builtin_forbidden_033_4-q.js")
+R.c("server/chunks/ssr/024d_next_dist_client_components_builtin_unauthorized_0d7hid2.js")
+R.c("server/chunks/ssr/024d_next_dist_client_components_builtin_global-error_02hszeg.js")
+R.c("server/chunks/ssr/0ei2__next-internal_server_app_thailand-authentication_page_actions_0k_sw_0.js")
+R.m(88698)
+module.exports=R.m(88698).exports

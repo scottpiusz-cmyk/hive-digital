@@ -91,6 +91,12 @@
       "namedRegex": "^/insights(?:/)?$"
     },
     {
+      "page": "/japan-apostille",
+      "regex": "^/japan\\-apostille(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/japan\\-apostille(?:/)?$"
+    },
+    {
       "page": "/korea-apostille",
       "regex": "^/korea\\-apostille(?:/)?$",
       "routeKeys": {},
@@ -107,6 +113,12 @@
       "regex": "^/shanghai\\-fingerprinting(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/shanghai\\-fingerprinting(?:/)?$"
+    },
+    {
+      "page": "/thailand-authentication",
+      "regex": "^/thailand\\-authentication(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/thailand\\-authentication(?:/)?$"
     },
     {
       "page": "/vietnam-authentication",
