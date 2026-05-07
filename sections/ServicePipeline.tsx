@@ -50,7 +50,6 @@ const services: Service[] = [
     image: "/apostille-auth-combined.jpg",
     summary:
       "Hague Apostille certification, Embassy / Consulate legalization, and notarization for degrees, teaching certificates, marriage licenses, and corporate documents.",
-    link: "/services/apostille/",
     details: [
       "Hague Apostille (Convention member states)",
       "Chinese Embassy / Consulate Authentication",
@@ -237,6 +236,15 @@ export default function ServicePipeline() {
                               </li>
                             ))}
                           </ul>
+                          {service.id === "apostille" && (
+                            <div className="mt-4 space-y-1.5">
+                              <p className="text-xs font-semibold uppercase tracking-wider text-hive-dim mb-2">Country-Specific Services</p>
+                              <Link href="/vietnam-authentication/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Vietnam Document Authentication</Link>
+                              <Link href="/korea-apostille/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Korea Document Apostille</Link>
+                              <Link href="/thailand-authentication/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Thailand Document Authentication</Link>
+                              <Link href="/japan-apostille/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Japan Document Apostille</Link>
+                            </div>
+                          )}
                           <div className="mt-5 pt-4 border-t border-hive-border">
                             <p className="text-hive-dim text-xs">
                               Pricing varies by document volume and destination.
