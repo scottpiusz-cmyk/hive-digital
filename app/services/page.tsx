@@ -42,7 +42,7 @@ const services = [
       "Hague Apostille certification, Embassy / Consulate legalization, and notarization for degrees, teaching certificates, marriage licenses, and corporate documents accepted in 120+ member countries.",
     features: [
       "Hague Apostille (Convention member states)",
-      "Chinese Embassy / Consulate Authentication",
+      "China: Hague Apostille (member since 2023)",
       "Vietnamese Embassy Legalization",
       "Thai MOFA & Embassy Authentication",
     ],
