@@ -13,10 +13,10 @@ export default function Hero() {
         style={{ backgroundImage: "url('/hero-bg.jpg')" }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-hive-bg/60" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 bg-hive-bg/30" style={{ zIndex: 1 }} />
       {/* Gradient overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-hive-bg/90 via-hive-bg/50 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-hive-bg/50 via-hive-bg/20 to-transparent"
         style={{ zIndex: 2 }}
       />
 
