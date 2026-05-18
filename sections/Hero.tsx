@@ -16,13 +16,16 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-24">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="inline-flex items-center gap-3 px-4 py-2 mb-8 rounded-full border border-hive-border/50 bg-hive-surface/40 backdrop-blur">
           <span className="w-1.5 h-1.5 rounded-full bg-hive-accent" />
-          <span className="text-[10px] sm:text-xs font-medium tracking-widest uppercase text-hive-muted">Documentation Services for 21+ Countries</span>
+          <span className="text-[10px] sm:text-xs font-medium tracking-widest uppercase text-hive-muted">Documents Authenticated & Delivered</span>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.3 }} className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-[-0.04em] uppercase leading-[0.88] mb-8">
-          <span className="block">Apostille &amp;</span>
-          <span className="block text-hive-accent">Document Authentication</span>
+          <span className="block">Your documents.</span>
+          <span className="block">Anywhere in APAC.</span>
+            <span className="block text-amber-400">Handled with intelligence.</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.55 }} className="text-base sm:text-lg text-hive-muted max-w-xl mx-auto mb-12 leading-relaxed">
+          Apostille, embassy legalisation and document services for individuals and businesses moving across borders.
+          Apostille, embassy legalisation and document services for individuals and businesses moving across borders.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.75 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/contact/" className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-hive-accent hover:bg-hive-accent-hover text-hive-bg text-sm font-semibold tracking-wide transition-all hover:shadow-glow">
