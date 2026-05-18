@@ -8,7 +8,6 @@ import {
   Stamp,
   FileText,
   Fingerprint,
-  Globe,
   Plane,
   Building2,
   ChevronDown,
@@ -22,7 +21,6 @@ interface Service {
   icon: LucideIcon;
   title: string;
   image?: string;
-  link?: string;
   summary: string;
   details: string[];
 }
@@ -46,17 +44,16 @@ const services: Service[] = [
   {
     id: "apostille",
     icon: Stamp,
-    title: "Document Apostille & Authentication",
+    title: "Apostille & Document Authentication",
     image: "/apostille-auth-combined.jpg",
     summary:
       "Hague Apostille certification, Embassy / Consulate legalization, and notarization for degrees, teaching certificates, marriage licenses, and corporate documents.",
     details: [
       "Hague Apostille (Convention member states)",
       "Chinese Embassy / Consulate Authentication",
-      "Vietnam: Embassy authentication or Apostille (post-Sept 2025)",
-      "Korea: Hague Apostille (member since 2007)",
-      "Thailand: Thai Embassy authentication & legalization",
-      "Japan: Hague Apostille (member since 1970)",
+      "Vietnamese Embassy Legalization",
+      "Thai MOFA & Embassy Authentication",
+      "Korean & Japanese Consulate Authentication",
       "Notarization and certified translation coordination",
     ],
   },
@@ -162,7 +159,6 @@ export default function ServicePipeline() {
             const Icon = service.icon;
             const isOpen = openId === service.id;
             const isFingerprinting = service.id === "fingerprinting";
-            const hasLink = service.link !== undefined;
             const cardContent = (
               <>
                 {service.image && (
@@ -236,15 +232,6 @@ export default function ServicePipeline() {
                               </li>
                             ))}
                           </ul>
-                          {service.id === "apostille" && (
-                            <div className="mt-4 space-y-1.5">
-                              <p className="text-xs font-semibold uppercase tracking-wider text-hive-dim mb-2">Country-Specific Services</p>
-                              <Link href="/vietnam-authentication/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Vietnam Document Authentication</Link>
-                              <Link href="/korea-apostille/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Korea Document Apostille</Link>
-                              <Link href="/thailand-authentication/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Thailand Document Authentication</Link>
-                              <Link href="/japan-apostille/" className="block text-sm text-red-400 hover:text-white transition-colors">→ Japan Document Apostille</Link>
-                            </div>
-                          )}
                           <div className="mt-5 pt-4 border-t border-hive-border">
                             <p className="text-hive-dim text-xs">
                               Pricing varies by document volume and destination.
@@ -258,10 +245,10 @@ export default function ServicePipeline() {
                 )}
               </>
             );
-            return hasLink ? (
+            return isFingerprinting ? (
               <Link
                 key={service.id}
-                href={service.link!}
+                href="/shanghai-fingerprinting/"
                 className="group bg-hive-surface border border-hive-border rounded-2xl overflow-hidden hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-[1.02] block"
               >
                 {cardContent}

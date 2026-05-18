@@ -38,6 +38,7 @@ const services = [
   {
     icon: Stamp,
     title: "Apostille & Document Authentication",
+    link: "/services/apostille/",
     description:
       "Hague Apostille certification, Embassy / Consulate legalization, and notarization for degrees, teaching certificates, marriage licenses, and corporate documents accepted in 120+ member countries.",
     features: [
