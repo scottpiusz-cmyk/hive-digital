@@ -1,3 +1,5 @@
+import { prcPrCardArticle } from "./insights-prc-pr-card";
+
 export interface InsightArticle {
   slug: string;
   title: string;
@@ -11,6 +13,7 @@ export interface InsightArticle {
 }
 
 export const insights: InsightArticle[] = [
+  prcPrCardArticle,
   {
     slug: "china-vietnam-document-legalization-2026",
     title:
