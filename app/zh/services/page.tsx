@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Stamp, FileText, Fingerprint, Plane, Building2, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "我们的服务 | Hive Digital",
-  description: "Hive Digital提供全面的跨境文件认证服务，包括Apostille认证、使馆公证、背景调查、指纹采集、中国签证等。",
+  title: "中国文件认证与指纹采集服务 | Apostille海牙认证背景调查 | Hive Digital",
+  description: "Hive Digital提供中国文件Apostille海牙认证、使馆公证、FBI背景调查、指纹采集、中国签证、五星卡文件等跨境文件认证与指纹采集服务。上海北京成都可预约。",
 };
 
 const services = [
@@ -18,13 +18,13 @@ const services = [
     icon: Stamp,
     title: "文件Apostille与认证",
     description: "海牙Apostille认证、使馆/领事馆公证、学位证明、结婚证明和公司文件的公证。",
-    features: ["海牙Apostille：中国、韩国、日本", "使馆认证：越南、泰国等", "公证与认证翻译协调"],
+    features: ["海牙Apostille认证", "使馆/领事馆公证", "学位和教师证书公证", "结婚证明和公司文件公证"],
   },
   {
     icon: FileText,
     title: "中国无犯罪记录证明",
     description: "从北京、上海、深圳等中国城市的公安局获取无犯罪记录证明。",
-    features: ["北京公安局证明", "上海公安局证明", "深圳公安局证明", "公证与英文翻译"],
+    features: ["北京公安局无犯罪记录", "上海公安局无犯罪记录", "深圳公安局犯罪记录", "其他城市可咨询"],
   },
   {
     icon: Fingerprint,
@@ -37,7 +37,7 @@ const services = [
     icon: Plane,
     title: "中国签证与工作许可",
     description: "中国Z签证申请和居留许可文件的全流程准备和指导。",
-    features: ["Z签证文件准备与审核", "居留许可申请支持", "文件翻译与认证"],
+    features: ["Z签证文件准备", "居留许可申请支持", "文件翻译与认证"],
   },
   {
     icon: Building2,
@@ -56,36 +56,42 @@ const services = [
 export default function ChineseServicesPage() {
   return (
     <main className="pt-24 pb-16 px-6 lg:px-12 bg-hive-bg min-h-screen">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
-          我们的<span className="text-red-500">服务</span>
-        </h1>
-        <p className="text-hive-muted text-lg max-w-3xl mb-12">
-          端到端的文件认证和合规支持，覆盖亚洲及全球。
-        </p>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-4">
+            我们的服务
+          </h1>
+          <p className="text-hive-muted text-lg max-w-3xl mx-auto">
+            覆盖亚洲及全球的端到端文件认证和合规支持。从Apostille认证到签证文件，我们处理一切。
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div key={service.title} className="bg-hive-surface border border-hive-border rounded-2xl p-6 hover:border-red-500/30 transition-all">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-red-500" />
-                  </div>
-                  <h2 className="text-xl font-bold text-white">{service.title}</h2>
+              <div
+                key={service.title}
+                className="bg-hive-surface border border-hive-border rounded-2xl p-8 hover:border-red-500/30 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-red-500/10 flex items-center justify-center mb-6">
+                  <Icon className="w-7 h-7 text-red-500" />
                 </div>
-                <p className="text-hive-muted text-sm mb-4">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-hive-muted">
+                <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
+                <p className="text-hive-muted text-sm mb-6">{service.description}</p>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-hive-muted">
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 {service.link && (
-                  <Link href={service.link} className="inline-flex items-center gap-1 text-red-400 text-sm mt-4 hover:text-white transition-colors">
+                  <Link
+                    href={service.link}
+                    className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+                  >
                     了解更多 <ArrowRight className="w-4 h-4" />
                   </Link>
                 )}
