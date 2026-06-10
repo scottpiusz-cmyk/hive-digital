@@ -53,12 +53,12 @@ This is where most American applicants get confused. Because the United States a
 
 The FBI offers two methods:
 
-| Method | Processing Time | Cost | Best For |
-|--------|----------------|------|----------|
-| **FBI-Approved Channeler** | 3–5 business days | $50–$80 | Urgent applications |
-| **Direct FBI Submission** | 12–14 weeks (mail) / Same-day (electronic) | $18 | Non-urgent, cost-sensitive |
+| Method | Processing Time | Best For |
+|--------|----------------|----------|
+| **FBI-Approved Channeler** | 24–48 hours | Urgent applications |
+| **Direct FBI Submission** | 12–14 weeks (mail) / Same-day (electronic) | Non-urgent, cost-sensitive |
 
-**Channeler recommendation:** Hive Digital works with FBI-approved channelers who can deliver results in 3–5 business days. The electronic PDF is valid for apostille — no hardcopy required.
+**Channeler recommendation:** Hive Digital works with FBI-approved channelers who can deliver results in 24–48 hours. The electronic PDF is valid for apostille — no hardcopy required.
 
 **Important:** The FBI check must be issued within **6 months** of your 五星卡 application submission. Plan your timeline accordingly.
 
@@ -68,12 +68,12 @@ Once you have your FBI Identity History Summary Check, it must receive an **apos
 
 **Submission options:**
 
-| Method | Processing Time | Cost | Notes |
-|--------|----------------|------|-------|
-| **Mail-in** | 8–11 weeks | $20 per document | Standard service; slow but reliable |
-| **Walk-in (DC)** | Same-day to 5 business days | $20 per document | Must appear in person at 600 19th St NW |
-| **Expedited mail** | 3–5 business days | $20 + $95 priority fee | Requires prepaid return label |
-| **Hive Digital service** | 5–7 business days | All-inclusive | We handle channeling + apostille + delivery |
+| Method | Processing Time | Notes |
+|--------|----------------|-------|
+| **Mail-in** | 8–11 weeks | Standard service; slow but reliable |
+| **Walk-in (DC)** | Same-day to 5 business days | Must appear in person at 600 19th St NW |
+| **Expedited mail** | 3–5 business days | Requires prepaid return label |
+| **Hive Digital service** | 4 weeks (2 weeks expedited) | We handle channeling + apostille + delivery |
 
 **Critical detail:** The apostille must be issued by the **US Department of State in Washington DC**, not by an individual state's Secretary of State office. FBI documents are federal documents and require federal-level apostille.
 
@@ -84,10 +84,7 @@ Once apostilled, the FBI check must be translated into Chinese by a **certified 
 Requirements for the translation:
 - Must be performed by a licensed translation agency in China
 - Must include a translation certification statement
-- Must be notarized at a local 公证处
 - The notary will attach a notarization certificate (公证书) to the translated document
-
-Hive Digital coordinates this step directly through our certified translation partners in Shanghai, Beijing, and Guangzhou.
 
 **Step 4: Submit With Your 五星卡 Application**
 
@@ -129,11 +126,11 @@ NIA requires translations performed by licensed translation agencies with proper
 
 | Stage | Method | Time Required |
 |-------|--------|---------------|
-| FBI Identity History Summary Check | Channeler | 3–5 business days |
+| FBI Identity History Summary Check | Channeler | 24–48 hours |
 | FBI Identity History Summary Check | Direct FBI | 12–14 weeks |
 | US Department of State Apostille | Walk-in (DC) | Same-day to 5 days |
 | US Department of State Apostille | Mail-in | 8–11 weeks |
-| US Department of State Apostille | Hive Digital service | 5–7 business days |
+| US Department of State Apostille | Hive Digital service | 4 weeks (2 weeks expedited) |
 | Chinese Translation + Notarization | Hive Digital | 3–5 business days |
 | **Total (fastest path)** | **Channeler + Hive** | **2–3 weeks** |
 | **Total (DIY path)** | **Direct FBI + mail** | **20–28 weeks** |
@@ -146,23 +143,17 @@ For American 五星卡 applicants, Hive Digital provides an **end-to-end managed
 
 **Phase 1: FBI Check Procurement**
 - We submit your FBI Identity History Summary Check request through an FBI-approved channeler
-- Electronic results delivered in 3–5 business days
+- Electronic results in 24–48 hours
 - No need for you to visit a fingerprinting location in the US — we can arrange fingerprinting in Shanghai, Beijing, or Chengdu if needed
 
 **Phase 2: Apostille Processing**
 - We hand-deliver your FBI check to the US Department of State Office of Authentications in Washington DC
-- Apostille completed in 5–7 business days
+- Apostille completed in 4 weeks, or 2 weeks expedited
 - Secure international courier delivery back to our Shanghai office
 
 **Phase 3: Chinese Translation & Notarization**
 - Certified Chinese translation by licensed agencies
-- Notarization at local 公证处 in Shanghai, Beijing, or your city of residence
 - Final document package prepared for NIA submission
-
-**Phase 4: Application Support**
-- Document checklist review for your specific 五星卡 category
-- Coordination with local Exit-Entry Administration Bureau
-- Ongoing support through application review and card issuance
 
 **Pricing:** Contact us for a tailored quote based on your timeline and location. Our all-inclusive FBI-to-apostille-to-translation package typically costs less than the combined fees of handling each step independently — and significantly reduces your risk of delays or rejections.
 
@@ -175,7 +166,6 @@ To get started, Hive Digital requires:
 1. **Completed FBI fingerprint card (FD-258)** or electronic fingerprint scan
 2. **Valid US passport** (for identity verification)
 3. **China residence address** (for document delivery coordination)
-4. **Intended 五星卡 application city** (determines which 公证处 handles notarization)
 
 Most clients begin with a free 15-minute consultation via WeChat, WeCom, or WhatsApp to discuss their timeline and specific situation.
 
