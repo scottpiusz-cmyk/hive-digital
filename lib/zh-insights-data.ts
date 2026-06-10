@@ -1,3 +1,5 @@
+import { zhPrcPrCardArticle } from "./zh-prc-pr-card";
+
 export interface ZhInsightArticle {
   slug: string;
   title: string;
@@ -11,6 +13,7 @@ export interface ZhInsightArticle {
 }
 
 export const zhInsights: ZhInsightArticle[] = [
+  zhPrcPrCardArticle,
   {
     slug: "china-vietnam-document-legalization-2026",
     title: "中越文件认证合规指南：2026年越南加入海牙 Apostille 公约后的新规",

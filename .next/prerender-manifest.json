@@ -194,6 +194,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/insights/fbi-background-check-china-5-star-pr-card-2026": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/insights/[slug]",
+      "dataRoute": "/insights/fbi-background-check-china-5-star-pr-card-2026.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/insights/fbi-background-check-optimization-2026": {
       "experimentalBypassFor": [
         {
@@ -650,6 +674,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/zh/insights/fbi-background-check-china-5-star-pr-card-2026": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/zh/insights/[slug]",
+      "dataRoute": "/zh/insights/fbi-background-check-china-5-star-pr-card-2026.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/zh/insights/fbi-background-check-optimization-2026": {
       "experimentalBypassFor": [
         {
@@ -811,8 +859,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "46a0987a49e032bf83e0e7c64999e9cd",
-    "previewModeSigningKey": "fe95733278b14f04899af8d69e0177d6e4e5d880c52e2e9ba6339ab3fe51b5b1",
-    "previewModeEncryptionKey": "5dd19739abcce24e04b546c5cc0bc166e3f0f8691a4f053ed36d6639215ae61c"
+    "previewModeId": "9de8f1a30b339e36de773dbfda28ef9c",
+    "previewModeSigningKey": "833cea83623c6c22af51de7e66047ee7e38a0b0107b77333a334b6e64b66673a",
+    "previewModeEncryptionKey": "9548adeb9310ed0841fc833762466a64b770f6bfb9fb3af49de82f29eefaf9ba"
   }
 }
