@@ -3,7 +3,7 @@
 
 type AppRoutes = "/" | "/about" | "/contact" | "/insights" | "/insights/[slug]" | "/japan-apostille" | "/korea-apostille" | "/services" | "/services/[slug]" | "/shanghai-fingerprinting" | "/thailand-authentication" | "/vietnam-authentication" | "/zh" | "/zh/about" | "/zh/contact" | "/zh/insights" | "/zh/insights/[slug]" | "/zh/services" | "/zh/shanghai-fingerprinting"
 type PageRoutes = never
-type LayoutRoutes = "/zh"
+type LayoutRoutes = "/" | "/zh"
 type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
@@ -35,6 +35,7 @@ interface ParamMap {
 export type ParamsOf<Route extends Routes> = ParamMap[Route]
 
 interface LayoutSlotMap {
+  "/": never
   "/zh": never
 }
 

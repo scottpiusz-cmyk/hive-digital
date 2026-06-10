@@ -1,12 +1,13 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/japan-apostille/page.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0mpkgp-._.js")
-R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0~cazxg.js")
-R.c("server/chunks/ssr/[root-of-the-server]__00iditu._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0_wtxk4.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0o_vtwa._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0zgvpt1._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0oq28r_._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
 R.c("server/chunks/ssr/_next-internal_server_app_japan-apostille_page_actions_0j8tvsl.js")
-R.m(79123)
-module.exports=R.m(79123).exports
+R.m(57657)
+module.exports=R.m(57657).exports
