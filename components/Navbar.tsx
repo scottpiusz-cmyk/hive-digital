@@ -15,26 +15,24 @@ const enNavLinks = [
 ];
 
 const zhNavLinks = [
-  { label: "首页", href: "/zh/" },
-  { label: "服务", href: "/zh/services/" },
-  { label: "资讯", href: "/zh/insights/" },
-  { label: "关于", href: "/zh/about/" },
-  { label: "联系", href: "/zh/contact/" },
+  { label: "\u9996\u9875", href: "/zh/" },
+  { label: "\u670d\u52a1", href: "/zh/services/" },
+  { label: "\u8d44\u8baf", href: "/zh/insights/" },
+  { label: "\u5173\u4e8e", href: "/zh/about/" },
+  { label: "\u8054\u7cfb", href: "/zh/contact/" },
 ];
 
-interface NavbarProps {
-  isChinese?: boolean;
-}
-
-export default function Navbar({ isChinese = false }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
+  const isChinese = pathname?.startsWith("/zh") ?? false;
   const navLinks = isChinese ? zhNavLinks : enNavLinks;
-  const contactLabel = isChinese ? "联系我们" : "Contact";
-  const tagline = isChinese ? "跨境文件专家" : "Crossborder Document Specialists";
-  const badgeText = isChinese ? "服务21+国家" : "Documentation for 21+ Countries";
+  const contactLabel = isChinese ? "\u8054\u7cfb\u6211\u4eec" : "Contact";
+  const tagline = isChinese ? "\u8de8\u5883\u6587\u4ef6\u4e13\u5bb6" : "Crossborder Document Specialists";
+  const badgeText = isChinese ? "\u670d\u52a121+\u56fd\u5bb6" : "Documentation for 21+ Countries";
+  const menuLabel = isChinese ? "\u83dc\u5355" : "Menu";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -106,7 +104,7 @@ export default function Navbar({ isChinese = false }: NavbarProps) {
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               <span className="text-xs font-medium tracking-wide uppercase">
-                {isChinese ? "菜单" : "Menu"}
+                {menuLabel}
               </span>
               <Menu className="w-5 h-5" />
             </button>
