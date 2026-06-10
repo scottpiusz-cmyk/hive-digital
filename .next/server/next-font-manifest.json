@@ -1,42 +1,63 @@
 {
   "app": {
-    "[project]/Desktop/hive-next/app/_not-found/page": [
+    "[project]/app/_not-found/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/about/page": [
+    "[project]/app/about/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/contact/page": [
+    "[project]/app/contact/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/insights/[slug]/page": [
+    "[project]/app/insights/[slug]/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/insights/page": [
+    "[project]/app/insights/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/japan-apostille/page": [
+    "[project]/app/japan-apostille/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/korea-apostille/page": [
+    "[project]/app/korea-apostille/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/page": [
+    "[project]/app/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/services/[slug]/page": [
+    "[project]/app/services/[slug]/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/services/page": [
+    "[project]/app/services/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/shanghai-fingerprinting/page": [
+    "[project]/app/shanghai-fingerprinting/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/thailand-authentication/page": [
+    "[project]/app/thailand-authentication/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ],
-    "[project]/Desktop/hive-next/app/vietnam-authentication/page": [
+    "[project]/app/vietnam-authentication/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/about/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/contact/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/insights/[slug]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/insights/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/services/page": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ],
+    "[project]/app/zh/shanghai-fingerprinting/page": [
       "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
     ]
   },

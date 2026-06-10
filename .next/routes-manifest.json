@@ -51,6 +51,14 @@
         "nxtPslug": "nxtPslug"
       },
       "namedRegex": "^/services/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/zh/insights/[slug]",
+      "regex": "^/zh/insights/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/zh/insights/(?<nxtPslug>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -125,6 +133,42 @@
       "regex": "^/vietnam\\-authentication(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/vietnam\\-authentication(?:/)?$"
+    },
+    {
+      "page": "/zh",
+      "regex": "^/zh(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zh(?:/)?$"
+    },
+    {
+      "page": "/zh/about",
+      "regex": "^/zh/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zh/about(?:/)?$"
+    },
+    {
+      "page": "/zh/contact",
+      "regex": "^/zh/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zh/contact(?:/)?$"
+    },
+    {
+      "page": "/zh/insights",
+      "regex": "^/zh/insights(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zh/insights(?:/)?$"
+    },
+    {
+      "page": "/zh/services",
+      "regex": "^/zh/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zh/services(?:/)?$"
+    },
+    {
+      "page": "/zh/shanghai-fingerprinting",
+      "regex": "^/zh/shanghai\\-fingerprinting(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zh/shanghai\\-fingerprinting(?:/)?$"
     }
   ],
   "dataRoutes": [],

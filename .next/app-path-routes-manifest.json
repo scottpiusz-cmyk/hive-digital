@@ -12,5 +12,12 @@
   "/services/page": "/services",
   "/shanghai-fingerprinting/page": "/shanghai-fingerprinting",
   "/thailand-authentication/page": "/thailand-authentication",
-  "/vietnam-authentication/page": "/vietnam-authentication"
+  "/vietnam-authentication/page": "/vietnam-authentication",
+  "/zh/about/page": "/zh/about",
+  "/zh/contact/page": "/zh/contact",
+  "/zh/insights/[slug]/page": "/zh/insights/[slug]",
+  "/zh/insights/page": "/zh/insights",
+  "/zh/page": "/zh",
+  "/zh/services/page": "/zh/services",
+  "/zh/shanghai-fingerprinting/page": "/zh/shanghai-fingerprinting"
 }

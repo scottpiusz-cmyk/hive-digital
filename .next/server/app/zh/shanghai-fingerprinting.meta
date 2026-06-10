@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/zh/layout,_N_T_/zh/shanghai-fingerprinting/layout,_N_T_/zh/shanghai-fingerprinting/page,_N_T_/zh/shanghai-fingerprinting"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/zh/shanghai-fingerprinting/__PAGE__",
+    "/zh/shanghai-fingerprinting",
+    "/zh",
+    "/_index",
+    "/_head"
+  ]
+}

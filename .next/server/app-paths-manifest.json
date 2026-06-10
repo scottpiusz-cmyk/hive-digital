@@ -12,5 +12,12 @@
   "/services/page": "app/services/page.js",
   "/shanghai-fingerprinting/page": "app/shanghai-fingerprinting/page.js",
   "/thailand-authentication/page": "app/thailand-authentication/page.js",
-  "/vietnam-authentication/page": "app/vietnam-authentication/page.js"
+  "/vietnam-authentication/page": "app/vietnam-authentication/page.js",
+  "/zh/about/page": "app/zh/about/page.js",
+  "/zh/contact/page": "app/zh/contact/page.js",
+  "/zh/insights/[slug]/page": "app/zh/insights/[slug]/page.js",
+  "/zh/insights/page": "app/zh/insights/page.js",
+  "/zh/page": "app/zh/page.js",
+  "/zh/services/page": "app/zh/services/page.js",
+  "/zh/shanghai-fingerprinting/page": "app/zh/shanghai-fingerprinting/page.js"
 }

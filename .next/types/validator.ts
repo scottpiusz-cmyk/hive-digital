@@ -144,6 +144,69 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../app/zh/about/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh/about">> = Specific
+  const handler = {} as typeof import("../../app/zh/about/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/contact/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh/contact">> = Specific
+  const handler = {} as typeof import("../../app/zh/contact/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/insights/[slug]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh/insights/[slug]">> = Specific
+  const handler = {} as typeof import("../../app/zh/insights/[slug]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/insights/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh/insights">> = Specific
+  const handler = {} as typeof import("../../app/zh/insights/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh">> = Specific
+  const handler = {} as typeof import("../../app/zh/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/services/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh/services">> = Specific
+  const handler = {} as typeof import("../../app/zh/services/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/shanghai-fingerprinting/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/zh/shanghai-fingerprinting">> = Specific
+  const handler = {} as typeof import("../../app/zh/shanghai-fingerprinting/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 
 
 
@@ -154,6 +217,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 {
   type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
   const handler = {} as typeof import("../../app/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/zh/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/zh">> = Specific
+  const handler = {} as typeof import("../../app/zh/layout.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
