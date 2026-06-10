@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { Shield, Globe, Clock, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "关于我们 | Hive Digital",
-  description: "Hive Digital — 15年跨境文件认证经验，服务21+国家，Trustpilot 4.9/5评分。",
+  title: "关于Hive Digital | 上海跨境文件认证专家 | 15年经验",
+  description: "Hive Digital — 上海跨境文件认证公司，15年经验，服务中国美国越南泰国韩国日本等21+国家，Trustpilot 4.9/5评分。",
 };
 
 const stats = [

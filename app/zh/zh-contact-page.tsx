@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Mail, Phone, MessageCircle, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "联系我们 | Hive Digital",
-  description: "联系Hive Digital获取文件认证服务咨询。微信/WhatsApp/邮件，2小时内回复。",
+  title: "联系Hive Digital | 文件认证咨询微信WhatsApp | 上海",
+  description: "联系Hive Digital获取中国文件Apostille认证、海牙认证、背景调查、签证文件认证咨询。微信/WhatsApp/邮件，2小时内回复。",
 };
 
 export default function ChineseContactPage() {
