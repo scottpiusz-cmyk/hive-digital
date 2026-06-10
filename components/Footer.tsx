@@ -1,21 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-interface FooterProps {
-  isChinese?: boolean;
-}
-
-export default function Footer({ isChinese = false }: FooterProps) {
+export default function Footer() {
+  const pathname = usePathname();
+  const isChinese = pathname?.startsWith("/zh") ?? false;
   const currentYear = new Date().getFullYear();
-  
+
   const links = isChinese ? [
-    { label: "首页", href: "/zh/" },
-    { label: "服务", href: "/zh/services/" },
-    { label: "资讯", href: "/zh/insights/" },
-    { label: "关于", href: "/zh/about/" },
-    { label: "联系", href: "/zh/contact/" },
-    { label: "隐私政策", href: "#" },
+    { label: "\u9996\u9875", href: "/zh/" },
+    { label: "\u670d\u52a1", href: "/zh/services/" },
+    { label: "\u8d44\u8baf", href: "/zh/insights/" },
+    { label: "\u5173\u4e8e", href: "/zh/about/" },
+    { label: "\u8054\u7cfb", href: "/zh/contact/" },
+    { label: "\u9690\u79c1\u653f\u7b56", href: "#" },
   ] : [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -25,12 +24,12 @@ export default function Footer({ isChinese = false }: FooterProps) {
     { label: "Privacy", href: "#" },
   ];
 
-  const rights = isChinese 
-    ? `${currentYear} Hive Digital。保留所有权利。`
+  const rights = isChinese
+    ? `${currentYear} Hive Digital\u3002\u4fdd\u7559\u6240\u6709\u6743\u5229\u3002`
     : `${currentYear} Hive Digital. All rights reserved.`;
 
   const poweredBy = isChinese
-    ? "跨境文件认证服务 | 上海"
+    ? "\u8de8\u5883\u6587\u4ef6\u8ba4\u8bc1\u670d\u52a1 | \u4e0a\u6d77"
     : "Crossborder Document Authentication | Shanghai";
 
   return (
@@ -62,14 +61,14 @@ export default function Footer({ isChinese = false }: FooterProps) {
         <div className="mt-8 pt-8 border-t border-hive-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-hive-dim text-xs">{rights}</p>
           <div className="flex items-center gap-4">
-            <a 
-              href="mailto:sales@hiverelo.com" 
+            <a
+              href="mailto:sales@hiverelo.com"
               className="text-xs text-hive-muted hover:text-white transition-colors"
             >
               sales@hiverelo.com
             </a>
-            <a 
-              href="https://wa.me/8613764322474" 
+            <a
+              href="https://wa.me/8613764322474"
               className="text-xs text-hive-muted hover:text-white transition-colors"
             >
               WhatsApp
