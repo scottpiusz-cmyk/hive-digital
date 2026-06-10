@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const navLinks = [
+const enNavLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services/" },
   { label: "Insights", href: "/insights/" },
@@ -13,10 +14,27 @@ const navLinks = [
   { label: "Contact", href: "/contact/" },
 ];
 
-export default function Navbar() {
+const zhNavLinks = [
+  { label: "首页", href: "/zh/" },
+  { label: "服务", href: "/zh/services/" },
+  { label: "资讯", href: "/zh/insights/" },
+  { label: "关于", href: "/zh/about/" },
+  { label: "联系", href: "/zh/contact/" },
+];
+
+interface NavbarProps {
+  isChinese?: boolean;
+}
+
+export default function Navbar({ isChinese = false }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  const navLinks = isChinese ? zhNavLinks : enNavLinks;
+  const contactLabel = isChinese ? "联系我们" : "Contact";
+  const tagline = isChinese ? "跨境文件专家" : "Crossborder Document Specialists";
+  const badgeText = isChinese ? "服务21+国家" : "Documentation for 21+ Countries";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -38,22 +56,23 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="flex flex-col flex-shrink-0 leading-none">
+          <Link href={isChinese ? "/zh/" : "/"} className="flex flex-col flex-shrink-0 leading-none">
             <span className="text-lg lg:text-xl font-black tracking-tight text-white">
               Hive <span className="text-red-500">Digital</span>
             </span>
             <span className="text-[9px] lg:text-[10px] tracking-[0.12em] uppercase text-hive-dim mt-0.5">
-              Crossborder Document Specialists
+              {tagline}
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center gap-4">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-hive-border bg-hive-surface/50">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
               <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-hive-muted">
-                Documentation for 21+ Countries
+                {badgeText}
               </span>
             </div>
+            <LanguageSwitcher />
           </div>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -73,22 +92,25 @@ export default function Navbar() {
               ))}
             </nav>
             <Link
-              href="/contact/"
+              href={isChinese ? "/zh/contact/" : "/contact/"}
               className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wide uppercase text-white bg-red-600 hover:bg-red-500 rounded-full transition-all duration-300"
             >
-              Contact
+              {contactLabel}
             </Link>
           </div>
 
-          <button
-            className="lg:hidden flex items-center gap-2 text-hive-muted hover:text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            <span className="text-xs font-medium tracking-wide uppercase">
-              Menu
-            </span>
-            <Menu className="w-5 h-5" />
-          </button>
+          <div className="flex lg:hidden items-center gap-4">
+            <LanguageSwitcher />
+            <button
+              className="flex items-center gap-2 text-hive-muted hover:text-white"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              <span className="text-xs font-medium tracking-wide uppercase">
+                {isChinese ? "菜单" : "Menu"}
+              </span>
+              <Menu className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -110,10 +132,10 @@ export default function Navbar() {
             ))}
             <div className="h-px bg-white/10" />
             <Link
-              href="/contact/"
+              href={isChinese ? "/zh/contact/" : "/contact/"}
               className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold tracking-wide uppercase text-white bg-red-600 hover:bg-red-500 rounded-full transition-all"
             >
-              Contact
+              {contactLabel}
             </Link>
           </div>
         </div>
