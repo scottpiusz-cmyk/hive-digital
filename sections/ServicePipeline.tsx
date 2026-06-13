@@ -27,6 +27,22 @@ interface Service {
 
 const services: Service[] = [
   {
+    id: "fingerprinting",
+    icon: Fingerprint,
+    title: "Fingerprinting Solutions",
+    image: "/fingerprinting.jpg",
+    summary:
+      "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and other major cities across China.",
+    details: [
+      "FBI-compliant fingerprinting",
+      "Traditional ink-based fingerprinting",
+      "Available in Shanghai, Beijing, Chengdu",
+      "Other cities by appointment — inquire",
+      "Digital delivery within 24 hours",
+      "Hard copies via secure courier",
+    ],
+  },
+  {
     id: "background-checks",
     icon: ShieldCheck,
     title: "Federal & State Background Checks",
@@ -70,22 +86,6 @@ const services: Service[] = [
       "Shenzhen PSB Criminal Record Check",
       "Other cities available — inquire for availability",
       "Notarization and English translation included",
-    ],
-  },
-  {
-    id: "fingerprinting",
-    icon: Fingerprint,
-    title: "Fingerprinting Solutions",
-    image: "/fingerprinting.jpg",
-    summary:
-      "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and other major cities across China.",
-    details: [
-      "FBI-compliant fingerprinting",
-      "Traditional ink-based fingerprinting",
-      "Available in Shanghai, Beijing, Chengdu",
-      "Other cities by appointment — inquire",
-      "Digital delivery within 24 hours",
-      "Hard copies via secure courier",
     ],
   },
   {
