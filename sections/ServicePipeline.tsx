@@ -30,7 +30,7 @@ const services: Service[] = [
     id: "fingerprinting",
     icon: Fingerprint,
     title: "Fingerprinting Solutions",
-    image: "/fingerprinting.jpg",
+    image: "/fingerprinting-v2.jpg",
     summary:
       "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and other major cities across China.",
     details: [
