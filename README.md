@@ -37,5 +37,6 @@ npm run build
 5. Push the approved commit to `main` for production.
 6. Wait for Vercel to report `READY`, then verify the live URL.
 
-Read [AGENTS.md](AGENTS.md) before making changes. Ongoing work is tracked in
-[ROADMAP.md](ROADMAP.md).
+Read [AGENTS.md](AGENTS.md) before making changes. Use
+[docs/site-brief.md](docs/site-brief.md) as the content source of truth, and
+track ongoing work in [ROADMAP.md](ROADMAP.md).

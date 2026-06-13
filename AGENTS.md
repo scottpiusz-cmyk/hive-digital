@@ -45,9 +45,15 @@ The GitHub repository is `scottpiusz-cmyk/hive-digital`. Vercel deploys the
 ## Workflow
 
 - Before editing, state which files are expected to change and why.
-- Use a preview branch and Vercel preview for user-facing changes when practical.
-- Do not push to `main` or deploy production until the user approves the preview,
-  unless the user explicitly requests a direct production push.
+- Use this default rhythm: Idea -> `ROADMAP.md` -> `codex/` branch -> Vercel
+  preview -> revisions -> pull request -> merge -> production verification.
+- Keep tasks small and concrete. Preserve existing layout and behavior unless the
+  task explicitly requests broader changes.
+- Use a preview branch and Vercel preview for user-facing changes.
+- Open a pull request for review rather than pushing feature work directly to
+  `main`. Direct production pushes require explicit user approval.
+- Use `docs/site-brief.md` as the source of truth for services, audiences, brand
+  voice, contact details, approved claims, and page priorities.
 - Run `npm run lint` and `npm run build` before finalizing when the local setup
   supports them. If either cannot run, report the exact limitation and verify
   through Vercel preview/build logs.
@@ -57,6 +63,7 @@ The GitHub repository is `scottpiusz-cmyk/hive-digital`. Vercel deploys the
 
 ## Content Sources
 
+- Master site brief: `docs/site-brief.md`
 - Website roadmap: `ROADMAP.md`
 - English article data: `lib/insights-data.ts`
 - Chinese article data: `lib/zh-insights-data.ts`

@@ -2,6 +2,16 @@
 
 Keep this file current as ideas are approved, completed, or deprioritized.
 
+## Working Rhythm
+
+Idea -> Roadmap -> Small Codex task -> Preview branch -> Vercel preview ->
+Revise -> Pull request -> Merge -> Production verification
+
+Write tasks with a narrow outcome and explicit constraints. Example:
+
+> Update the future RCMP page for a clearer China expat audience. Keep the
+> existing layout, improve the contact CTA, preserve SEO, and run lint/build.
+
 ## Priority
 
 - Improve the homepage hero messaging and conversion path.
@@ -28,5 +38,6 @@ Keep this file current as ideas are approved, completed, or deprioritized.
 
 ## Completed
 
+- Add a master site brief and pull-request-first workflow for ongoing work.
 - Move Fingerprinting Solutions to the first homepage service position in English.
 - Move 指纹采集服务 to the first homepage service position in Chinese.
