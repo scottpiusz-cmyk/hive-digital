@@ -7,10 +7,10 @@ import { ShieldCheck, Stamp, FileText, Fingerprint, Plane, Building2, ChevronDow
 import Image from "next/image";
 
 const services = [
+  { id: "fingerprinting", icon: Fingerprint, title: "指纹采集服务", image: "/fingerprinting.jpg", summary: "在上海、北京、成都等主要城市提供快速、便捷的指纹采集服务。", details: ["FBI合规指纹采集", "传统墨水指纹", "24小时内数字交付", "安全快递纸质版"], link: "/zh/shanghai-fingerprinting/" },
   { id: "background-checks", icon: ShieldCheck, title: "联邦与州背景调查", image: "/background-checks.jpg", summary: "来自美国、加拿大、英国、澳大利亚等国家的犯罪记录检查和身份验证。", details: ["FBI身份历史摘要检查（美国）", "RCMP犯罪记录检查（加拿大）", "ACRO警方证明（英国）", "州级司法部检查"] },
   { id: "apostille", icon: Stamp, title: "文件Apostille与认证", image: "/apostille-auth-combined.jpg", summary: "海牙Apostille认证、使馆/领事馆公证、学位证明、教师证书、结婚证明和公司文件的公证。", details: ["海牙Apostille（公约成员国）", "中国使馆/领事馆认证", "越南使馆公证", "泰国外交部与使馆认证", "韩国和日本领事馆认证", "公证与翻译协调"] },
   { id: "china-pcc", icon: FileText, title: "中国无犯罪记录证明", image: "/china-pcc.jpg", summary: "从北京、上海、深圳等中国城市的公安局获取无犯罪记录证明。", details: ["北京公安局无犯罪记录证明", "上海公安局无犯罪记录证明", "深圳公安局犯罪记录检查", "其他城市可用 — 咨询确认", "公证与英文翻译包含"] },
-  { id: "fingerprinting", icon: Fingerprint, title: "指纹采集服务", image: "/fingerprinting.jpg", summary: "在上海、北京、成都等主要城市提供快速、便捷的指纹采集服务。", details: ["FBI合规指纹采集", "传统墨水指纹", "24小时内数字交付", "安全快递纸质版"], link: "/zh/shanghai-fingerprinting/" },
   { id: "visa", icon: Plane, title: "中国签证与工作许可", image: "/china-visa.jpg", summary: "中国Z签证申请和居留许可文件的全流程准备和指导。", details: ["Z签证文件准备与审核", "居留许可申请支持", "文件翻译与认证"] },
   { id: "business", icon: Building2, title: "中国企业注册", image: "/business-registration.jpg", summary: "从WFOE和合资公司设立到注册后合规，帮助外国企业在中国建立法律实体。", details: ["WFOE注册", "合资公司设立", "营业执照申请", "银行账户开立"] },
   { id: "ancillary", icon: MessageSquare, title: "辅助服务", image: "/ancillary.jpg", summary: "后台运营支持——人力资源、薪资、财务、税务合规和办公选址。", details: ["人力资源与薪资管理", "财务、会计与税务合规", "办公选址与租赁协调"] },
