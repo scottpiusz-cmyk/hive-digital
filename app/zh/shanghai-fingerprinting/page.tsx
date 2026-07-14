@@ -5,6 +5,13 @@ import { ArrowRight, MapPin, Clock, Shield, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "指纹采集服务 — 上海、北京、成都 | Hive Digital",
   description: "上海、北京、成都及中国其他主要城市提供快速、便捷、准确的指纹采集服务。FBI合规电子和墨水指纹采集。",
+  alternates: {
+    canonical: "/zh/shanghai-fingerprinting/",
+    languages: {
+      en: "/shanghai-fingerprinting/",
+      "zh-CN": "/zh/shanghai-fingerprinting/",
+    },
+  },
   openGraph: {
     title: "指纹采集服务 — 上海、北京、成都 | Hive Digital",
     description: "中国专业的指纹采集解决方案。电子和墨水采集，适用于FBI检查、签证和就业。",

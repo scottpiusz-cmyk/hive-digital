@@ -5,6 +5,9 @@ import { ArrowRight, FileText, Clock, Shield, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Thailand Document Authentication & Legalization Services | Hive Digital",
   description: "Thailand document authentication and legalization services for Americans. Thai Embassy legalization for degrees, teaching certificates, FBI checks, and corporate documents.",
+  alternates: {
+    canonical: "/thailand-authentication/",
+  },
   openGraph: {
     title: "Thailand Document Authentication & Legalization Services | Hive Digital",
     description: "Expert Thailand document authentication for Americans. Thai Embassy legalization and translation services.",

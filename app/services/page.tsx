@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   title: "Our Services — Hive Digital Document Authentication",
   description:
     "Explore Hive Digital's services: Federal & State Background Checks, Apostille & Document Authentication, Local China PCC Reports, China Visa & Work Permit Assistance, China Business Registration, and Ancillary Services.",
+  alternates: {
+    canonical: "/services/",
+    languages: {
+      en: "/services/",
+      "zh-CN": "/zh/services/",
+    },
+  },
   openGraph: {
     title: "Our Services — Hive Digital",
     description:

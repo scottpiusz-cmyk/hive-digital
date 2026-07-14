@@ -6,6 +6,13 @@ import { zhInsights } from "@/lib/zh-insights-data";
 export const metadata: Metadata = {
   title: "资讯与合规指南 | Hive Digital",
   description: "深入了解文件Apostille、使馆认证、背景调查和中国工作许可的合规指南。由Hive Digital专家团队撰写。",
+  alternates: {
+    canonical: "/zh/insights/",
+    languages: {
+      en: "/insights/",
+      "zh-CN": "/zh/insights/",
+    },
+  },
 };
 
 export default function ChineseInsightsPage() {

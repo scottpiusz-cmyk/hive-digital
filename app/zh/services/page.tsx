@@ -5,6 +5,13 @@ import { ArrowRight, ShieldCheck, Stamp, FileText, Fingerprint, Plane, Building2
 export const metadata: Metadata = {
   title: "中国文件认证与指纹采集服务 | Apostille海牙认证背景调查 | Hive Digital",
   description: "Hive Digital提供中国文件Apostille海牙认证、使馆公证、FBI背景调查、指纹采集、中国签证、五星卡文件等跨境文件认证与指纹采集服务。上海北京成都可预约。",
+  alternates: {
+    canonical: "/zh/services/",
+    languages: {
+      en: "/services/",
+      "zh-CN": "/zh/services/",
+    },
+  },
 };
 
 const services = [

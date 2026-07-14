@@ -7,6 +7,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Korea Apostille Services | Hive Digital",
   description: "Korea document apostille services for Americans. Hague Apostille for E-2 visa, teaching positions, and corporate documents. State and federal apostille processing.",
+  alternates: {
+    canonical: "/korea-apostille/",
+  },
   openGraph: {
     title: "Korea Apostille Services | Hive Digital",
     description: "Expert Korea apostille processing for American documents. E-2 visa, teaching, and corporate authentication.",

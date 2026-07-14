@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Insights — Document Compliance Intelligence | Hive Digital",
   description:
     "Regulatory intelligence, process optimization guides, and document compliance updates for crossborder hiring. China-Vietnam corridor, FBI checks, apostille, and more.",
+  alternates: {
+    canonical: "/insights/",
+    languages: {
+      en: "/insights/",
+      "zh-CN": "/zh/insights/",
+    },
+  },
   openGraph: {
     title: "Insights — Document Compliance Intelligence | Hive Digital",
     description:

@@ -5,6 +5,13 @@ import { Mail, MessageCircle, MapPin, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "\u8054\u7cfb\u6211\u4eec | Hive Digital",
   description: "\u8054\u7cfbHive Digital\u83b7\u53d6\u6587\u4ef6\u8ba4\u8bc1\u670d\u52a1\u54a8\u8be2\u3002\u5fae\u4fe1/WhatsApp/\u90ae\u4ef6\uff0c2\u5c0f\u65f6\u5185\u56de\u590d\u3002",
+  alternates: {
+    canonical: "/zh/contact/",
+    languages: {
+      en: "/contact/",
+      "zh-CN": "/zh/contact/",
+    },
+  },
 };
 
 export default function ChineseContactPage() {

@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Contact Hive Digital — Get Your Free Quote",
   description:
     "Contact Hive Digital for document authentication, apostille, background checks, and visa documentation services. Reach us via WeCom/WeChat, WhatsApp, email, or phone.",
+  alternates: {
+    canonical: "/contact/",
+    languages: {
+      en: "/contact/",
+      "zh-CN": "/zh/contact/",
+    },
+  },
   openGraph: {
     title: "Contact Hive Digital",
     description:

@@ -172,6 +172,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${service.title} — Hive Digital`,
     description: service.description.slice(0, 160),
+    alternates: {
+      canonical: `/services/${slug}/`,
+    },
     openGraph: {
       title: `${service.title} — Hive Digital`,
       description: service.description.slice(0, 200),

@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "About Hive Digital — Crossborder Document Specialists",
   description:
     "Learn about Hive Digital. With 15+ years of experience across 21+ countries, we specialize in apostille, document authentication, background checks, China visa assistance, and business registration for international hiring.",
+  alternates: {
+    canonical: "/about/",
+    languages: {
+      en: "/about/",
+      "zh-CN": "/zh/about/",
+    },
+  },
   openGraph: {
     title: "About Hive Digital — Crossborder Document Specialists",
     description:

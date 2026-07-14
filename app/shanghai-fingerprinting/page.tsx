@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Fingerprinting Services — Shanghai, Beijing, Chengdu | Hive Digital",
   description:
     "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and across China. FBI-compliant electronic and ink-based fingerprinting for background checks, visa applications, and employment screening.",
+  alternates: {
+    canonical: "/shanghai-fingerprinting/",
+    languages: {
+      en: "/shanghai-fingerprinting/",
+      "zh-CN": "/zh/shanghai-fingerprinting/",
+    },
+  },
   openGraph: {
     title: "Fingerprinting Services — Shanghai, Beijing, Chengdu | Hive Digital",
     description:

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/sections/Hero";
 import TrustBar from "@/sections/TrustBar";
 import ServicePipeline from "@/sections/ServicePipeline";
@@ -6,6 +7,16 @@ import ProcessSteps from "@/sections/ProcessSteps";
 import LatestInsights from "@/sections/LatestInsights";
 import FAQ from "@/sections/FAQ";
 import Head from "next/head";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      "zh-CN": "/zh/",
+    },
+  },
+};
 
 
 export default function Home() {

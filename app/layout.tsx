@@ -11,13 +11,6 @@ export const metadata: Metadata = {
   description: "Fast apostille, background check, and visa document services for China, Vietnam, Thailand, Korea, Japan & 21+ countries. 15+ years experience. 4.9/5 Trustpilot.",
   keywords: ["apostille China","document authentication Vietnam","background check Thailand","work permit documents Korea","FBI background check apostille","China business registration","document legalization","notarization","visa documentation"],
   metadataBase: new URL("https://www.hiverelo.com"),
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en": "/",
-      "zh-CN": "/zh/",
-    },
-  },
   openGraph: { type: "website", title: "Hive Digital | Document Apostille & Authentication", description: "Fast apostille, background check, and visa document services. 15+ years, 21+ countries, 4.9/5 Trustpilot rating.", siteName: "Hive Digital", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Hive Digital | Document Apostille & Authentication", description: "Fast apostille, background check, and visa document services for 21+ countries." },
   robots: { index: true, follow: true },

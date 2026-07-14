@@ -9,13 +9,6 @@ export const metadata: Metadata = {
   description: "快速apostille、背景调查、签证文件服务，覆盖中国、越南、泰国、韩国、日本等21+国家。15年经验，Trustpilot 4.9/5评分。",
   keywords: ["中国apostille","文件认证","签证文件","背景调查","FBI背景调查","指纹采集","中国公证","海牙认证","文件翻译","工作签证","公证服务","五星卡","永久居留","上海指纹采集"],
   metadataBase: new URL("https://www.hiverelo.com"),
-  alternates: {
-    canonical: "/zh/",
-    languages: {
-      "en": "/",
-      "zh-CN": "/zh/",
-    },
-  },
   openGraph: {
     type: "website",
     title: "Hive Digital | 中国文件Apostille与认证服务",

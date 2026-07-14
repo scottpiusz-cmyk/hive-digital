@@ -16,6 +16,7 @@ import {
   getAllZhInsightSlugs,
   type ZhInsightArticle,
 } from "@/lib/zh-insights-data";
+import { getInsightBySlug } from "@/lib/insights-data";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,6 +33,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${article.title} | Hive Digital 资讯`,
     description: article.excerpt,
+    alternates: {
+      canonical: `/zh/insights/${slug}/`,
+      ...(getInsightBySlug(slug)
+        ? {
+            languages: {
+              en: `/insights/${slug}/`,
+              "zh-CN": `/zh/insights/${slug}/`,
+            },
+          }
+        : {}),
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,

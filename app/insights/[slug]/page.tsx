@@ -16,6 +16,7 @@ import {
   getAllInsightSlugs,
   type InsightArticle,
 } from "@/lib/insights-data";
+import { getZhInsightBySlug } from "@/lib/zh-insights-data";
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
@@ -36,6 +37,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${article.title} | Hive Digital Insights`,
     description: article.excerpt,
+    alternates: {
+      canonical: `/insights/${slug}/`,
+      ...(getZhInsightBySlug(slug)
+        ? {
+            languages: {
+              en: `/insights/${slug}/`,
+              "zh-CN": `/zh/insights/${slug}/`,
+            },
+          }
+        : {}),
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,

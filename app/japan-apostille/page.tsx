@@ -5,6 +5,9 @@ import { ArrowRight, FileText, Clock, Shield, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Japan Document Apostille Services | Hive Digital",
   description: "Japan document apostille services for Americans. Hague Apostille for work visas, teaching positions, corporate documents, and immigration since 1970.",
+  alternates: {
+    canonical: "/japan-apostille/",
+  },
   openGraph: {
     title: "Japan Document Apostille Services | Hive Digital",
     description: "Expert Japan apostille processing for American documents. Work visa, teaching, and corporate authentication.",
