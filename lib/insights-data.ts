@@ -1,5 +1,7 @@
 export interface InsightArticle {
   slug: string;
+  translationKey?: string;
+  lastModified?: string;
   title: string;
   category: string;
   excerpt: string;
@@ -13,6 +15,8 @@ export interface InsightArticle {
 export const insights: InsightArticle[] = [
   {
     slug: "china-vietnam-document-legalization-2026",
+    translationKey: "china-vietnam-document-legalization-2026",
+    lastModified: "2026-04-15",
     title:
       "Strategic Compliance: Navigating Document Legalization for the China-Vietnam Corridor in 2026",
     category: "Regulatory Intelligence",
@@ -291,6 +295,8 @@ At Hive Digital, we provide end-to-end document authentication services for the 
   },
   {
     slug: "fbi-background-check-optimization-2026",
+    translationKey: "fbi-background-check-optimization-2026",
+    lastModified: "2026-03-20",
     title:
       "Reducing FBI Check Turnaround: Channeler Strategies for Time-Critical Deployments",
     category: "Process Optimization",
@@ -421,6 +427,8 @@ For organizations processing 10+ FBI checks annually, we offer corporate account
   },
   {
     slug: "china-pcc-guide-2026",
+    translationKey: "china-pcc-guide-2026",
+    lastModified: "2026-02-10",
     title:
       "Obtaining China Police Clearance Certificates: A Complete Guide for Former Residents",
     category: "Document Guides",
