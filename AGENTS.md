@@ -4,6 +4,11 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+Before making architectural, UX, SEO, content, or product decisions, consult
+`FOUNDATION.md`. If implementation choices conflict with the business
+strategy, follow the principles in `FOUNDATION.md` unless explicitly instructed
+otherwise.
+
 # Hive Digital Website
 
 ## Project
@@ -14,6 +19,19 @@ This repository powers the Hive Digital Consulting website at
 
 The GitHub repository is `scottpiusz-cmyk/hive-digital`. Vercel deploys the
 `main` branch to production.
+
+## Documentation Map
+
+- Product and delivery priorities: `ROADMAP.md`
+- System design and source-of-truth map: `docs/ARCHITECTURE.md`
+- SEO, sitemaps, and locale rules: `docs/SEO-AND-LOCALIZATION.md`
+- Local setup and contribution workflow: `docs/DEVELOPMENT.md`
+- Preview and production release process: `docs/DEPLOYMENT.md`
+- Sensitive-data handling and incident response: `docs/SECURITY-AND-PRIVACY.md`
+
+`AGENTS.md` is the authoritative instruction file for coding agents. Technical
+reference documents describe the current implementation; `ROADMAP.md` describes
+planned work. If they conflict, stop and resolve the discrepancy before editing.
 
 ## Brand Rules
 
@@ -28,6 +46,9 @@ The GitHub repository is `scottpiusz-cmyk/hive-digital`. Vercel deploys the
 - Treat English and Chinese pages as mirrors where practical. When changing a
   shared offering or page order, check whether the corresponding Chinese page
   should receive the same change.
+- English and Chinese are the only active language trees. Korean (`/ko`) and
+  Japanese (`/ja`) are planned, not live; do not publish or index placeholder
+  locale routes.
 
 ## Technical Rules
 
@@ -54,11 +75,16 @@ The GitHub repository is `scottpiusz-cmyk/hive-digital`. Vercel deploys the
 - After editing, summarize the change, tests run, deployment status, and any
   follow-up risk.
 - Keep commits narrowly scoped and do not stage unrelated working-tree changes.
+- Leave changes uncommitted when the user asks to review them before approval.
 
 ## Content Sources
 
 - Website roadmap: `ROADMAP.md`
+- Service detail data: `lib/services-data.ts`
 - English article data: `lib/insights-data.ts`
 - Chinese article data: `lib/zh-insights-data.ts`
 - English homepage services: `sections/ServicePipeline.tsx`
 - Chinese homepage services: `sections/ZhServicePipeline.tsx`
+- Sitemap and locale relationships: `lib/site-sitemap.ts`
+- Sitemap build verification: `scripts/verify-sitemap.mjs`
+- Structured-data helpers: `lib/schema.ts`
