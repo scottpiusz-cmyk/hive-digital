@@ -5,9 +5,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 <!-- END:nextjs-agent-rules -->
 
 Before making architectural, UX, SEO, content, or product decisions, consult
-`FOUNDATION.md`. If implementation choices conflict with the business
-strategy, follow the principles in `FOUNDATION.md` unless explicitly instructed
-otherwise.
+`docs/core/FOUNDATION.md`. If implementation choices conflict with the business
+strategy, follow the principles in `docs/core/FOUNDATION.md` unless explicitly
+instructed otherwise.
 
 # Hive Digital Website
 
@@ -23,11 +23,12 @@ The GitHub repository is `scottpiusz-cmyk/hive-digital`. Vercel deploys the
 ## Documentation Map
 
 - Product and delivery priorities: `ROADMAP.md`
-- System design and source-of-truth map: `docs/ARCHITECTURE.md`
-- SEO, sitemaps, and locale rules: `docs/SEO-AND-LOCALIZATION.md`
-- Local setup and contribution workflow: `docs/DEVELOPMENT.md`
-- Preview and production release process: `docs/DEPLOYMENT.md`
-- Sensitive-data handling and incident response: `docs/SECURITY-AND-PRIVACY.md`
+- Business strategy and decision principles: `docs/core/FOUNDATION.md`
+- System design and source-of-truth map: `docs/core/ARCHITECTURE.md`
+- SEO, sitemaps, and locale rules: `docs/core/SEO-AND-LOCALIZATION.md`
+- Local setup and contribution workflow: `docs/core/DEVELOPMENT.md`
+- Preview and production release process: `docs/core/DEPLOYMENT.md`
+- Sensitive-data handling and incident response: `docs/core/SECURITY-AND-PRIVACY.md`
 
 `AGENTS.md` is the authoritative instruction file for coding agents. Technical
 reference documents describe the current implementation; `ROADMAP.md` describes
