@@ -28,21 +28,25 @@ interface RouteRecord {
 }
 
 const staticLastModified: Record<string, string> = {
-  "/": "2026-05-06",
+  "/": "2026-07-14",
   "/about/": "2026-05-06",
   "/contact/": "2026-05-06",
+  "/countries/": "2026-07-14",
   "/insights/": "2026-05-06",
   "/japan-apostille/": "2026-05-06",
   "/korea-apostille/": "2026-05-06",
-  "/services/": "2026-05-06",
+  "/services/": "2026-07-14",
+  "/privacy/": "2026-07-14",
   "/shanghai-fingerprinting/": "2026-05-06",
   "/thailand-authentication/": "2026-05-06",
   "/vietnam-authentication/": "2026-05-06",
-  "/zh/": "2026-06-10",
+  "/zh/": "2026-07-14",
   "/zh/about/": "2026-06-10",
   "/zh/contact/": "2026-06-10",
+  "/zh/countries/": "2026-07-14",
   "/zh/insights/": "2026-06-10",
-  "/zh/services/": "2026-06-10",
+  "/zh/services/": "2026-07-14",
+  "/zh/privacy/": "2026-07-14",
   "/zh/shanghai-fingerprinting/": "2026-06-10",
 };
 

@@ -11,9 +11,9 @@ export const zhPrcPrCardArticle: InsightArticle = {
   readTime: "7分钟阅读",
   author: "Hive Digital合规团队",
   relatedPipelines: [
-    { label: "FBI背景调查", href: "/zh/services/background-checks/" },
-    { label: "Apostille认证服务", href: "/zh/services/apostille/" },
-    { label: "中国签证与永居支持", href: "/zh/services/china-visa/" },
+    { label: "FBI背景调查", href: "/zh/services/#background-checks" },
+    { label: "Apostille认证服务", href: "/zh/services/#apostille" },
+    { label: "中国签证与永居支持", href: "/zh/services/#china-visa" },
   ],
   content: `
 ## 什么是中国五星卡（外国人永久居留身份证）？

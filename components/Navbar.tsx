@@ -9,6 +9,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const enNavLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services/" },
+  { label: "Countries", href: "/countries/" },
   { label: "Insights", href: "/insights/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
@@ -17,6 +18,7 @@ const enNavLinks = [
 const zhNavLinks = [
   { label: "\u9996\u9875", href: "/zh/" },
   { label: "\u670d\u52a1", href: "/zh/services/" },
+  { label: "\u56fd\u5bb6/\u76ee\u7684\u5730", href: "/zh/countries/" },
   { label: "\u8d44\u8baf", href: "/zh/insights/" },
   { label: "\u5173\u4e8e", href: "/zh/about/" },
   { label: "\u8054\u7cfb", href: "/zh/contact/" },
@@ -73,8 +75,8 @@ export default function Navbar() {
             <LanguageSwitcher />
           </div>
 
-          <div className="hidden lg:flex items-center gap-8">
-            <nav className="flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

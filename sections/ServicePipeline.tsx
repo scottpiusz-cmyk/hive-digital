@@ -23,6 +23,7 @@ interface Service {
   image?: string;
   summary: string;
   details: string[];
+  link: string;
 }
 
 const services: Service[] = [
@@ -41,6 +42,7 @@ const services: Service[] = [
       "Digital delivery within 24 hours",
       "Hard copies via secure courier",
     ],
+    link: "/shanghai-fingerprinting/",
   },
   {
     id: "background-checks",
@@ -56,6 +58,7 @@ const services: Service[] = [
       "State-level Department of Justice checks",
       "Secure digital delivery with tracking",
     ],
+    link: "/services/background-checks/",
   },
   {
     id: "apostille",
@@ -72,6 +75,7 @@ const services: Service[] = [
       "Korean & Japanese Consulate Authentication",
       "Notarization and certified translation coordination",
     ],
+    link: "/services/apostille/",
   },
   {
     id: "china-pcc",
@@ -87,6 +91,7 @@ const services: Service[] = [
       "Other cities available — inquire for availability",
       "Notarization and English translation included",
     ],
+    link: "/services/china-pcc/",
   },
   {
     id: "china-visa",
@@ -102,6 +107,7 @@ const services: Service[] = [
       "Integration with WFOE/JV business registration",
       "Post-registration employee onboarding support",
     ],
+    link: "/services/china-visa/",
   },
   {
     id: "business-reg",
@@ -116,6 +122,7 @@ const services: Service[] = [
       "Chop carving & bank account opening",
       "Post-registration tax & compliance setup",
     ],
+    link: "/services/business-reg/",
   },
   {
     id: "ancillary",
@@ -129,6 +136,7 @@ const services: Service[] = [
       "Office selection & lease coordination",
       "Ongoing operational consulting",
     ],
+    link: "/services/ancillary/",
   },
 ];
 
@@ -191,6 +199,15 @@ export default function ServicePipeline() {
                         Learn more <span aria-hidden="true">→</span>
                       </span>
                     )}
+                    {!isFingerprinting && (
+                      <Link
+                        href={service.link}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1 text-red-400 text-xs font-semibold mt-2 hover:text-white transition-colors"
+                      >
+                        View service details <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
                   </div>
                   {!isFingerprinting && (
                     <ChevronDown
@@ -248,7 +265,7 @@ export default function ServicePipeline() {
             return isFingerprinting ? (
               <Link
                 key={service.id}
-                href="/shanghai-fingerprinting/"
+                href={service.link}
                 className="group bg-hive-surface border border-hive-border rounded-2xl overflow-hidden hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:scale-[1.02] block"
               >
                 {cardContent}

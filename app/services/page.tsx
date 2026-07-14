@@ -33,6 +33,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: "Federal & State Background Checks",
+    link: "/services/background-checks/",
     description:
       "Criminal record checks and identity verification from the United States, Canada, UK, Australia, and other jurisdictions — completed fast and returned securely.",
     features: [
@@ -58,6 +59,7 @@ const services = [
   {
     icon: FileText,
     title: "Local China PCC Reports (Police Clearance)",
+    link: "/services/china-pcc/",
     description:
       "We obtain Police Clearance Certificates (PCC) from Public Security Bureau (PSB) offices in Beijing, Shanghai, Shenzhen, and other cities across China for former residents.",
     features: [
@@ -70,6 +72,7 @@ const services = [
   {
     icon: Plane,
     title: "China Visa & Work Permit Assistance",
+    link: "/services/china-visa/",
     description:
       "End-to-end document preparation and guidance for China Z-Visa applications and Residence Permit documentation — integrated with our business registration and ancillary support services.",
     features: [
@@ -82,6 +85,7 @@ const services = [
   {
     icon: Building2,
     title: "China Business Registration",
+    link: "/services/business-reg/",
     description:
       "From WFOE and JV setup to post-registration operational compliance, we help foreign companies establish and run a legal entity in China.",
     features: [
@@ -94,6 +98,7 @@ const services = [
   {
     icon: MessageSquare,
     title: "Ancillary Services",
+    link: "/services/ancillary/",
     description:
       "Back-office operational support to keep your China entity running smoothly — HR, payroll, finance, tax compliance, and office selection.",
     features: [
@@ -145,12 +150,13 @@ export default function ServicesPage() {
 
         {/* Services grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div
+              <Link
                 key={service.title}
-                className="bg-hive-surface border border-hive-border rounded-2xl p-6 hover:border-hive-accent/30 transition-colors"
+                href={service.link}
+                className="group bg-hive-surface border border-hive-border rounded-2xl p-6 hover:border-hive-accent/30 transition-colors"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-11 h-11 rounded-xl bg-hive-accent/10 flex items-center justify-center">
@@ -174,7 +180,10 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+                <span className="inline-flex items-center gap-1 text-hive-accent text-sm font-semibold mt-5 group-hover:text-white transition-colors">
+                  View service details <span aria-hidden="true">&rarr;</span>
+                </span>
+              </Link>
             );
           })}
         </div>

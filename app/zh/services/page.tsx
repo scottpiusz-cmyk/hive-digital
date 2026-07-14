@@ -16,24 +16,31 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    id: "background-checks",
     icon: ShieldCheck,
     title: "联邦与州背景调查",
     description: "来自美国、加拿大、英国、澳大利亚等国家的犯罪记录检查和身份验证。",
     features: ["FBI身份历史摘要检查", "RCMP犯罪记录检查", "ACRO警方证明", "州级司法部检查"],
+    link: "/zh/services/#background-checks",
   },
   {
+    id: "apostille",
     icon: Stamp,
     title: "文件Apostille与认证",
     description: "海牙Apostille认证、使馆/领事馆公证、学位证明、结婚证明和公司文件的公证。",
     features: ["海牙Apostille认证", "使馆/领事馆公证", "学位和教师证书公证", "结婚证明和公司文件公证"],
+    link: "/zh/services/#apostille",
   },
   {
+    id: "china-pcc",
     icon: FileText,
     title: "中国无犯罪记录证明",
     description: "从北京、上海、深圳等中国城市的公安局获取无犯罪记录证明。",
     features: ["北京公安局无犯罪记录", "上海公安局无犯罪记录", "深圳公安局犯罪记录", "其他城市可咨询"],
+    link: "/zh/services/#china-pcc",
   },
   {
+    id: "fingerprinting",
     icon: Fingerprint,
     title: "指纹采集服务",
     description: "在上海、北京、成都等主要城市提供快速、便捷的指纹采集服务。",
@@ -41,22 +48,28 @@ const services = [
     link: "/zh/shanghai-fingerprinting/",
   },
   {
+    id: "china-visa",
     icon: Plane,
     title: "中国签证与工作许可",
     description: "中国Z签证申请和居留许可文件的全流程准备和指导。",
     features: ["Z签证文件准备", "居留许可申请支持", "文件翻译与认证"],
+    link: "/zh/services/#china-visa",
   },
   {
+    id: "business-reg",
     icon: Building2,
     title: "中国企业注册",
     description: "从WFOE和合资公司设立到注册后合规，帮助外国企业在中国建立法律实体。",
     features: ["WFOE注册", "合资公司设立", "营业执照申请", "银行账户开立"],
+    link: "/zh/services/#business-reg",
   },
   {
+    id: "ancillary",
     icon: MessageSquare,
     title: "辅助服务",
     description: "后台运营支持——人力资源、薪资、财务、税务合规和办公选址。",
     features: ["人力资源与薪资管理", "财务、会计与税务合规", "办公选址与租赁协调"],
+    link: "/zh/services/#ancillary",
   },
 ];
 
@@ -79,7 +92,8 @@ export default function ChineseServicesPage() {
             return (
               <div
                 key={service.title}
-                className="bg-hive-surface border border-hive-border rounded-2xl p-8 hover:border-red-500/30 transition-all duration-300"
+                id={service.id}
+                className="scroll-mt-24 bg-hive-surface border border-hive-border rounded-2xl p-8 hover:border-red-500/30 transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-2xl bg-red-500/10 flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-red-500" />
@@ -94,14 +108,12 @@ export default function ChineseServicesPage() {
                     </li>
                   ))}
                 </ul>
-                {service.link && (
-                  <Link
-                    href={service.link}
-                    className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
-                  >
-                    了解更多 <ArrowRight className="w-4 h-4" />
-                  </Link>
-                )}
+                <Link
+                  href={service.link}
+                  className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+                >
+                  了解详情 <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             );
           })}

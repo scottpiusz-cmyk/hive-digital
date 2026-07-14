@@ -7,9 +7,11 @@ import { Globe } from "lucide-react";
 const englishToChineseRoutes: Record<string, string> = {
   "/": "/zh/",
   "/services/": "/zh/services/",
+  "/countries/": "/zh/countries/",
   "/insights/": "/zh/insights/",
   "/about/": "/zh/about/",
   "/contact/": "/zh/contact/",
+  "/privacy/": "/zh/privacy/",
   "/shanghai-fingerprinting/": "/zh/shanghai-fingerprinting/",
   "/insights/china-vietnam-document-legalization-2026/":
     "/zh/insights/china-vietnam-document-legalization-2026/",

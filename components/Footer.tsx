@@ -11,17 +11,19 @@ export default function Footer() {
   const links = isChinese ? [
     { label: "\u9996\u9875", href: "/zh/" },
     { label: "\u670d\u52a1", href: "/zh/services/" },
+    { label: "\u56fd\u5bb6/\u76ee\u7684\u5730", href: "/zh/countries/" },
     { label: "\u8d44\u8baf", href: "/zh/insights/" },
     { label: "\u5173\u4e8e", href: "/zh/about/" },
     { label: "\u8054\u7cfb", href: "/zh/contact/" },
-    { label: "\u9690\u79c1\u653f\u7b56", href: "#" },
+    { label: "\u9690\u79c1\u653f\u7b56", href: "/zh/privacy/" },
   ] : [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
+    { label: "Countries", href: "/countries/" },
     { label: "Insights", href: "/insights/" },
     { label: "About", href: "/about/" },
     { label: "Contact", href: "/contact/" },
-    { label: "Privacy", href: "#" },
+    { label: "Privacy", href: "/privacy/" },
   ];
 
   const rights = isChinese
