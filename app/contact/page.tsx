@@ -5,7 +5,7 @@ import { Mail, Phone, MessageCircle, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Hive Digital — Get Your Free Quote",
   description:
-    "Contact Hive Digital for document authentication, apostille, background checks, and visa documentation services. Reach us via WeCom/WeChat, WhatsApp, email, or phone.",
+    "Contact Hive Digital for document authentication, apostille, background checks, and visa documentation services. Reach us via WeCom/WeChat, WhatsApp, KakaoTalk, email, or phone.",
   alternates: {
     canonical: "/contact/",
     languages: {
@@ -35,7 +35,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* WeCom/WeChat — Primary */}
           <div className="bg-hive-surface border border-hive-accent/30 rounded-2xl p-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-hive-accent text-hive-bg text-xs font-bold uppercase px-3 py-1 rounded-bl-xl">
@@ -92,6 +92,27 @@ export default function ContactPage() {
               <Phone className="w-4 h-4" />
               +86 13764322474
             </a>
+          </div>
+
+          {/* KakaoTalk — South Korea */}
+          <div className="bg-hive-surface border border-hive-border rounded-2xl p-8 text-center">
+            <div className="w-14 h-14 rounded-2xl bg-yellow-400/10 flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="w-7 h-7 text-yellow-400" />
+            </div>
+            <h2 className="text-xl font-bold text-white mb-2">KakaoTalk</h2>
+            <p className="text-hive-muted text-sm mb-6">
+              Scan the QR code to contact Hive on KakaoTalk for South Korea
+              inquiries.
+            </p>
+            <div className="relative w-44 h-44 mx-auto rounded-xl overflow-hidden border border-hive-border bg-white">
+              <Image
+                src="/kakao-qr.jpg"
+                alt="Hive KakaoTalk contact QR code"
+                fill
+                sizes="176px"
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
 

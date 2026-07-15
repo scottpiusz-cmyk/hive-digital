@@ -35,7 +35,7 @@ export default function Footer() {
     : "Crossborder Document Authentication | Shanghai";
 
   return (
-    <footer className="bg-hive-surface border-t border-hive-border">
+    <footer className="bg-hive-surface border-t border-hive-border pb-20 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center lg:items-start gap-2">

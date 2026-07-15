@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const enNavLinks = [
@@ -42,10 +42,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -56,7 +52,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href={isChinese ? "/zh/" : "/"} className="flex flex-col flex-shrink-0 leading-none">
+          <Link
+            href={isChinese ? "/zh/" : "/"}
+            onNavigate={() => setMobileOpen(false)}
+            className="flex flex-col flex-shrink-0 leading-none"
+          >
             <span className="text-lg lg:text-xl font-black tracking-tight text-white">
               Hive <span className="text-red-500">Digital</span>
             </span>
@@ -104,6 +104,8 @@ export default function Navbar() {
             <button
               className="flex items-center gap-2 text-hive-muted hover:text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
             >
               <span className="text-xs font-medium tracking-wide uppercase">
                 {menuLabel}
@@ -115,12 +117,16 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/5 px-6 py-8">
+        <div
+          id="mobile-navigation"
+          className="lg:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/5 px-6 py-8"
+        >
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                onNavigate={() => setMobileOpen(false)}
                 className={`text-sm font-medium tracking-wide uppercase transition-colors ${
                   pathname === link.href
                     ? "text-red-500"
@@ -133,6 +139,7 @@ export default function Navbar() {
             <div className="h-px bg-white/10" />
             <Link
               href={isChinese ? "/zh/contact/" : "/contact/"}
+              onNavigate={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold tracking-wide uppercase text-white bg-red-600 hover:bg-red-500 rounded-full transition-all"
             >
               {contactLabel}
@@ -140,6 +147,20 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      <nav
+        aria-label={isChinese ? "\u5feb\u901f\u8054\u7cfb" : "Quick contact"}
+        className="fixed inset-x-0 bottom-0 border-t border-white/10 bg-slate-900/90 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md lg:hidden"
+      >
+        <Link
+          href={isChinese ? "/zh/contact/" : "/contact/"}
+          onNavigate={() => setMobileOpen(false)}
+          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-black/20 transition-colors hover:bg-red-500"
+        >
+          <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          {contactLabel}
+        </Link>
+      </nav>
     </header>
   );
 }
