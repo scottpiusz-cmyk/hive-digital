@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/sections/Hero";
 import TrustBar from "@/sections/TrustBar";
 import ServicePipeline from "@/sections/ServicePipeline";
+import CountriesWeSupport from "@/sections/CountriesWeSupport";
 import TrustpilotCarousel from "@/sections/TrustpilotCarousel";
 import ProcessSteps from "@/sections/ProcessSteps";
 import LatestInsights from "@/sections/LatestInsights";
@@ -51,6 +52,7 @@ export default function Home() {
   />
 </Head>
       <Hero />
+      <CountriesWeSupport />
       <TrustBar />
       <ServicePipeline />
       <TrustpilotCarousel />
