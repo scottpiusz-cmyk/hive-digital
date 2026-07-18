@@ -7,7 +7,7 @@ import { ShieldCheck, Stamp, FileText, Fingerprint, Plane, Building2, ChevronDow
 import Image from "next/image";
 
 const services = [
-  { id: "fingerprinting", icon: Fingerprint, title: "指纹采集服务", image: "/fingerprinting.jpg", summary: "在上海、北京、成都等主要城市提供快速、便捷的指纹采集服务。", details: ["FBI合规指纹采集", "传统墨水指纹", "24小时内数字交付", "安全快递纸质版"], link: "/zh/shanghai-fingerprinting/" },
+  { id: "fingerprinting", icon: Fingerprint, title: "指纹采集服务", image: "/fingerprinting.jpg", summary: "覆盖中国、韩国、日本及亚太地区的专业指纹采集解决方案，支持FBI、RCMP/CPIC及国际背景调查要求。具体服务会根据申请人所在地和接收机构要求确认。", details: ["FBI合规指纹采集", "传统墨水指纹", "24小时内数字交付", "安全快递纸质版"], link: "/zh/shanghai-fingerprinting/" },
   { id: "background-checks", icon: ShieldCheck, title: "联邦与州背景调查", image: "/background-checks.jpg", summary: "来自美国、加拿大、英国、澳大利亚等国家的犯罪记录检查和身份验证。", details: ["FBI身份历史摘要检查（美国）", "RCMP犯罪记录检查（加拿大）", "ACRO警方证明（英国）", "州级司法部检查"], link: "/zh/services/#background-checks" },
   { id: "apostille", icon: Stamp, title: "文件Apostille与认证", image: "/apostille-auth-combined.jpg", summary: "海牙Apostille认证、使馆/领事馆公证、学位证明、教师证书、结婚证明和公司文件的公证。", details: ["海牙Apostille（公约成员国）", "中国使馆/领事馆认证", "越南使馆公证", "泰国外交部与使馆认证", "韩国和日本领事馆认证", "公证与翻译协调"], link: "/zh/services/#apostille" },
   { id: "china-pcc", icon: FileText, title: "中国无犯罪记录证明", image: "/china-pcc.jpg", summary: "从北京、上海、深圳等中国城市的公安局获取无犯罪记录证明。", details: ["北京公安局无犯罪记录证明", "上海公安局无犯罪记录证明", "深圳公安局犯罪记录检查", "其他城市可用 — 咨询确认", "公证与英文翻译包含"], link: "/zh/services/#china-pcc" },

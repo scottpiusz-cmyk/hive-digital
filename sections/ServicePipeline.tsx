@@ -33,7 +33,7 @@ const services: Service[] = [
     title: "Fingerprinting Solutions",
     image: "/fingerprinting.jpg",
     summary:
-      "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and other major cities across China.",
+      "Professional fingerprinting solutions across China, South Korea, Japan and the Asia-Pacific region, supporting FBI, RCMP/CPIC and international background check requirements.",
     details: [
       "FBI-compliant fingerprinting",
       "Traditional ink-based fingerprinting",

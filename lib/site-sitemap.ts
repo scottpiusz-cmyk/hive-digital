@@ -37,7 +37,7 @@ const staticLastModified: Record<string, string> = {
   "/korea-apostille/": "2026-07-14",
   "/services/": "2026-07-14",
   "/privacy/": "2026-07-14",
-  "/shanghai-fingerprinting/": "2026-05-06",
+  "/shanghai-fingerprinting/": "2026-07-18",
   "/thailand-authentication/": "2026-05-06",
   "/vietnam-authentication/": "2026-05-06",
   "/zh/": "2026-07-14",
@@ -47,7 +47,7 @@ const staticLastModified: Record<string, string> = {
   "/zh/insights/": "2026-06-10",
   "/zh/services/": "2026-07-14",
   "/zh/privacy/": "2026-07-14",
-  "/zh/shanghai-fingerprinting/": "2026-06-10",
+  "/zh/shanghai-fingerprinting/": "2026-07-18",
 };
 
 function withTrailingSlash(path: string): string {

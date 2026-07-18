@@ -1,12 +1,11 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Clock, Shield, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Fingerprinting Services — Shanghai, Beijing, Chengdu | Hive Digital",
+  title: "China Fingerprinting Solutions | Hive Digital",
   description:
-    "Fast, convenient, and accurate fingerprinting solutions in Shanghai, Beijing, Chengdu and across China. FBI-compliant electronic and ink-based fingerprinting for background checks, visa applications, and employment screening.",
+    "Fingerprinting solutions in Shanghai and selected cities across China for FBI, RCMP and other fingerprint-based background checks. Availability varies by location and service type.",
   alternates: {
     canonical: "/shanghai-fingerprinting/",
     languages: {
@@ -15,20 +14,20 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Fingerprinting Services — Shanghai, Beijing, Chengdu | Hive Digital",
+    title: "China Fingerprinting Solutions | Hive Digital",
     description:
-      "Professional fingerprinting solutions across China. Electronic and ink-based for FBI checks, visas, and employment.",
+      "Fingerprinting support in Shanghai and selected cities across China for FBI, RCMP and other fingerprint-based document requirements.",
   },
 };
 
 const cities = [
-  { name: "Shanghai", status: "Available", note: "Same-day appointments" },
-  { name: "Beijing", status: "Available", note: "2-day advance booking" },
-  { name: "Chengdu", status: "Available", note: "3-day advance booking" },
-  { name: "Shenzhen", status: "Available", note: "By appointment" },
-  { name: "Guangzhou", status: "Available", note: "By appointment" },
-  { name: "Hangzhou", status: "Available", note: "By appointment" },
-  { name: "Nanjing", status: "Available", note: "By appointment" },
+  { name: "Shanghai", status: "Primary", note: "Contact us to schedule" },
+  { name: "Beijing", status: "Confirm", note: "Availability varies" },
+  { name: "Chengdu", status: "Confirm", note: "Availability varies" },
+  { name: "Shenzhen", status: "Confirm", note: "Availability varies" },
+  { name: "Guangzhou", status: "Confirm", note: "Availability varies" },
+  { name: "Nanjing", status: "Confirm", note: "Availability varies" },
+  { name: "Kunming", status: "Confirm", note: "Availability varies" },
   { name: "Other Cities", status: "Inquire", note: "Contact us for availability" },
 ];
 
@@ -37,6 +36,11 @@ const useCases = [
     title: "FBI Background Checks",
     description:
       "Fingerprinting for FBI Identity History Summary Checks. Electronic submission directly to FBI CJIS.",
+  },
+  {
+    title: "RCMP / CPIC Background Checks",
+    description:
+      "Fingerprint-based criminal background checks for Canadian citizens and permanent residents. We confirm the required Canadian record before scheduling.",
   },
   {
     title: "China Visa & Work Permit",
@@ -75,14 +79,14 @@ export default function FingerprintingPage() {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
-            Fingerprinting Solutions
+            China Fingerprinting Solutions
           </h1>
           <p className="text-hive-muted text-lg max-w-3xl leading-relaxed mb-8">
-            Fast, convenient, and accurate fingerprinting solutions in
-            <strong className="text-white"> Shanghai, Beijing, Chengdu</strong>,
-            and other major cities across China. FBI-compliant electronic and
-            traditional ink-based fingerprinting for all your documentation
-            needs.
+            Shanghai is Hive&apos;s primary fingerprinting location. We also
+            assist clients in Beijing, Chengdu, Shenzhen, Guangzhou, Nanjing,
+            Kunming, and other cities across China. Available capture methods
+            and appointment options vary by location and service type, so we
+            confirm the requirements before scheduling.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -102,10 +106,15 @@ export default function FingerprintingPage() {
         </div>
 
         <div className="bg-hive-surface border border-hive-border rounded-2xl p-6 lg:p-8 mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-white mb-3 uppercase tracking-tight flex items-center gap-3">
             <MapPin className="w-6 h-6 text-red-500" />
             Service Locations
           </h2>
+          <p className="mb-6 max-w-3xl text-sm leading-relaxed text-hive-muted">
+            Our fingerprinting solutions are available in Shanghai, Beijing,
+            Chengdu, Shenzhen, Guangzhou, Nanjing and Kunming. Availability may
+            vary depending on location and service type.
+          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {cities.map((city) => (
               <div
@@ -118,7 +127,7 @@ export default function FingerprintingPage() {
                   </span>
                   <span
                     className={`text-xs px-2 py-0.5 rounded-full ${
-                      city.status === "Available"
+                      city.status === "Primary"
                         ? "bg-green-500/10 text-green-400"
                         : "bg-yellow-500/10 text-yellow-400"
                     }`}
@@ -165,7 +174,7 @@ export default function FingerprintingPage() {
               {
                 step: "1",
                 title: "Book Appointment",
-                text: "Contact us via WeCom/WeChat or email to schedule. Same-day available in Shanghai.",
+                text: "Contact us via WeCom/WeChat or email. We confirm the service type and location before scheduling.",
               },
               {
                 step: "2",
