@@ -92,6 +92,42 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
         </div>
 
+        {slug === "background-checks" && (
+          <section
+            className="bg-hive-surface border border-hive-border rounded-2xl p-6 mb-12"
+            aria-labelledby="fingerprinting-cta-title"
+          >
+            <h2
+              id="fingerprinting-cta-title"
+              className="text-lg font-bold text-white mb-4 uppercase tracking-tight"
+            >
+              Do You Need Fingerprinting?
+            </h2>
+            <div className="space-y-3 text-hive-muted text-sm leading-relaxed">
+              <p>
+                Many FBI and RCMP / CPIC criminal background checks require
+                fingerprint collection before an application can be submitted.
+              </p>
+              <p>
+                Hive provides professional fingerprinting solutions throughout
+                China and supports clients across South Korea, Japan, and other
+                Asia-Pacific locations.
+              </p>
+              <p>
+                Not sure whether fingerprinting is required? Contact us first
+                and we&apos;ll confirm whether it is needed and recommend the
+                correct solution for your location and destination country.
+              </p>
+            </div>
+            <Link
+              href="/fingerprinting/"
+              className="mt-6 inline-flex w-full items-center justify-center px-6 py-3 bg-hive-accent text-hive-bg font-semibold rounded-xl hover:bg-hive-accent-hover transition-colors sm:w-auto"
+            >
+              View Fingerprinting Solutions
+            </Link>
+          </section>
+        )}
+
         {/* China PCC special requirements box */}
         {slug === "china-pcc" && (
           <div className="bg-hive-elevated border border-hive-accent/30 rounded-2xl p-6 mb-12">

@@ -32,7 +32,7 @@ export const services: Record<string, ServiceDefinition> = {
     ],
     pricing:
       "Pricing varies by jurisdiction and urgency. Contact us for a tailored quote.",
-    lastModified: "2026-05-06",
+    lastModified: "2026-07-18",
   },
   apostille: {
     title: "Apostille & Document Authentication",

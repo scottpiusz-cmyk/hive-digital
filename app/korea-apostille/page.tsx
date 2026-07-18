@@ -464,7 +464,7 @@ export default function KoreaApostillePage() {
                 </p>
               </div>
               <Link
-                href="/shanghai-fingerprinting/"
+                href="/fingerprinting/"
                 className="inline-flex items-center gap-2 text-red-400 hover:text-white text-sm font-semibold pt-2 transition-colors"
               >
                 View fingerprinting services
