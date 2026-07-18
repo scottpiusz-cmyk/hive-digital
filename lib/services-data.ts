@@ -2,6 +2,7 @@ export interface ServiceDefinition {
   title: string;
   subtitle: string;
   description: string;
+  metaDescription?: string;
   features: string[];
   process: string[];
   pricing: string;
@@ -85,28 +86,31 @@ export const services: Record<string, ServiceDefinition> = {
     lastModified: "2026-05-06",
   },
   "china-visa": {
-    title: "China Visa & Work Permit Assistance",
-    subtitle: "Z-Visa and Residence Permit document support",
+    title: "China Work Permit & Visa Document Services",
+    subtitle: "Documents required to work in China",
     description:
-      "We prepare and authenticate all documentation required for China Z-Visa applications and Residence Permit processing. This service is tightly integrated with our China Business Registration and Ancillary Services — ensuring a seamless transition from entity setup to employee onboarding and work authorization.",
+      "Hive helps professionals, teachers, families, and HR teams prepare and legalize documents an employer may require before beginning a China work permit and visa application. Hive does not issue visas or work permits.",
+    metaDescription:
+      "Prepare background checks, degrees, teaching qualifications, and family documents for China employment. Confirm requirements before obtaining Apostilles.",
     features: [
-      "China Z-Visa document preparation & review",
-      "Residence Permit application support",
-      "Document translation & certification",
-      "Integration with WFOE/JV business registration",
-      "Post-registration employee onboarding support",
-      "Authentication and legalization coordination",
+      "Criminal background check selection",
+      "Degree document preparation",
+      "TEFL, TESOL, or teaching qualification review where applicable",
+      "Marriage certificate preparation for a spouse",
+      "Birth certificate preparation for dependents",
+      "Apostille coordination where required",
     ],
     process: [
-      "Identify required documents for your Z-Visa or Residence Permit category",
-      "Coordinate notarization and apostille/legalization",
-      "Arrange certified translations into Chinese",
-      "Verify document compliance with Chinese immigration requirements",
-      "Submit or return documents for your visa application",
+      "Receive job offer",
+      "Confirm employer requirements",
+      "Prepare required documents",
+      "Obtain Apostilles where required",
+      "Send documents to employer",
+      "Employer continues the China work permit and visa process",
     ],
     pricing:
-      "Pricing varies by document volume and visa type. Contact us for a detailed breakdown.",
-    lastModified: "2026-05-06",
+      "Pricing depends on the documents actually required and where they were issued. Confirm the employer's requirements before ordering services.",
+    lastModified: "2026-07-18",
   },
   "business-reg": {
     title: "China Business Registration",
