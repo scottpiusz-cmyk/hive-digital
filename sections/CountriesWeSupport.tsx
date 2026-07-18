@@ -9,7 +9,7 @@ const countries = [
     name: "China",
     code: "CN",
     href: "/services/china-visa/",
-    headline: "Apostilles • Police Clearance • Work Permits",
+    headline: "Apostilles:\n• Police Clearance\n• Degree\n• TEFL",
     description:
       "Supporting professionals, families and businesses relocating to China.",
   },
@@ -82,7 +82,7 @@ export default function CountriesWeSupport() {
                 <h3 className="mb-3 text-2xl font-bold text-white">
                   {country.name}
                 </h3>
-                <p className="mb-3 text-sm font-semibold leading-relaxed text-red-400">
+                <p className="mb-3 whitespace-pre-line text-sm font-semibold leading-relaxed text-red-400">
                   {country.headline}
                 </p>
                 <p className="text-sm leading-relaxed text-hive-muted">
