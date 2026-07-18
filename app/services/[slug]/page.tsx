@@ -1,6 +1,8 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllServiceSlugs, services } from "@/lib/services-data";
+import ChinaWorkDocumentsPage from "./ChinaWorkDocumentsPage";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -14,15 +16,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = services[slug];
   if (!service) return {};
+  const description = service.metaDescription ?? service.description.slice(0, 160);
   return {
     title: `${service.title} — Hive Digital`,
-    description: service.description.slice(0, 160),
+    description,
     alternates: {
       canonical: `/services/${slug}/`,
     },
     openGraph: {
       title: `${service.title} — Hive Digital`,
-      description: service.description.slice(0, 200),
+      description,
     },
   };
 }
@@ -31,6 +34,10 @@ export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const service = services[slug];
   if (!service) notFound();
+
+  if (slug === "china-visa") {
+    return <ChinaWorkDocumentsPage />;
+  }
 
   return (
     <main className="pt-24 pb-16 px-6 lg:px-12 bg-hive-bg min-h-screen">
@@ -128,12 +135,12 @@ export default async function ServiceDetailPage({ params }: Props) {
           >
             Request a Quote
           </a>
-          <a
+          <Link
             href="/services/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-hive-border text-white font-semibold rounded-xl hover:border-hive-accent/50 transition-colors"
           >
             All Services
-          </a>
+          </Link>
         </div>
       </div>
     </main>

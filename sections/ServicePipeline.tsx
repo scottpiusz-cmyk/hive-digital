@@ -96,16 +96,16 @@ const services: Service[] = [
   {
     id: "china-visa",
     icon: Plane,
-    title: "China Visa & Work Permit Assistance",
+    title: "China Work Permit & Visa Documents",
     image: "/china-visa.jpg",
     summary:
-      "End-to-end document preparation and guidance for China Z-Visa applications and Residence Permit documentation.",
+      "Document preparation and Apostille guidance for records employers may require before beginning China work permit and visa procedures.",
     details: [
-      "China Z-Visa document preparation & review",
-      "Residence Permit application support",
-      "Document translation & certification",
-      "Integration with WFOE/JV business registration",
-      "Post-registration employee onboarding support",
+      "Employer requirement review",
+      "Criminal background check selection",
+      "Degree and teaching qualification Apostilles",
+      "Marriage and birth certificate Apostilles for dependents",
+      "Name consistency review",
     ],
     link: "/services/china-visa/",
   },

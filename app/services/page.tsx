@@ -4,7 +4,7 @@ import {
   ShieldCheck,
   Stamp,
   FileText,
-  Plane,
+  Files,
   Building2,
   MessageSquare,
 } from "lucide-react";
@@ -13,7 +13,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Our Services — Hive Digital Document Authentication",
   description:
-    "Explore Hive Digital's services: Federal & State Background Checks, Apostille & Document Authentication, Local China PCC Reports, China Visa & Work Permit Assistance, China Business Registration, and Ancillary Services.",
+    "Explore Hive Digital's background checks, Apostille services, China police clearance reports, China employment document preparation, business registration, and operational support.",
   alternates: {
     canonical: "/services/",
     languages: {
@@ -70,16 +70,16 @@ const services = [
     ],
   },
   {
-    icon: Plane,
-    title: "China Visa & Work Permit Assistance",
+    icon: Files,
+    title: "China Work Permit & Visa Documents",
     link: "/services/china-visa/",
     description:
-      "End-to-end document preparation and guidance for China Z-Visa applications and Residence Permit documentation — integrated with our business registration and ancillary support services.",
+      "Prepare and legalize documents an employer may require before beginning a China work permit and visa application. Hive does not issue visas or work permits.",
     features: [
-      "China Z-Visa document preparation & review",
-      "Residence Permit application support",
-      "Document translation & certification",
-      "Integration with WFOE/JV registration",
+      "Background check selection",
+      "Degree and teaching qualification review",
+      "Family document preparation",
+      "Apostille coordination where required",
     ],
   },
   {
