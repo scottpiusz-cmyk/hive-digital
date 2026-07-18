@@ -5,10 +5,12 @@ import {
   Baby,
   BriefcaseBusiness,
   Building2,
+  CheckCircle2,
   FileSearch,
   GraduationCap,
   Heart,
   HelpCircle,
+  Info,
   Send,
   ShieldCheck,
   Stamp,
@@ -18,12 +20,14 @@ const typicalDocuments = [
   {
     icon: ShieldCheck,
     title: "Criminal Background Check",
+    href: "/services/background-checks/",
     description:
-      "The correct report may be state-level or national-level, depending on the employer and application city.",
+      "FBI and state-level background checks are both used, but the correct report depends on the employer and application city.",
   },
   {
     icon: GraduationCap,
-    title: "Degree",
+    title: "Degree Apostille",
+    href: "/services/apostille/",
     description:
       "Employers commonly request an Apostille for the degree when it was issued in a Hague Convention country.",
   },
@@ -35,25 +39,50 @@ const typicalDocuments = [
   },
   {
     icon: Heart,
-    title: "Marriage Certificate",
+    title: "Marriage Certificate Apostille",
+    href: "/services/apostille/",
     description:
       "A spouse joining the applicant may need a legalized marriage certificate for the employer-led process.",
   },
   {
     icon: Baby,
-    title: "Birth Certificate",
+    title: "Birth Certificate Apostille",
+    href: "/services/apostille/",
     description:
       "Dependent children may need legalized birth certificates showing the relationship to the applicant.",
   },
 ];
 
 const questions = [
-  "Which background check do I need?",
-  "Does my degree need an Apostille?",
-  "What if my passport and degree names do not match?",
-  "How can I prepare documents while already living overseas?",
-  "What should I do if my employer gave incomplete instructions?",
-  "Which documents should I prioritize if I have a tight deadline?",
+  { question: "Which background check do I need?" },
+  { question: "Does my degree need an Apostille?" },
+  { question: "What if my passport and degree names do not match?" },
+  { question: "How can I prepare documents while already living overseas?" },
+  { question: "What should I do if my employer gave incomplete instructions?" },
+  { question: "Which documents should I prioritize if I have a tight deadline?" },
+  {
+    question: "Can I prepare my documents before accepting a job?",
+    answer:
+      "Some documents can be prepared in advance, but requirements vary. Confirm employer requirements before processing expensive documents that may not ultimately be required.",
+  },
+];
+
+const consultationFactors = [
+  "Destination city",
+  "Employer requirements",
+  "Applicant nationality",
+  "Current location",
+  "Document origin",
+  "Existing documents",
+  "Deadlines",
+];
+
+const whyHive = [
+  "Honest recommendations",
+  "Only necessary services recommended",
+  "Clear explanations of why requirements vary",
+  "Experience supporting recruiters, HR teams, and international schools",
+  "Support for applicants already living overseas",
 ];
 
 const process = [
@@ -108,9 +137,9 @@ export default function ChinaWorkDocumentsPage() {
           China Work Permit &amp; Visa Document Services
         </h1>
         <p className="mb-5 max-w-4xl text-lg leading-relaxed text-hive-muted">
-          Hive helps professionals, teachers, families, and HR teams prepare and
-          legalize documents an employer may require before beginning a China
-          work permit and visa application.
+          Moving to China for work? Hive helps prepare and legalize the
+          documents commonly required before your employer begins the China
+          work permit and visa process.
         </p>
         <p className="mb-14 max-w-4xl text-sm leading-relaxed text-hive-dim md:text-base">
           Hive does not issue visas or work permits. Requirements can vary by
@@ -128,9 +157,9 @@ export default function ChinaWorkDocumentsPage() {
               Typical Documents Required
             </h2>
             <p className="leading-relaxed text-hive-muted">
-              The final list depends on the employer and application city. The
-              documents below are common starting points, not a universal
-              checklist.
+              The documents below are among the most commonly requested. Your
+              employer, application city, and individual circumstances
+              determine the final requirements.
             </p>
           </div>
 
@@ -145,9 +174,20 @@ export default function ChinaWorkDocumentsPage() {
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-hive-accent/10">
                     <Icon className="h-5 w-5 text-hive-accent" aria-hidden="true" />
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
-                    {document.title}
-                  </h3>
+                  {document.href ? (
+                    <h3 className="mb-2 text-lg font-semibold text-white">
+                      <Link
+                        href={document.href}
+                        className="transition-colors hover:text-hive-accent"
+                      >
+                        {document.title}
+                      </Link>
+                    </h3>
+                  ) : (
+                    <h3 className="mb-2 text-lg font-semibold text-white">
+                      {document.title}
+                    </h3>
+                  )}
                   <p className="text-sm leading-relaxed text-hive-muted">
                     {document.description}
                   </p>
@@ -183,9 +223,10 @@ export default function ChinaWorkDocumentsPage() {
                   universally required.
                 </p>
                 <p>
-                  Confirm the requirement before paying for a more expensive or
-                  time-consuming report. Hive recommends only the document that
-                  satisfies the requirements known at the time of consultation.
+                  Confirm the requirement before spending time and money
+                  obtaining a report you may not actually need. Hive recommends
+                  only the document that satisfies the requirements known at
+                  the time of consultation.
                 </p>
               </div>
             </div>
@@ -205,6 +246,71 @@ export default function ChinaWorkDocumentsPage() {
               </Link>
             </div>
           </div>
+
+          <aside className="mt-8 rounded-xl border border-hive-border bg-hive-bg p-6">
+            <div className="flex items-start gap-4">
+              <Info
+                className="mt-0.5 h-5 w-5 shrink-0 text-hive-accent"
+                aria-hidden="true"
+              />
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-white">
+                  A Common Mistake
+                </h3>
+                <div className="space-y-2 text-sm leading-relaxed text-hive-muted">
+                  <p>
+                    Many applicants assume they automatically need an FBI
+                    background check simply because they are moving to China.
+                  </p>
+                  <p>
+                    In reality, some employers and cities accept state-level
+                    police checks while others require national reports. Always
+                    confirm the requirement before ordering a report.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section
+          className="mb-16 rounded-2xl border border-hive-border bg-hive-surface p-7 md:p-9"
+          aria-labelledby="consultation-approach"
+        >
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+            <div>
+              <h2
+                id="consultation-approach"
+                className="mb-4 text-2xl font-bold uppercase tracking-tight text-white md:text-3xl"
+              >
+                How Hive Assesses Your Situation
+              </h2>
+              <div className="space-y-3 leading-relaxed text-hive-muted">
+                <p>
+                  Hive does not begin a consultation by selling services. We
+                  first establish what your employer and application location
+                  are likely to require.
+                </p>
+                <p>
+                  Only after understanding the relevant factors do we recommend
+                  the minimum documents necessary for the requirements confirmed
+                  at that time.
+                </p>
+              </div>
+            </div>
+
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {consultationFactors.map((factor) => (
+                <li
+                  key={factor}
+                  className="flex items-center gap-3 rounded-xl border border-hive-border bg-hive-bg p-4 text-sm text-hive-muted"
+                >
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-hive-accent" />
+                  {factor}
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         <section className="mb-16" aria-labelledby="common-questions">
@@ -222,18 +328,27 @@ export default function ChinaWorkDocumentsPage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
-            {questions.map((question) => (
+            {questions.map((item) => (
               <div
-                key={question}
-                className="flex items-start gap-4 rounded-2xl border border-hive-border bg-hive-surface p-5"
+                key={item.question}
+                className={`flex items-start gap-4 rounded-2xl border border-hive-border bg-hive-surface p-5 ${
+                  item.answer ? "md:col-span-2" : ""
+                }`}
               >
                 <HelpCircle
                   className="mt-0.5 h-5 w-5 shrink-0 text-hive-accent"
                   aria-hidden="true"
                 />
-                <p className="text-sm font-medium leading-relaxed text-white">
-                  {question}
-                </p>
+                <div>
+                  <p className="text-sm font-medium leading-relaxed text-white">
+                    {item.question}
+                  </p>
+                  {item.answer && (
+                    <p className="mt-2 text-sm leading-relaxed text-hive-muted">
+                      {item.answer}
+                    </p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -298,6 +413,36 @@ export default function ChinaWorkDocumentsPage() {
               );
             })}
           </ol>
+        </section>
+
+        <section className="mb-16" aria-labelledby="why-hive">
+          <div className="mb-8 max-w-3xl">
+            <h2
+              id="why-hive"
+              className="mb-3 text-2xl font-bold uppercase tracking-tight text-white md:text-3xl"
+            >
+              Why Clients Choose Hive
+            </h2>
+            <p className="leading-relaxed text-hive-muted">
+              Practical document support should reduce uncertainty, not add
+              unnecessary services.
+            </p>
+          </div>
+
+          <ul className="grid gap-4 md:grid-cols-2">
+            {whyHive.map((reason) => (
+              <li
+                key={reason}
+                className="flex items-start gap-3 rounded-2xl border border-hive-border bg-hive-surface p-5 text-sm leading-relaxed text-hive-muted"
+              >
+                <CheckCircle2
+                  className="mt-0.5 h-5 w-5 shrink-0 text-hive-accent"
+                  aria-hidden="true"
+                />
+                {reason}
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="rounded-2xl border border-hive-border bg-hive-surface p-8 text-center md:p-10">
