@@ -12,6 +12,7 @@ const englishToChineseRoutes: Record<string, string> = {
   "/about/": "/zh/about/",
   "/contact/": "/zh/contact/",
   "/privacy/": "/zh/privacy/",
+  "/fingerprinting/": "/zh/fingerprinting/",
   "/shanghai-fingerprinting/": "/zh/shanghai-fingerprinting/",
   "/insights/china-vietnam-document-legalization-2026/":
     "/zh/insights/china-vietnam-document-legalization-2026/",

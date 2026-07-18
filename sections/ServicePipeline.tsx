@@ -42,7 +42,7 @@ const services: Service[] = [
       "Digital delivery within 24 hours",
       "Hard copies via secure courier",
     ],
-    link: "/shanghai-fingerprinting/",
+    link: "/fingerprinting/",
   },
   {
     id: "background-checks",
