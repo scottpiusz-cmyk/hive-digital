@@ -4,18 +4,26 @@ import {
   ArrowRight,
   Building2,
   CheckCircle,
+  CircleDollarSign,
+  ClipboardCheck,
   FileQuestion,
   FileText,
   Fingerprint,
   GraduationCap,
+  Languages,
+  MapPin,
+  MessageCircle,
+  Phone,
   ShieldCheck,
+  Star,
   Stamp,
+  TriangleAlert,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Korea Apostille and Document Services | Hive Digital",
   description:
-    "Review document paths for South Korea, including FBI background checks, US apostilles, degrees, certificates, and fingerprint-supported applications.",
+    "Find FBI fingerprinting in Seoul, prepare an FD-258 fingerprint card in Korea, and review background check and apostille support.",
   alternates: {
     canonical: "/korea-apostille/",
   },
@@ -134,6 +142,68 @@ const consultationReasons = [
     description:
       "If the instructions do not call for an additional service, we tell the client rather than adding it to the workflow.",
   },
+];
+
+const fingerprintLocations = [
+  {
+    name: "Seoul Seocho Police Station",
+    address: ["179 Banpo-daero", "Seocho-gu", "Seoul"],
+    phone: "02-532-0112",
+    phoneHref: "tel:+8225320112",
+    cost: "Usually free",
+    note: "One of the most commonly recommended locations for foreign applicants who need an FBI fingerprint card.",
+    recommended: true,
+  },
+  {
+    name: "Seoul Yeongdeungpo Police Station",
+    address: ["608 Gukhoe-daero", "Yeongdeungpo-gu", "Seoul"],
+    phone: "182 (Korean Police Information Line)",
+    phoneHref: "tel:182",
+    cost: "Usually free",
+    recommended: false,
+  },
+  {
+    name: "Seoul Gangnam Police Station",
+    address: ["11 Teheran-ro 114-gil", "Gangnam-gu", "Seoul"],
+    phone: "02-3673-9324",
+    phoneHref: "tel:+82236739324",
+    cost: "Usually free",
+    recommended: false,
+  },
+];
+
+const fingerprintChecklist = [
+  "FBI FD-258 fingerprint card",
+  "Passport",
+  "Alien Registration Card / Residence Card (if applicable)",
+  "Pen",
+  "Fingerprint ink (optional, depending on the station)",
+];
+
+const reviewChannels = [
+  "Email",
+  "KakaoTalk",
+  "WeChat",
+  "WhatsApp",
+  "Other Hive-connected messaging platforms",
+];
+
+const fingerprintReviewChecks = [
+  "Poor fingerprint quality",
+  "Missing information",
+  "Incorrect signatures",
+  "Incorrect dates",
+  "Formatting problems",
+];
+
+const fbiSupportServices = [
+  {
+    label: "FBI Background Checks",
+    href: "/services/background-checks/",
+  },
+  { label: "Apostille Services", href: "/services/apostille/" },
+  { label: "Fingerprinting Guidance", href: "/fingerprinting/" },
+  { label: "International Document Services", href: "/services/" },
 ];
 
 const faqs = [
@@ -407,74 +477,7 @@ export default function KoreaApostillePage() {
           </div>
         </section>
 
-        <section
-          id="fingerprinting"
-          className="scroll-mt-24 bg-hive-elevated border border-hive-border rounded-2xl p-7 lg:p-10 mb-20"
-          aria-labelledby="fingerprinting-heading"
-        >
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12 items-start">
-            <div>
-              <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
-                <Fingerprint className="w-5 h-5 text-red-500" />
-              </div>
-              <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">
-                Fingerprinting for FBI processing
-              </span>
-              <h2
-                id="fingerprinting-heading"
-                className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight mt-2 mb-4"
-              >
-                Fingerprinting Options in Korea and China
-              </h2>
-              <p className="text-hive-muted leading-relaxed">
-                Your location affects how fingerprints can be collected, but
-                you may not need to travel to a Hive office to begin an FBI
-                background-check application.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-hive-surface border border-hive-border rounded-xl p-5">
-                <h3 className="text-white font-semibold mb-2">
-                  Applicants in South Korea
-                </h3>
-                <p className="text-hive-muted text-sm leading-relaxed">
-                  Applicants in Korea can usually obtain ink fingerprints
-                  locally. Confirm that the fingerprints are recorded on the
-                  appropriate card and that all required fields are complete.
-                </p>
-              </div>
-              <div className="bg-hive-surface border border-hive-border rounded-xl p-5">
-                <h3 className="text-white font-semibold mb-2">
-                  Applicants in China
-                </h3>
-                <p className="text-hive-muted text-sm leading-relaxed">
-                  Applicants in China may use Hive Livescan or periodic
-                  fingerprint collection services, depending on location and
-                  availability.
-                </p>
-              </div>
-              <div className="bg-hive-surface border border-hive-border rounded-xl p-5">
-                <h3 className="text-white font-semibold mb-2">
-                  Using scanned fingerprint cards
-                </h3>
-                <p className="text-hive-muted text-sm leading-relaxed">
-                  Scanned fingerprint cards can be used for FBI processing.
-                  Hive can review the card format and explain the submission
-                  route before processing begins.
-                </p>
-              </div>
-              <Link
-                href="/fingerprinting/"
-                className="inline-flex items-center gap-2 text-red-400 hover:text-white text-sm font-semibold pt-2 transition-colors"
-              >
-                View fingerprinting services
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="korea-document-faq">
+        <section className="mb-20" aria-labelledby="korea-document-faq">
           <div className="max-w-3xl mb-8">
             <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">
               Frequently asked questions
@@ -500,6 +503,331 @@ export default function KoreaApostillePage() {
                 </p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section
+          id="fingerprinting"
+          className="scroll-mt-24 mb-20"
+          aria-labelledby="fingerprinting-heading"
+        >
+          <div className="max-w-4xl mb-8">
+            <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+              <Fingerprint
+                className="w-5 h-5 text-red-500"
+                aria-hidden="true"
+              />
+            </div>
+            <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">
+              FBI fingerprinting Seoul
+            </span>
+            <h2
+              id="fingerprinting-heading"
+              className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight mt-2 mb-4"
+            >
+              FBI Background Check Fingerprinting in Seoul
+            </h2>
+            <p className="text-hive-muted leading-relaxed mb-4">
+              For the Hive workflow described here, applicants requesting an{" "}
+              <Link
+                href="/services/background-checks/"
+                className="text-red-400 underline decoration-red-500/40 underline-offset-4 hover:text-white"
+              >
+                FBI Identity History Summary
+              </Link>
+              {" "}submit current fingerprints on an FBI FD-258 fingerprint
+              card. FBI fingerprinting is available in Seoul, but procedures
+              can vary by police station.
+            </p>
+            <p className="text-white font-medium leading-relaxed">
+              Call ahead before visiting to confirm that the station can
+              provide FD-258 fingerprinting, when the appropriate department is
+              open, and whether there is a fee.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold text-white mb-5">
+              Recommended Locations
+            </h3>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {fingerprintLocations.map((location) => (
+                <article
+                  key={location.name}
+                  className={`relative rounded-2xl border p-6 ${
+                    location.recommended
+                      ? "border-red-500/50 bg-red-500/10 shadow-lg shadow-red-950/20"
+                      : "border-hive-border bg-hive-surface"
+                  }`}
+                >
+                  {location.recommended && (
+                    <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-red-300">
+                      <Star
+                        className="h-3.5 w-3.5 fill-current"
+                        aria-hidden="true"
+                      />
+                      Recommended
+                    </span>
+                  )}
+                  <h4 className="text-xl font-bold text-white mb-5">
+                    {location.name}
+                  </h4>
+                  <dl className="space-y-4 text-sm">
+                    <div className="flex items-start gap-3">
+                      <MapPin
+                        className="mt-0.5 h-4 w-4 shrink-0 text-red-500"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <dt className="font-semibold text-white">Address</dt>
+                        <dd className="mt-1 text-hive-muted not-italic">
+                          <address className="not-italic">
+                            {location.address.map((line) => (
+                              <span key={line} className="block">
+                                {line}
+                              </span>
+                            ))}
+                          </address>
+                        </dd>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Phone
+                        className="mt-0.5 h-4 w-4 shrink-0 text-red-500"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <dt className="font-semibold text-white">Phone</dt>
+                        <dd className="mt-1">
+                          <a
+                            href={location.phoneHref}
+                            className="text-hive-muted hover:text-white"
+                          >
+                            {location.phone}
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CircleDollarSign
+                        className="mt-0.5 h-4 w-4 shrink-0 text-red-500"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <dt className="font-semibold text-white">
+                          Estimated cost
+                        </dt>
+                        <dd className="mt-1 text-hive-muted">
+                          {location.cost}. Confirm when calling.
+                        </dd>
+                      </div>
+                    </div>
+                  </dl>
+                  {location.note && (
+                    <p className="mt-5 border-t border-red-500/20 pt-4 text-sm leading-relaxed text-hive-muted">
+                      {location.note}
+                    </p>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-2 mb-10">
+            <div className="rounded-2xl border border-hive-border bg-hive-surface p-6 lg:p-7">
+              <div className="flex items-center gap-3 mb-5">
+                <ClipboardCheck
+                  className="h-5 w-5 text-red-500"
+                  aria-hidden="true"
+                />
+                <h3 className="text-xl font-bold text-white">What to Bring</h3>
+              </div>
+              <ul className="space-y-3">
+                {fingerprintChecklist.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-hive-muted"
+                  >
+                    <CheckCircle
+                      className="mt-0.5 h-4 w-4 shrink-0 text-red-500"
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-5">
+              <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-6 lg:p-7">
+                <div className="flex items-center gap-3 mb-5">
+                  <Languages
+                    className="h-5 w-5 text-red-400"
+                    aria-hidden="true"
+                  />
+                  <h3 className="text-xl font-bold text-white">What to Say</h3>
+                </div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-red-300">
+                  Korean
+                </p>
+                <p lang="ko" className="text-white leading-relaxed mb-5">
+                  미국 FBI 신원조회용 지문 채취를 하고 싶습니다.
+                  <br />
+                  FD-258 지문 카드 작성이 가능한지 확인 부탁드립니다.
+                </p>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-red-300">
+                  English translation
+                </p>
+                <p className="text-hive-muted leading-relaxed">
+                  “I need fingerprints taken for a U.S. FBI background check.
+                  <br />
+                  Can you help complete an FD-258 fingerprint card?”
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-hive-border bg-hive-surface p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Building2
+                    className="h-5 w-5 text-red-500"
+                    aria-hidden="true"
+                  />
+                  <h3 className="text-xl font-bold text-white">Where to Go</h3>
+                </div>
+                <p className="text-sm text-hive-muted mb-3">Ask for:</p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <p className="rounded-xl bg-hive-elevated p-4 text-sm text-white">
+                    <span lang="ko" className="block font-semibold">
+                      민원실
+                    </span>
+                    <span className="text-hive-muted">
+                      Civil Affairs Office
+                    </span>
+                  </p>
+                  <p className="rounded-xl bg-hive-elevated p-4 text-sm text-white">
+                    <span lang="ko" className="block font-semibold">
+                      지문 담당 부서
+                    </span>
+                    <span className="text-hive-muted">
+                      Fingerprint Department
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside
+            className="mb-10 overflow-hidden rounded-2xl border-2 border-red-500/60 bg-red-950/30 shadow-xl shadow-red-950/30"
+            aria-labelledby="send-scan-heading"
+          >
+            <div className="flex items-center gap-3 border-b border-red-500/30 bg-red-600/20 px-6 py-5 lg:px-8">
+              <TriangleAlert
+                className="h-6 w-6 shrink-0 text-red-300"
+                aria-hidden="true"
+              />
+              <h3
+                id="send-scan-heading"
+                className="text-2xl font-bold text-white"
+              >
+                Send Your Fingerprint Card Scan to Hive
+              </h3>
+            </div>
+            <div className="p-6 lg:p-8">
+              <p className="text-lg font-semibold leading-relaxed text-white mb-6">
+                After fingerprinting, scan the completed card at a minimum of
+                400 DPI and send the scan to Hive for review and processing.
+                Once Hive receives a usable scan and the required applicant
+                details, Hive processes the FBI report in 24–48 hours before
+                the Apostille process begins.
+              </p>
+              <div className="grid gap-7 lg:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold text-white mb-4">
+                    Hive accepts scans via:
+                  </h4>
+                  <ul className="space-y-3">
+                    {reviewChannels.map((channel) => (
+                      <li
+                        key={channel}
+                        className="flex items-start gap-3 text-sm text-hive-muted"
+                      >
+                        <CheckCircle
+                          className="mt-0.5 h-4 w-4 shrink-0 text-red-400"
+                          aria-hidden="true"
+                        />
+                        {channel}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-4">
+                    Hive will review the card to help prevent delays caused by:
+                  </h4>
+                  <ul className="space-y-3">
+                    {fingerprintReviewChecks.map((check) => (
+                      <li
+                        key={check}
+                        className="flex items-start gap-3 text-sm text-hive-muted"
+                      >
+                        <CheckCircle
+                          className="mt-0.5 h-4 w-4 shrink-0 text-red-400"
+                          aria-hidden="true"
+                        />
+                        {check}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-7 rounded-xl border border-red-500/30 bg-red-600/15 p-5">
+                <p className="font-semibold leading-relaxed text-white">
+                  Send the scan to Hive before taking any further submission
+                  steps. After the scan is approved, Hive will confirm the FBI
+                  report processing and Apostille instructions.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <div className="rounded-2xl border border-hive-border bg-hive-elevated p-7 text-center lg:p-10">
+            <MessageCircle
+              className="mx-auto mb-4 h-7 w-7 text-red-500"
+              aria-hidden="true"
+            />
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              Need Help With Your FBI Background Check?
+            </h3>
+            <p className="mx-auto mb-6 max-w-3xl leading-relaxed text-hive-muted">
+              Hive Digital Consulting assists international clients with FBI
+              Background Checks, Apostilles, fingerprinting guidance, and
+              international document services. The correct next step depends
+              on where the document will be used and the instructions from the
+              receiving organization.
+            </p>
+            <ul className="mx-auto mb-7 grid max-w-3xl gap-3 text-left sm:grid-cols-2">
+              {fbiSupportServices.map((service) => (
+                <li key={service.label}>
+                  <Link
+                    href={service.href}
+                    className="flex items-center gap-3 rounded-xl border border-hive-border bg-hive-surface px-4 py-3 text-sm font-medium text-white transition-colors hover:border-red-500/40"
+                  >
+                    <CheckCircle
+                      className="h-4 w-4 shrink-0 text-red-500"
+                      aria-hidden="true"
+                    />
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/contact/"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-500"
+            >
+              Request a Quote
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </section>
       </div>
