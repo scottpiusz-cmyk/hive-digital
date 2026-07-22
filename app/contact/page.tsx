@@ -37,7 +37,7 @@ export default function ContactPage() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* WeCom/WeChat — Primary */}
-          <div className="bg-hive-surface border border-hive-accent/30 rounded-2xl p-8 text-center relative overflow-hidden">
+          <div id="wechat" className="scroll-mt-24 bg-hive-surface border border-hive-accent/30 rounded-2xl p-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-hive-accent text-hive-bg text-xs font-bold uppercase px-3 py-1 rounded-bl-xl">
               Quickest Response
             </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
           </div>
 
           {/* WhatsApp Business — Secondary */}
-          <div className="bg-hive-surface border border-hive-border rounded-2xl p-8 text-center">
+          <div id="whatsapp" className="scroll-mt-24 bg-hive-surface border border-hive-border rounded-2xl p-8 text-center">
             <div className="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
               <MessageCircle className="w-7 h-7 text-green-400" />
             </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
           </div>
 
           {/* KakaoTalk — South Korea */}
-          <div className="bg-hive-surface border border-hive-border rounded-2xl p-8 text-center">
+          <div id="kakao" className="scroll-mt-24 bg-hive-surface border border-hive-border rounded-2xl p-8 text-center">
             <div className="w-14 h-14 rounded-2xl bg-yellow-400/10 flex items-center justify-center mx-auto mb-4">
               <MessageCircle className="w-7 h-7 text-yellow-400" />
             </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
 
         {/* Contact info cards */}
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
-          <div className="bg-hive-surface border border-hive-border rounded-2xl p-6 text-center">
+          <div id="email" className="scroll-mt-24 bg-hive-surface border border-hive-border rounded-2xl p-6 text-center">
             <div className="w-11 h-11 rounded-xl bg-hive-accent/10 flex items-center justify-center mx-auto mb-4">
               <Mail className="w-5 h-5 text-hive-accent" />
             </div>
@@ -152,7 +152,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="bg-hive-surface border border-hive-border rounded-2xl p-6 text-center">
+          <div id="phone" className="scroll-mt-24 bg-hive-surface border border-hive-border rounded-2xl p-6 text-center">
             <div className="w-11 h-11 rounded-xl bg-hive-accent/10 flex items-center justify-center mx-auto mb-4">
               <Phone className="w-5 h-5 text-hive-accent" />
             </div>
