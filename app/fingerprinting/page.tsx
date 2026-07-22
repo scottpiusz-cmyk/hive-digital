@@ -43,13 +43,15 @@ const coverage = [
     name: "South Korea",
     description:
       "We help applicants confirm the fingerprint format and collection route requested for their background check. Local options vary.",
-    status: "Country guide planned",
+    href: "/korea-apostille/#fingerprinting",
+    linkLabel: "Explore South Korea fingerprinting",
   },
   {
     name: "Japan",
     description:
       "Fingerprinting procedures depend on the requesting agency, record type and applicant location. Confirm the specification before collection.",
-    status: "Country guide planned",
+    href: "/japan-fingerprinting/",
+    linkLabel: "Explore Japan fingerprinting",
   },
   {
     name: "Asia-Pacific",
