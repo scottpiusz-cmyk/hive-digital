@@ -36,6 +36,10 @@ const englishServiceLandingPages = new Set([
   "/japan-apostille/",
 ]);
 
+const englishFingerprintingLandingPages = new Set([
+  "/japan-fingerprinting/",
+]);
+
 function normalizePathname(pathname: string) {
   if (pathname === "/") return pathname;
   return `${pathname.replace(/\/+$/, "")}/`;
@@ -52,7 +56,9 @@ export default function LanguageSwitcher() {
   const zhPath = isChinese
     ? pathname
     : englishToChineseRoutes[pathname] ??
-      (pathname.startsWith("/services/") ||
+      (englishFingerprintingLandingPages.has(pathname)
+        ? "/zh/fingerprinting/"
+        : pathname.startsWith("/services/") ||
       englishServiceLandingPages.has(pathname)
         ? "/zh/services/"
         : pathname.startsWith("/insights/")
