@@ -35,7 +35,7 @@ const staticLastModified: Record<string, string> = {
   "/fingerprinting/": "2026-07-18",
   "/insights/": "2026-05-06",
   "/japan-apostille/": "2026-05-06",
-  "/korea-apostille/": "2026-07-14",
+  "/korea-apostille/": "2026-07-22",
   "/services/": "2026-07-14",
   "/privacy/": "2026-07-14",
   "/shanghai-fingerprinting/": "2026-07-18",
