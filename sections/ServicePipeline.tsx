@@ -48,7 +48,7 @@ const services: Service[] = [
     id: "background-checks",
     icon: ShieldCheck,
     title: "Federal & State Background Checks",
-    image: "/background-checks.jpg",
+    image: "/background-checks.png",
     summary:
       "Criminal record checks and identity verification from the United States, Canada, UK, Australia, and other jurisdictions.",
     details: [
@@ -175,7 +175,7 @@ export default function ServicePipeline() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`object-cover group-hover:scale-105 transition-transform duration-500 ${service.id === "background-checks" ? "object-[center_25%]" : "object-center"}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-hive-surface via-hive-surface/60 to-transparent" />
                   </div>
