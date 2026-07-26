@@ -37,6 +37,7 @@ const staticLastModified: Record<string, string> = {
   "/japan-apostille/": "2026-05-06",
   "/japan-fingerprinting/": "2026-07-22",
   "/korea-apostille/": "2026-07-22",
+  "/partners/korean-horizons/": "2026-07-26",
   "/services/": "2026-07-14",
   "/privacy/": "2026-07-14",
   "/shanghai-fingerprinting/": "2026-07-18",
@@ -91,6 +92,9 @@ function routeSettings(logicalPath: string): Pick<
   }
   if (logicalPath.startsWith("/insights/")) {
     return { changeFrequency: "monthly", priority: 0.7 };
+  }
+  if (logicalPath.startsWith("/partners/")) {
+    return { changeFrequency: "monthly", priority: 0.8 };
   }
   if (
     logicalPath === "/fingerprinting/" ||
