@@ -14,6 +14,7 @@ import {
   FileCheck2,
   FileText,
   Fingerprint,
+  Globe2,
   GraduationCap,
   IdCard,
   Image as ImageIcon,
@@ -26,10 +27,7 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
-import type {
-  PartnerIconName,
-  RecruiterPartnerConfig,
-} from "@/lib/recruiter-partners";
+import type { PartnerPageConfig, PartnerIconName } from "@/lib/partners/types";
 
 const checklistIcons: Record<PartnerIconName, LucideIcon> = {
   passport: IdCard,
@@ -50,15 +48,15 @@ type PartnerStyle = CSSProperties & {
 };
 
 function DocumentHeroIllustration({
-  recruiterName,
+  illustration,
 }: {
-  recruiterName: string;
+  illustration: PartnerPageConfig["hero"]["illustration"];
 }) {
   return (
     <div
       className="relative mx-auto min-h-[390px] w-full max-w-xl sm:min-h-[460px]"
       role="img"
-      aria-label={`Document preparation illustration for ${recruiterName} applicants showing an FBI background check, fingerprint card, university degree and apostille certificate`}
+      aria-label={illustration.ariaLabel}
     >
       <div
         className="absolute inset-x-[12%] bottom-[7%] top-[10%] rounded-[2rem] bg-[rgb(var(--partner-primary-rgb)/0.12)] blur-3xl"
@@ -75,10 +73,10 @@ function DocumentHeroIllustration({
           </div>
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
-              United States
+              {illustration.backgroundCheck.jurisdiction}
             </p>
             <p className="text-sm font-black uppercase tracking-tight sm:text-base">
-              FBI Background Check
+              {illustration.backgroundCheck.title}
             </p>
           </div>
         </div>
@@ -89,7 +87,7 @@ function DocumentHeroIllustration({
         </div>
         <div className="mt-7 flex items-end justify-between">
           <div className="rounded-lg border border-slate-300 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">
-            Identity History Summary
+            {illustration.backgroundCheck.subtitle}
           </div>
           <div className="h-10 w-20 border-b border-slate-500" />
         </div>
@@ -102,9 +100,11 @@ function DocumentHeroIllustration({
         <div className="mb-4 flex items-center justify-between border-b border-slate-400/40 pb-3">
           <div>
             <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500">
-              Applicant
+              {illustration.fingerprintCard.eyebrow}
             </p>
-            <p className="text-lg font-black">FD-258</p>
+            <p className="text-lg font-black">
+              {illustration.fingerprintCard.title}
+            </p>
           </div>
           <Fingerprint className="h-8 w-8 text-slate-600" />
         </div>
@@ -126,10 +126,10 @@ function DocumentHeroIllustration({
       >
         <GraduationCap className="mb-7 h-8 w-8 text-amber-300" />
         <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-white/45">
-          Academic credential
+          {illustration.degree.eyebrow}
         </p>
         <p className="mt-1 font-serif text-xl sm:text-2xl">
-          University Degree
+          {illustration.degree.title}
         </p>
         <div className="mt-6 h-px w-full bg-white/15" />
       </div>
@@ -140,10 +140,10 @@ function DocumentHeroIllustration({
       >
         <Stamp className="mb-1 h-7 w-7 text-[var(--partner-primary)] sm:h-9 sm:w-9" />
         <p className="text-[8px] font-black uppercase tracking-[0.16em] sm:text-[10px]">
-          Apostille
+          {illustration.apostille.title}
         </p>
         <p className="mt-1 text-[6px] font-semibold uppercase tracking-widest text-slate-500 sm:text-[8px]">
-          Convention of 1961
+          {illustration.apostille.subtitle}
         </p>
       </div>
     </div>
@@ -158,7 +158,7 @@ function ChecklistCard({
 }: {
   title: string;
   description: string;
-  items: RecruiterPartnerConfig["checklist"]["applicant"];
+  items: PartnerPageConfig["checklist"]["applicant"]["items"];
   emphasized?: boolean;
 }) {
   return (
@@ -218,16 +218,29 @@ function ChecklistCard({
   );
 }
 
-export default function RecruiterPartnerPage({
+export function RecruiterPartnerPage({
   config,
 }: {
-  config: RecruiterPartnerConfig;
+  config: PartnerPageConfig;
 }) {
   const style: PartnerStyle = {
     "--partner-primary": config.brand.primary,
     "--partner-primary-rgb": config.brand.primaryRgb,
     "--partner-secondary": config.brand.secondary,
   };
+  const sectionLinks = [
+    ...(config.countrySelector
+      ? [["Start here", "#country-selector"] as const]
+      : []),
+    ["Document checklist", "#document-checklist"] as const,
+    ...(config.apostille
+      ? [["Apostille guidance", "#apostille-guidance"] as const]
+      : []),
+    ["Common mistakes", "#common-mistakes"] as const,
+    ["Process timeline", "#document-timeline"] as const,
+    ["Fingerprinting", "#fingerprinting-options"] as const,
+    ["Questions", "#frequently-asked-questions"] as const,
+  ];
 
   return (
     <div
@@ -235,7 +248,10 @@ export default function RecruiterPartnerPage({
       style={style}
       data-partner={config.referralCode}
     >
-      <section className="relative px-6 pb-20 lg:px-12" aria-labelledby="partner-page-title">
+      <section
+        className="relative px-6 pb-20 lg:px-12"
+        aria-labelledby="partner-page-title"
+      >
         <div
           className="pointer-events-none absolute -left-52 -top-40 h-[32rem] w-[32rem] rounded-full bg-[rgb(var(--partner-primary-rgb)/0.12)] blur-3xl"
           aria-hidden="true"
@@ -246,7 +262,10 @@ export default function RecruiterPartnerPage({
         />
 
         <div className="relative mx-auto max-w-7xl">
-          <nav aria-label="Breadcrumb" className="mb-10 flex items-center gap-2 text-sm">
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-10 flex items-center gap-2 text-sm"
+          >
             <Link
               href="/"
               className="text-hive-muted transition-colors hover:text-white"
@@ -274,13 +293,16 @@ export default function RecruiterPartnerPage({
                 className="h-11 w-auto object-contain"
               />
             </div>
-            <div className="hidden h-9 w-px bg-hive-border sm:block" aria-hidden="true" />
+            <div
+              className="hidden h-9 w-px bg-hive-border sm:block"
+              aria-hidden="true"
+            />
             <div className="leading-tight">
               <p className="text-lg font-black tracking-tight text-white">
                 Hive <span className="text-red-500">Digital</span>
               </p>
               <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-hive-dim">
-                Candidate document resource partner
+                {config.coBrandLabel}
               </p>
             </div>
           </div>
@@ -314,30 +336,33 @@ export default function RecruiterPartnerPage({
                   {config.cta.primaryLabel}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
-                <a
-                  href={config.cta.secondaryHref}
-                  download
-                  className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-surface px-7 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[rgb(var(--partner-primary-rgb)/0.55)]"
-                >
-                  <Download className="h-4 w-4" aria-hidden="true" />
-                  {config.cta.secondaryLabel}
-                </a>
+                {config.cta.secondaryDownload ? (
+                  <a
+                    href={config.cta.secondaryHref}
+                    download
+                    className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-surface px-7 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[rgb(var(--partner-primary-rgb)/0.55)]"
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {config.cta.secondaryLabel}
+                  </a>
+                ) : (
+                  <Link
+                    href={config.cta.secondaryHref}
+                    className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-surface px-7 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[rgb(var(--partner-primary-rgb)/0.55)]"
+                  >
+                    {config.cta.secondaryLabel}
+                  </Link>
+                )}
               </div>
             </div>
-            <DocumentHeroIllustration recruiterName={config.recruiterName} />
+            <DocumentHeroIllustration illustration={config.hero.illustration} />
           </div>
 
           <nav
             aria-label="Resource centre sections"
             className="mt-14 flex flex-wrap gap-2 border-t border-hive-border pt-7"
           >
-            {[
-              ["Document checklist", "#document-checklist"],
-              ["Common mistakes", "#common-mistakes"],
-              ["Process timeline", "#document-timeline"],
-              ["Fingerprinting", "#fingerprinting-options"],
-              ["Questions", "#frequently-asked-questions"],
-            ].map(([label, href]) => (
+            {sectionLinks.map(([label, href]) => (
               <a
                 key={href}
                 href={href}
@@ -350,6 +375,55 @@ export default function RecruiterPartnerPage({
         </div>
       </section>
 
+      {config.countrySelector && (
+        <section
+          id="country-selector"
+          className="scroll-mt-24 border-y border-hive-border bg-hive-surface/45 px-6 py-20 lg:px-12"
+          aria-labelledby="country-selector-title"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
+              <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--partner-primary)]">
+                {config.countrySelector.eyebrow}
+              </span>
+              <h2
+                id="country-selector-title"
+                className="mt-3 text-3xl font-bold uppercase tracking-tight text-white md:text-5xl"
+              >
+                {config.countrySelector.title}
+              </h2>
+              <p className="mt-4 leading-relaxed text-hive-muted">
+                {config.countrySelector.introduction}
+              </p>
+            </div>
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {config.countrySelector.countries.map((country) => (
+                <li key={country.name}>
+                  <Link
+                    href={country.href}
+                    className="group flex min-h-24 items-center gap-4 rounded-2xl border border-hive-border bg-hive-surface p-5 transition-all hover:-translate-y-1 hover:border-[rgb(var(--partner-primary-rgb)/0.5)]"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgb(var(--partner-primary-rgb)/0.11)]">
+                      <Globe2
+                        className="h-5 w-5 text-[var(--partner-primary)]"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span className="font-semibold text-white">
+                      {country.name}
+                    </span>
+                    <ArrowRight
+                      className="ml-auto h-4 w-4 text-hive-dim transition-transform group-hover:translate-x-1 group-hover:text-[var(--partner-primary)]"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       <section
         id="document-checklist"
         className="scroll-mt-24 border-y border-hive-border bg-[#0d0d13] px-6 py-20 lg:px-12"
@@ -358,40 +432,86 @@ export default function RecruiterPartnerPage({
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--partner-primary)]">
-              Start with clarity
+              {config.checklist.eyebrow}
             </span>
             <h2
               id="document-checklist-title"
               className="mt-3 text-3xl font-bold uppercase tracking-tight text-white md:text-5xl"
             >
-              Korea Document Checklist
+              {config.checklist.title}
             </h2>
             <p className="mt-4 leading-relaxed text-hive-muted">
-              Use this as an orientation guide, then follow the current checklist
-              and timing instructions supplied by {config.recruiterName}.
+              {config.checklist.introduction}
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <ChecklistCard
-              title="Documents You'll Prepare"
-              description="Personal and application materials normally supplied by the candidate."
-              items={config.checklist.applicant}
+              title={config.checklist.applicant.title}
+              description={config.checklist.applicant.description}
+              items={config.checklist.applicant.items}
             />
             <ChecklistCard
-              title="Documents Hive Can Help With"
-              description="Specialist background-check, fingerprinting and apostille workflows."
-              items={config.checklist.hive}
+              title={config.checklist.hive.title}
+              description={config.checklist.hive.description}
+              items={config.checklist.hive.items}
               emphasized
             />
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-12" aria-labelledby="partnership-reasons-title">
+      {config.apostille && (
+        <section
+          id="apostille-guidance"
+          className="scroll-mt-24 px-6 py-20 lg:px-12"
+          aria-labelledby="apostille-guidance-title"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-10 max-w-3xl">
+              <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--partner-primary)]">
+                {config.apostille.eyebrow}
+              </span>
+              <h2
+                id="apostille-guidance-title"
+                className="mt-3 text-3xl font-bold uppercase tracking-tight text-white md:text-5xl"
+              >
+                {config.apostille.title}
+              </h2>
+              <p className="mt-4 leading-relaxed text-hive-muted">
+                {config.apostille.introduction}
+              </p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {config.apostille.items.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-3xl border border-hive-border bg-hive-surface p-7 shadow-xl shadow-black/10"
+                >
+                  <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgb(var(--partner-primary-rgb)/0.12)]">
+                    <Stamp
+                      className="h-6 w-6 text-[var(--partner-primary)]"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-hive-muted">
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section
+        className="px-6 py-20 lg:px-12"
+        aria-labelledby="partnership-reasons-title"
+      >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--partner-primary)]">
-              Managed, not merely mailed
+              {config.partnership.eyebrow}
             </span>
             <h2
               id="partnership-reasons-title"
@@ -405,8 +525,7 @@ export default function RecruiterPartnerPage({
                 aria-hidden="true"
               />
               <p className="font-medium leading-relaxed text-white">
-                The goal is a smoother applicant experience: clear instructions,
-                fewer avoidable corrections, and a documented next step.
+                {config.partnership.highlight}
               </p>
             </div>
           </div>
@@ -434,22 +553,20 @@ export default function RecruiterPartnerPage({
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-3xl">
             <span className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-400">
-              Avoid preventable delays
+              {config.commonMistakes.eyebrow}
             </span>
             <h2
               id="common-mistakes-title"
               className="mt-3 text-3xl font-bold uppercase tracking-tight text-white md:text-5xl"
             >
-              Common Document Mistakes
+              {config.commonMistakes.title}
             </h2>
             <p className="mt-4 leading-relaxed text-hive-muted">
-              Most corrections begin with a small mismatch: the wrong authority,
-              a poor scan, an incomplete card, or a document ordered at the wrong
-              time.
+              {config.commonMistakes.introduction}
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {config.commonMistakes.map((mistake) => (
+            {config.commonMistakes.items.map((mistake) => (
               <article
                 key={mistake.title}
                 className="rounded-2xl border border-amber-500/15 bg-amber-500/[0.045] p-6 transition-all hover:-translate-y-1 hover:border-amber-500/35"
@@ -496,9 +613,9 @@ export default function RecruiterPartnerPage({
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--partner-primary)] text-sm font-bold text-white">
-                    {index + 1}
-                  </span>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--partner-primary)] text-sm font-bold text-white">
+                      {index + 1}
+                    </span>
                     <h3 className="font-semibold leading-snug text-white">
                       {step.title}
                     </h3>
@@ -538,7 +655,10 @@ export default function RecruiterPartnerPage({
                   </p>
                 </article>
                 {index < config.timeline.steps.length - 1 && (
-                  <span className="flex justify-center text-[var(--partner-primary)]" aria-hidden="true">
+                  <span
+                    className="flex justify-center text-[var(--partner-primary)]"
+                    aria-hidden="true"
+                  >
                     <ArrowDown className="h-5 w-5 lg:hidden" />
                     <ArrowRight className="hidden h-5 w-5 lg:block" />
                   </span>
@@ -566,22 +686,22 @@ export default function RecruiterPartnerPage({
               />
             </div>
             <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--partner-primary)]">
-              Capture it correctly
+              {config.fingerprinting.eyebrow}
             </span>
             <h2
               id="fingerprinting-options-title"
               className="mt-3 text-3xl font-bold uppercase tracking-tight text-white md:text-4xl"
             >
-              Fingerprinting Options
+              {config.fingerprinting.title}
             </h2>
             <p className="mt-5 leading-relaxed text-hive-muted">
               {config.fingerprinting.introduction}
             </p>
             <Link
-              href="/fingerprinting/"
+              href={config.fingerprinting.guideHref}
               className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[var(--partner-primary)]"
             >
-              Review regional fingerprinting guidance
+              {config.fingerprinting.guideLabel}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -607,7 +727,9 @@ export default function RecruiterPartnerPage({
                 aria-hidden="true"
               />
               <div>
-                <h3 className="font-bold text-white">Quality review before submission</h3>
+                <h3 className="font-bold text-white">
+                  {config.fingerprinting.reviewTitle}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-hive-muted">
                   {config.fingerprinting.reviewNote}
                 </p>
@@ -617,7 +739,10 @@ export default function RecruiterPartnerPage({
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-12" aria-labelledby="about-partnership-title">
+      <section
+        className="px-6 py-20 lg:px-12"
+        aria-labelledby="about-partnership-title"
+      >
         <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-hive-border bg-hive-surface shadow-2xl shadow-black/15">
           <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
             <div className="flex flex-col justify-between border-b border-hive-border bg-white p-8 lg:border-b-0 lg:border-r">
@@ -640,13 +765,13 @@ export default function RecruiterPartnerPage({
             </div>
             <div className="p-8 lg:p-12">
               <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--partner-primary)]">
-                Shared applicant support
+                {config.about.eyebrow}
               </span>
               <h2
                 id="about-partnership-title"
                 className="mt-3 text-3xl font-bold uppercase tracking-tight text-white md:text-4xl"
               >
-                About the Partnership
+                {config.about.heading}
               </h2>
               <div className="mt-7 space-y-5 leading-relaxed text-hive-muted">
                 <p>{config.about.recruiterText}</p>
@@ -675,15 +800,14 @@ export default function RecruiterPartnerPage({
               id="faq-title"
               className="text-3xl font-bold uppercase tracking-tight text-white md:text-5xl"
             >
-              Frequently Asked Questions
+              {config.faq.heading}
             </h2>
             <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-hive-muted">
-              Practical answers for {config.recruiterName} applicants preparing
-              U.S. or Canadian documents for teaching in South Korea.
+              {config.faq.introduction}
             </p>
           </div>
           <div className="space-y-3">
-            {config.faqAdditions.map((faq) => (
+            {config.faq.items.map((faq) => (
               <details
                 key={faq.question}
                 className="group rounded-2xl border border-hive-border bg-hive-surface open:border-[rgb(var(--partner-primary-rgb)/0.4)]"
@@ -695,12 +819,17 @@ export default function RecruiterPartnerPage({
                   <span className="flex-1 font-semibold text-white">
                     {faq.question}
                   </span>
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-hive-border text-hive-muted transition-transform group-open:rotate-45" aria-hidden="true">
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-hive-border text-hive-muted transition-transform group-open:rotate-45"
+                    aria-hidden="true"
+                  >
                     +
                   </span>
                 </summary>
                 <div className="border-t border-hive-border px-5 py-5 sm:px-6">
-                  <p className="leading-relaxed text-hive-muted">{faq.answer}</p>
+                  <p className="leading-relaxed text-hive-muted">
+                    {faq.answer}
+                  </p>
                 </div>
               </details>
             ))}
@@ -713,13 +842,14 @@ export default function RecruiterPartnerPage({
                 aria-hidden="true"
               />
               <div>
-                <h3 className="font-bold text-white">Official references</h3>
+                <h3 className="font-bold text-white">
+                  {config.faq.sourcesHeading}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-hive-muted">
-                  Requirements and agency processing practices can change. Check
-                  current recruiter instructions alongside these primary sources:
+                  {config.faq.sourcesIntroduction}
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-2">
-                  {config.officialSources.map((source) => (
+                  {config.faq.officialSources.map((source) => (
                     <li key={source.href}>
                       <a
                         href={source.href}
@@ -740,7 +870,10 @@ export default function RecruiterPartnerPage({
         </div>
       </section>
 
-      <section className="px-6 pt-10 lg:px-12" aria-labelledby="partner-final-cta">
+      <section
+        className="px-6 pt-10 lg:px-12"
+        aria-labelledby="partner-final-cta"
+      >
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl border border-[rgb(var(--partner-primary-rgb)/0.4)] bg-gradient-to-br from-[rgb(var(--partner-primary-rgb)/0.2)] via-hive-surface to-hive-surface px-7 py-12 text-center shadow-2xl shadow-black/25 sm:px-10 lg:py-16">
           <div
             className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[rgb(var(--partner-primary-rgb)/0.18)] blur-3xl"
@@ -755,56 +888,86 @@ export default function RecruiterPartnerPage({
               id="partner-final-cta"
               className="text-3xl font-bold uppercase tracking-tight text-white md:text-5xl"
             >
-              Ready to Start Your Documents?
+              {config.finalCta.heading}
             </h2>
             <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-hive-muted">
-              Whether you have already accepted a position or are preparing in
-              advance, our specialists are ready to help you complete your
-              documentation accurately and on time.
+              {config.finalCta.description}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
-                href={config.cta.primaryHref}
+                href={config.finalCta.primaryHref ?? config.cta.primaryHref}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--partner-primary)] px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:brightness-110"
               >
-                {config.cta.primaryLabel}
+                {config.finalCta.primaryLabel ?? config.cta.primaryLabel}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+              {config.finalCta.secondaryLabel &&
+                config.finalCta.secondaryHref &&
+                (config.finalCta.secondaryExternal ? (
+                  <a
+                    href={config.finalCta.secondaryHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[rgb(var(--partner-primary-rgb)/0.45)] bg-hive-bg/60 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[rgb(var(--partner-primary-rgb)/0.1)]"
+                    aria-label={`${config.finalCta.secondaryLabel} (opens in a new tab)`}
+                  >
+                    {config.finalCta.secondaryLabel}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <Link
+                    href={config.finalCta.secondaryHref}
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[rgb(var(--partner-primary-rgb)/0.45)] bg-hive-bg/60 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[rgb(var(--partner-primary-rgb)/0.1)]"
+                  >
+                    {config.finalCta.secondaryLabel}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                ))}
               <a
                 href={config.contact.whatsapp}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-bg/60 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-green-500/40"
               >
-                <MessageCircle className="h-4 w-4 text-green-400" aria-hidden="true" />
+                <MessageCircle
+                  className="h-4 w-4 text-green-400"
+                  aria-hidden="true"
+                />
                 WhatsApp
               </a>
               <Link
                 href={config.contact.kakao}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-bg/60 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-yellow-400/40"
               >
-                <MessageCircle className="h-4 w-4 text-yellow-300" aria-hidden="true" />
+                <MessageCircle
+                  className="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                />
                 Kakao
               </Link>
               <Link
                 href={config.contact.wechat}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-bg/60 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-emerald-400/40"
               >
-                <MessageCircle className="h-4 w-4 text-emerald-300" aria-hidden="true" />
+                <MessageCircle
+                  className="h-4 w-4 text-emerald-300"
+                  aria-hidden="true"
+                />
                 WeChat
               </Link>
               <a
                 href={config.contact.email}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-hive-border bg-hive-bg/60 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-[rgb(var(--partner-primary-rgb)/0.45)]"
               >
-                <Mail className="h-4 w-4 text-[var(--partner-primary)]" aria-hidden="true" />
+                <Mail
+                  className="h-4 w-4 text-[var(--partner-primary)]"
+                  aria-hidden="true"
+                />
                 Email Hive
               </a>
             </div>
             <p className="mt-6 text-xs leading-relaxed text-hive-dim">
-              Hive prepares documents and coordinates document services. Final
-              acceptance decisions remain with the recruiter, employer and
-              relevant government authorities.
+              {config.finalCta.disclaimer}
             </p>
           </div>
         </div>
