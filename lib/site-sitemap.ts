@@ -2,6 +2,7 @@ import { readdirSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 import type { MetadataRoute } from "next";
 import { insights } from "@/lib/insights-data";
+import { partnerPageConfigs } from "@/lib/partners/configs";
 import { getAllServiceSlugs, services } from "@/lib/services-data";
 import { zhInsights } from "@/lib/zh-insights-data";
 
@@ -37,7 +38,6 @@ const staticLastModified: Record<string, string> = {
   "/japan-apostille/": "2026-05-06",
   "/japan-fingerprinting/": "2026-07-22",
   "/korea-apostille/": "2026-07-22",
-  "/partners/korean-horizons/": "2026-07-26",
   "/services/": "2026-07-14",
   "/privacy/": "2026-07-14",
   "/shanghai-fingerprinting/": "2026-07-18",
@@ -77,10 +77,9 @@ function getLocale(segments: string[]): {
   };
 }
 
-function routeSettings(logicalPath: string): Pick<
-  RouteRecord,
-  "changeFrequency" | "priority"
-> {
+function routeSettings(
+  logicalPath: string,
+): Pick<RouteRecord, "changeFrequency" | "priority"> {
   if (logicalPath === "/") {
     return { changeFrequency: "weekly", priority: 1 };
   }
@@ -123,9 +122,7 @@ function discoverStaticRoutes(): RouteRecord[] {
       if (!/^page\.(?:js|jsx|ts|tsx)$/.test(entry.name)) continue;
 
       const relativeDirectory = relative(appDirectory, directory);
-      const rawSegments = relativeDirectory
-        ? relativeDirectory.split(sep)
-        : [];
+      const rawSegments = relativeDirectory ? relativeDirectory.split(sep) : [];
 
       if (
         rawSegments.some(
@@ -183,7 +180,15 @@ function getDynamicRoutes(): RouteRecord[] {
     })),
   );
 
-  return [...serviceRoutes, ...insightRoutes];
+  const partnerRoutes: RouteRecord[] = partnerPageConfigs.map((partner) => ({
+    path: `/partners/${partner.slug}/`,
+    locale: "en",
+    translationKey: `partner:${partner.slug}`,
+    lastModified: partner.lastModified,
+    ...routeSettings(`/partners/${partner.slug}/`),
+  }));
+
+  return [...serviceRoutes, ...insightRoutes, ...partnerRoutes];
 }
 
 function absoluteUrl(path: string): string {
@@ -218,14 +223,10 @@ export function getSitemapEntries(options?: {
 
       return {
         url: absoluteUrl(record.path),
-        ...(record.lastModified
-          ? { lastModified: record.lastModified }
-          : {}),
+        ...(record.lastModified ? { lastModified: record.lastModified } : {}),
         changeFrequency: record.changeFrequency,
         priority: record.priority,
-        ...(translations.length > 1
-          ? { alternates: { languages } }
-          : {}),
+        ...(translations.length > 1 ? { alternates: { languages } } : {}),
       };
     });
 }
