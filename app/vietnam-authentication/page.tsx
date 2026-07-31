@@ -60,7 +60,7 @@ export default function VietnamAuthenticationPage() {
             <div className="bg-hive-bg border border-hive-border rounded-xl p-5">
               <div className="text-xs font-semibold uppercase tracking-wider text-green-400 mb-2">After Sept 30, 2026</div>
               <h3 className="text-white font-semibold mb-2">Hague Apostille</h3>
-              <p className="text-hive-muted text-sm">Apostille from the issuing state's competent authority is sufficient. No Vietnamese Embassy visit required.</p>
+              <p className="text-hive-muted text-sm">Apostille from the issuing state&apos;s competent authority is sufficient. No Vietnamese Embassy visit required.</p>
             </div>
           </div>
         </div>
@@ -91,13 +91,13 @@ export default function VietnamAuthenticationPage() {
         </div>
 
         <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-8 text-center mb-12">
-          <h2 className="text-2xl font-bold text-white mb-3">Vietnam's Apostille Transition</h2>
+          <h2 className="text-2xl font-bold text-white mb-3">Vietnam&apos;s Apostille Transition</h2>
           <p className="text-hive-muted mb-6 max-w-xl mx-auto text-sm leading-relaxed">
             Vietnam acceded to the Hague Apostille Convention on December 31, 2025. The Convention enters into force on September 30, 2026. 
             We guide clients through the transition — whether your documents need 
             pre-accession Embassy authentication or post-accession Apostille processing.
           </p>
-          <a href="/insights/china-vietnam-document-legalization-2026/" className="inline-flex items-center gap-2 text-red-400 hover:text-white text-sm font-semibold transition-colors">Read our Vietnam Legalization Guide →</a>
+          <Link href="/knowledge-centre/china-vietnam-document-legalization-2026/" className="inline-flex items-center gap-2 text-red-400 hover:text-white text-sm font-semibold transition-colors">Read our Vietnam Legalization Guide →</Link>
         </div>
 
         <div className="bg-hive-surface border border-hive-border rounded-2xl p-6 lg:p-8 text-center">

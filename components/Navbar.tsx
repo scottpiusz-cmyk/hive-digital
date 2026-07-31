@@ -10,7 +10,7 @@ const enNavLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services/" },
   { label: "Countries", href: "/countries/" },
-  { label: "Insights", href: "/insights/" },
+  { label: "Knowledge Centre", href: "/knowledge-centre/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
@@ -19,7 +19,7 @@ const zhNavLinks = [
   { label: "\u9996\u9875", href: "/zh/" },
   { label: "\u670d\u52a1", href: "/zh/services/" },
   { label: "\u56fd\u5bb6/\u76ee\u7684\u5730", href: "/zh/countries/" },
-  { label: "\u8d44\u8baf", href: "/zh/insights/" },
+  { label: "\u77e5\u8bc6\u4e2d\u5fc3", href: "/zh/knowledge-centre/" },
   { label: "\u5173\u4e8e", href: "/zh/about/" },
   { label: "\u8054\u7cfb", href: "/zh/contact/" },
 ];

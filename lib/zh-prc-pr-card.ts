@@ -2,9 +2,11 @@ import { InsightArticle } from "./insights-data";
 
 export const zhPrcPrCardArticle: InsightArticle = {
   slug: "fbi-background-check-china-5-star-pr-card-2026",
+  type: "guide",
   title:
     "FBI背景调查完整指南：申请中国五星卡（外国人永久居留身份证）",
   category: "永久居留",
+  tags: ["fbi background checks", "apostilles", "china"],
   excerpt:
     "美国公民申请中国新版五星卡必须提交FBI无犯罪记录证明并经美国国务院海牙认证。本文详解正确流程、时间线和常见延误规避方法。",
   date: "2026年6月",

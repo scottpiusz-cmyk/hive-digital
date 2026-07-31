@@ -1,10 +1,10 @@
 import { readdirSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 import type { MetadataRoute } from "next";
-import { insights } from "@/lib/insights-data";
+import { knowledgeArticles } from "@/lib/insights-data";
 import { partnerPageConfigs } from "@/lib/partners/configs";
 import { getAllServiceSlugs, services } from "@/lib/services-data";
-import { zhInsights } from "@/lib/zh-insights-data";
+import { zhKnowledgeArticles } from "@/lib/zh-insights-data";
 
 export const SITE_URL = "https://www.hiverelo.com";
 
@@ -34,7 +34,7 @@ const staticLastModified: Record<string, string> = {
   "/contact/": "2026-05-06",
   "/countries/": "2026-07-14",
   "/fingerprinting/": "2026-07-18",
-  "/insights/": "2026-05-06",
+  "/knowledge-centre/": "2026-07-30",
   "/japan-apostille/": "2026-05-06",
   "/japan-fingerprinting/": "2026-07-22",
   "/korea-apostille/": "2026-07-22",
@@ -48,7 +48,7 @@ const staticLastModified: Record<string, string> = {
   "/zh/contact/": "2026-06-10",
   "/zh/countries/": "2026-07-14",
   "/zh/fingerprinting/": "2026-07-18",
-  "/zh/insights/": "2026-06-10",
+  "/zh/knowledge-centre/": "2026-07-30",
   "/zh/services/": "2026-07-14",
   "/zh/privacy/": "2026-07-14",
   "/zh/shanghai-fingerprinting/": "2026-07-18",
@@ -83,13 +83,16 @@ function routeSettings(
   if (logicalPath === "/") {
     return { changeFrequency: "weekly", priority: 1 };
   }
-  if (logicalPath === "/services/" || logicalPath === "/insights/") {
+  if (
+    logicalPath === "/services/" ||
+    logicalPath === "/knowledge-centre/"
+  ) {
     return { changeFrequency: "weekly", priority: 0.9 };
   }
   if (logicalPath.startsWith("/services/")) {
     return { changeFrequency: "monthly", priority: 0.8 };
   }
-  if (logicalPath.startsWith("/insights/")) {
+  if (logicalPath.startsWith("/knowledge-centre/")) {
     return { changeFrequency: "monthly", priority: 0.7 };
   }
   if (logicalPath.startsWith("/partners/")) {
@@ -162,22 +165,27 @@ function getDynamicRoutes(): RouteRecord[] {
     ...routeSettings(`/services/${slug}/`),
   }));
 
-  const insightSources = [
-    { locale: "en" as const, prefix: "/insights", articles: insights },
+  const knowledgeSources = [
+    {
+      locale: "en" as const,
+      prefix: "/knowledge-centre",
+      articles: knowledgeArticles,
+    },
     {
       locale: "zh-CN" as const,
-      prefix: "/zh/insights",
-      articles: zhInsights,
+      prefix: "/zh/knowledge-centre",
+      articles: zhKnowledgeArticles,
     },
   ];
-  const insightRoutes = insightSources.flatMap(({ locale, prefix, articles }) =>
-    articles.map((article) => ({
-      path: `${prefix}/${article.slug}/`,
-      locale,
-      translationKey: `insight:${article.translationKey ?? article.slug}`,
-      lastModified: article.lastModified,
-      ...routeSettings(`/insights/${article.slug}/`),
-    })),
+  const knowledgeRoutes = knowledgeSources.flatMap(
+    ({ locale, prefix, articles }) =>
+      articles.map((article) => ({
+        path: `${prefix}/${article.slug}/`,
+        locale,
+        translationKey: `knowledge:${article.translationKey ?? article.slug}`,
+        lastModified: article.lastModified,
+        ...routeSettings(`/knowledge-centre/${article.slug}/`),
+      })),
   );
 
   const partnerRoutes: RouteRecord[] = partnerPageConfigs.map((partner) => ({
@@ -188,7 +196,7 @@ function getDynamicRoutes(): RouteRecord[] {
     ...routeSettings(`/partners/${partner.slug}/`),
   }));
 
-  return [...serviceRoutes, ...insightRoutes, ...partnerRoutes];
+  return [...serviceRoutes, ...knowledgeRoutes, ...partnerRoutes];
 }
 
 function absoluteUrl(path: string): string {

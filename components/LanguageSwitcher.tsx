@@ -8,18 +8,18 @@ const englishToChineseRoutes: Record<string, string> = {
   "/": "/zh/",
   "/services/": "/zh/services/",
   "/countries/": "/zh/countries/",
-  "/insights/": "/zh/insights/",
+  "/knowledge-centre/": "/zh/knowledge-centre/",
   "/about/": "/zh/about/",
   "/contact/": "/zh/contact/",
   "/privacy/": "/zh/privacy/",
   "/fingerprinting/": "/zh/fingerprinting/",
   "/shanghai-fingerprinting/": "/zh/shanghai-fingerprinting/",
-  "/insights/china-vietnam-document-legalization-2026/":
-    "/zh/insights/china-vietnam-document-legalization-2026/",
-  "/insights/fbi-background-check-optimization-2026/":
-    "/zh/insights/fbi-background-check-optimization-2026/",
-  "/insights/china-pcc-guide-2026/":
-    "/zh/insights/china-pcc-guide-2026/",
+  "/knowledge-centre/china-vietnam-document-legalization-2026/":
+    "/zh/knowledge-centre/china-vietnam-document-legalization-2026/",
+  "/knowledge-centre/fbi-background-check-optimization-2026/":
+    "/zh/knowledge-centre/fbi-background-check-optimization-2026/",
+  "/knowledge-centre/china-pcc-guide-2026/":
+    "/zh/knowledge-centre/china-pcc-guide-2026/",
 };
 
 const chineseToEnglishRoutes: Record<string, string> = Object.fromEntries(
@@ -51,7 +51,9 @@ export default function LanguageSwitcher() {
 
   const enPath = isChinese
     ? chineseToEnglishRoutes[pathname] ??
-      (pathname.startsWith("/zh/insights/") ? "/insights/" : "/")
+      (pathname.startsWith("/zh/knowledge-centre/")
+        ? "/knowledge-centre/"
+        : "/")
     : pathname;
   const zhPath = isChinese
     ? pathname
@@ -61,8 +63,8 @@ export default function LanguageSwitcher() {
         : pathname.startsWith("/services/") ||
       englishServiceLandingPages.has(pathname)
         ? "/zh/services/"
-        : pathname.startsWith("/insights/")
-          ? "/zh/insights/"
+        : pathname.startsWith("/knowledge-centre/")
+          ? "/zh/knowledge-centre/"
           : "/zh/");
 
   return (

@@ -1,24 +1,21 @@
-export interface ZhInsightArticle {
-  slug: string;
-  translationKey?: string;
-  lastModified?: string;
-  title: string;
-  category: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  author: string;
-  relatedPipelines: { label: string; href: string }[];
-  content: string;
-}
+import type { KnowledgeArticle } from "./knowledge-centre";
+
+export type ZhInsightArticle = KnowledgeArticle;
 
 export const zhInsights: ZhInsightArticle[] = [
   {
     slug: "china-vietnam-document-legalization-2026",
     translationKey: "china-vietnam-document-legalization-2026",
     lastModified: "2026-04-15",
+    publishedAt: "2026-04-15",
+    type: "guide",
+    featured: true,
     title: "中越文件认证合规指南：2026年越南加入海牙 Apostille 公约后的新规",
-    category: "法规解读",
+    seoTitle: "中越文件认证指南 | Hive Digital",
+    metaDescription: "介绍中国签发文件及第三国文件在越南使用前的认证、Apostille及文件准备注意事项。",
+    openGraphImage: "/apostille-macro.jpg",
+    category: "Apostille认证",
+    tags: ["apostilles", "authentication", "china", "vietnam"],
     excerpt: "越南加入海牙 Apostille 公约及第219/2025/ND-CP号法令对文件合规流程产生重大影响。HR团队需要了解的关键变化。",
     date: "2026年4月",
     readTime: "8分钟阅读",
@@ -27,6 +24,16 @@ export const zhInsights: ZhInsightArticle[] = [
       { label: "美国到中国文件流程", href: "/zh/services/#background-checks" },
       { label: "中国到越南文件流程", href: "/zh/services/" },
       { label: "中国签证服务", href: "/zh/services/" },
+    ],
+    faqs: [
+      {
+        question: "文件在越南使用前应在哪里办理认证？",
+        answer: "通常应从文件签发国家或司法辖区开始办理。美国学位、加拿大犯罪记录证明和中国签发证书各自适用不同的原属地流程。",
+      },
+      {
+        question: "所有文件都适用同一种认证流程吗？",
+        answer: "不适用。正确流程同时取决于文件签发地和使用地，并可能因文件类型和接收机构而异。",
+      },
     ],
     content: `
 ## 法规转折点
@@ -149,8 +156,15 @@ Hive Digital为中越走廊提供端到端文件认证服务。联系我们的�
     slug: "fbi-background-check-optimization-2026",
     translationKey: "fbi-background-check-optimization-2026",
     lastModified: "2026-03-20",
+    publishedAt: "2026-03-20",
+    type: "guide",
+    featured: true,
     title: "缩短FBI背景调查周期：时间紧迫部署的中介机构策略",
-    category: "流程优化",
+    seoTitle: "FBI背景调查办理指南 | Hive Digital",
+    metaDescription: "了解FBI身份历史摘要的指纹提交、办理渠道、Apostille衔接及时间规划注意事项。",
+    openGraphImage: "/background-checks.png",
+    category: "FBI背景调查",
+    tags: ["fbi background checks", "fingerprinting", "apostilles"],
     excerpt: "FBI身份历史摘要检查是大多数流动工作流程中最长的处理项目。了解如何通过批准的中介机构将14周压缩到3周。",
     date: "2026年3月",
     readTime: "5分钟阅读",
@@ -159,6 +173,16 @@ Hive Digital为中越走廊提供端到端文件认证服务。联系我们的�
       { label: "美国到中国文件流程", href: "/zh/services/#background-checks" },
       { label: "背景调查服务", href: "/zh/services/#background-checks" },
       { label: "中国签证服务", href: "/zh/services/" },
+    ],
+    faqs: [
+      {
+        question: "什么是FBI批准的渠道服务商？",
+        answer: "FBI批准的渠道服务商是获授权为符合条件的申请人电子提交基于指纹的身份历史摘要申请的私营机构。",
+      },
+      {
+        question: "开始办理前是否应检查指纹质量？",
+        answer: "建议检查。原件进入办理流程前审阅清晰的高分辨率扫描件，有助于及早发现信息遗漏或指纹质量问题。",
+      },
     ],
     content: `
 ## 瓶颈问题
@@ -249,8 +273,15 @@ Hive Digital将FBI背景调查管理作为综合背景调查服务的一部分�
     slug: "china-pcc-guide-2026",
     translationKey: "china-pcc-guide-2026",
     lastModified: "2026-02-10",
+    publishedAt: "2026-02-10",
+    type: "guide",
+    featured: true,
     title: "获取中国无犯罪记录证明：前居民完整指南",
-    category: "文件指南",
+    seoTitle: "中国无犯罪记录证明办理指南 | Hive Digital",
+    metaDescription: "为曾在中国居住的人士介绍无犯罪记录证明申请，以及可能需要的公证和认证准备。",
+    openGraphImage: "/china-pcc.jpg",
+    category: "国家指南",
+    tags: ["china", "police clearance", "background checks", "authentication"],
     excerpt: "如果您曾在中国居住，需要无犯罪记录证明用于移民或就业，以下是2026年关于公安局流程的一切须知。",
     date: "2026年2月",
     readTime: "6分钟阅读",
@@ -259,6 +290,16 @@ Hive Digital将FBI背景调查管理作为综合背景调查服务的一部分�
       { label: "中国无犯罪记录证明", href: "/zh/services/" },
       { label: "背景调查服务", href: "/zh/services/#background-checks" },
       { label: "Apostille与认证", href: "/zh/services/" },
+    ],
+    faqs: [
+      {
+        question: "什么是中国无犯罪记录证明？",
+        answer: "这是通过相关中国公安机关程序出具的文件，用于说明申请人在符合条件的中国居住期间是否存在犯罪记录。",
+      },
+      {
+        question: "离开中国后还可以申请吗？",
+        answer: "各城市程序不同。部分申请可由授权代表办理，当地机构也可能要求提供该城市特定的居住、签证和身份证明。",
+      },
     ],
     content: `
 ## 什么是中国无犯罪记录证明？
@@ -383,4 +424,16 @@ export function getZhInsightBySlug(slug: string): ZhInsightArticle | undefined {
 
 export function getAllZhInsightSlugs(): string[] {
   return zhInsights.map((a) => a.slug);
+}
+
+export const zhKnowledgeArticles = zhInsights;
+
+export function getZhKnowledgeArticleBySlug(
+  slug: string,
+): ZhInsightArticle | undefined {
+  return getZhInsightBySlug(slug);
+}
+
+export function getAllZhKnowledgeArticleSlugs(): string[] {
+  return getAllZhInsightSlugs();
 }

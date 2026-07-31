@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/insights",
+      "destination": "/knowledge-centre/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/:path*",
+      "destination": "/knowledge-centre/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/insights",
+      "destination": "/zh/knowledge-centre/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/insights/:path*",
+      "destination": "/zh/knowledge-centre/:path*",
+      "permanent": true
+    }
+  ]
+}
