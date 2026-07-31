@@ -5,7 +5,7 @@ import ServicePipeline from "@/sections/ServicePipeline";
 import CountriesWeSupport from "@/sections/CountriesWeSupport";
 import TrustpilotCarousel from "@/sections/TrustpilotCarousel";
 import ProcessSteps from "@/sections/ProcessSteps";
-import LatestInsights from "@/sections/LatestInsights";
+import KnowledgeCentre from "@/sections/KnowledgeCentre";
 import FAQ from "@/sections/FAQ";
 import Head from "next/head";
 
@@ -57,7 +57,7 @@ export default function Home() {
       <ServicePipeline />
       <TrustpilotCarousel />
       <ProcessSteps />
-      <LatestInsights />
+      <KnowledgeCentre />
       <FAQ />
     </>
   );

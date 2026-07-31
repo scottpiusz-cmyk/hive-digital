@@ -2,9 +2,11 @@ import { InsightArticle } from "./insights-data";
 
 export const prcPrCardArticle: InsightArticle = {
   slug: "fbi-background-check-china-5-star-pr-card-2026",
+  type: "guide",
   title:
     "The Complete Guide to FBI Background Checks for China's 5-Star Permanent Residence Card (五星卡) — 2026",
   category: "Permanent Residence",
+  tags: ["fbi background checks", "apostilles", "china"],
   excerpt:
     "American applicants for China's new 5-Star Permanent Residence Card (五星卡) must submit an FBI Identity History Summary Check with a US Department of State apostille. Here's the exact process, timeline, and how to avoid common delays.",
   date: "June 2026",

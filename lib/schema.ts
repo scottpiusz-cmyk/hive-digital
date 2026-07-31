@@ -1,18 +1,15 @@
-interface ArticleForSchema {
-  slug: string;
-  title: string;
-  category: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  author: string;
-  content: string;
-}
+import type { KnowledgeArticle } from "./knowledge-centre";
 
 const siteUrl = "https://www.hiverelo.com";
 
-export function generateArticleSchema(article: ArticleForSchema): object {
+export function generateArticleSchema(
+  article: KnowledgeArticle,
+  options?: { path?: string; language?: string },
+): object {
   const wordCount = article.content.split(/\s+/).length;
+  const articlePath =
+    options?.path ?? `/knowledge-centre/${article.slug}/`;
+  const articleUrl = new URL(articlePath, siteUrl).toString();
 
   // Extract HowTo steps from content (lines starting with "Step X:" or numbered steps)
   const howToSteps: Array<{ name: string; text: string }> = [];
@@ -52,15 +49,18 @@ export function generateArticleSchema(article: ArticleForSchema): object {
       name: "Hive Digital",
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/hive-logo.png`,
+        url: `${siteUrl}/og-image.ico`,
       },
     },
-    datePublished: article.date,
-    dateModified: article.date,
-    url: `${siteUrl}/insights/${article.slug}/`,
+    datePublished: article.publishedAt ?? article.lastModified,
+    dateModified: article.lastModified ?? article.publishedAt,
+    image: article.openGraphImage
+      ? new URL(article.openGraphImage, siteUrl).toString()
+      : undefined,
+    url: articleUrl,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteUrl}/insights/${article.slug}/`,
+      "@id": articleUrl,
     },
     articleSection: article.category,
     about: {
@@ -69,7 +69,7 @@ export function generateArticleSchema(article: ArticleForSchema): object {
     },
     proficiencyLevel: "Expert",
     wordCount,
-    inLanguage: "en-US",
+    inLanguage: options?.language ?? "en-US",
   };
 
   if (hasHowTo) {
@@ -93,21 +93,41 @@ export function generateArticleSchema(article: ArticleForSchema): object {
 }
 
 export function generateItemListSchema(
-  articles: ArticleForSchema[]
+  articles: KnowledgeArticle[],
+  options?: { path?: string; name?: string; description?: string },
 ): object {
+  const basePath = options?.path ?? "/knowledge-centre/";
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Hive Digital Insights — Document Compliance Guides",
+    name: options?.name ?? "Hive Digital Knowledge Centre",
     description:
-      "Regulatory intelligence and practical guides for crossborder document compliance. China-Vietnam corridor, FBI checks, apostille, and more.",
-    url: `${siteUrl}/insights/`,
+      options?.description ??
+      "Expert guides covering background checks, fingerprinting, apostilles, authentication and international document preparation.",
+    url: new URL(basePath, siteUrl).toString(),
     itemListElement: articles.map((article, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: article.title,
       description: article.excerpt,
-      url: `${siteUrl}/insights/${article.slug}/`,
+      url: new URL(`${basePath}${article.slug}/`, siteUrl).toString(),
+    })),
+  };
+}
+
+export function generateFaqSchema(
+  faqs: NonNullable<KnowledgeArticle["faqs"]>,
+): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
     })),
   };
 }
