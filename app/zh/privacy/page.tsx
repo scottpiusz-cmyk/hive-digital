@@ -43,6 +43,8 @@ const sections = [
     title: "网站技术数据",
     content: [
       "托管和安全系统可能会处理有限的技术信息，例如IP地址、浏览器类型、访问页面、时间记录以及错误或安全日志。这些信息可能用于网站运营、安全保护和故障排查。",
+      "Hive使用Google Analytics了解访客如何使用本网站并改进网站内容。Google Analytics可能会处理页面网址和标题、来源页面、大致位置、设备及浏览器信息，以及页面浏览、滚动、外部链接点击、下载、表单互动、站内搜索和视频活动等互动信息。",
+      "分析信息会根据Google的适用条款传输至Google并由其处理，也可能在访客所在国家或地区以外进行处理。信息的保存与删除将依照Hive的Analytics配置及Google的服务控制执行。请勿在网站网址或站内搜索字段中输入文件案件详情或敏感个人信息。",
     ],
   },
   {
@@ -71,7 +73,7 @@ export default function ChinesePrivacyPage() {
     <main className="pt-24 pb-16 px-6 lg:px-12 bg-hive-bg min-h-screen">
       <article className="max-w-4xl mx-auto">
         <p className="text-red-400 text-sm font-semibold uppercase tracking-widest mb-3">
-          更新日期：2026年7月14日
+          更新日期：2026年8月11日
         </p>
         <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
           隐私与数据处理
