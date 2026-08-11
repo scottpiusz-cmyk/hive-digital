@@ -45,6 +45,8 @@ const sections = [
     title: "Website Technical Data",
     content: [
       "Hosting and security systems may process limited technical information such as IP address, browser type, requested pages, timestamps, and error or security logs. This information may be used to operate, secure, and troubleshoot the website.",
+      "Hive uses Google Analytics to understand how visitors use the website and improve its content. Google Analytics may process page URLs and titles, referring pages, approximate location, device and browser information, and interactions such as page views, scrolling, outbound-link clicks, downloads, form interactions, site searches, and video activity.",
+      "Analytics information is transmitted to and processed by Google under its applicable terms and may be handled outside the visitor's country. Retention and deletion follow Hive's Analytics configuration and Google's service controls. Please do not place document case details or sensitive personal information in website URLs or site-search fields.",
     ],
   },
   {
@@ -73,7 +75,7 @@ export default function PrivacyPage() {
     <main className="pt-24 pb-16 px-6 lg:px-12 bg-hive-bg min-h-screen">
       <article className="max-w-4xl mx-auto">
         <p className="text-red-400 text-sm font-semibold uppercase tracking-widest mb-3">
-          Last updated: July 14, 2026
+          Last updated: August 11, 2026
         </p>
         <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
           Privacy and Data Handling
