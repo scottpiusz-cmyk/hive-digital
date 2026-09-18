@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import KnowledgeCentreIndex from "@/components/knowledge-centre/KnowledgeCentreIndex";
 import { knowledgeArticles } from "@/lib/insights-data";
+import { englishExternalArticles } from "@/lib/external-articles";
 import { generateItemListSchema } from "@/lib/schema";
 
 const description =
@@ -35,6 +36,7 @@ export default function KnowledgeCentrePage() {
     path: "/knowledge-centre/",
     name: "Hive Digital Knowledge Centre",
     description,
+    externalArticles: englishExternalArticles,
   });
 
   return (
@@ -45,6 +47,7 @@ export default function KnowledgeCentrePage() {
       />
       <KnowledgeCentreIndex
         articles={knowledgeArticles}
+        externalArticles={englishExternalArticles}
         basePath="/knowledge-centre"
         labels={{
           eyebrow: "Hive Digital Resources",
@@ -56,7 +59,7 @@ export default function KnowledgeCentrePage() {
             "Permanent, practical resources for planning background checks, authentication and international document preparation.",
           latestTitle: "Latest Updates",
           latestDescription:
-            "Verified service announcements, processing changes and operational notices are published separately from our evergreen guides.",
+            "Recent articles, service announcements and practical updates from Hive, including articles published on WeChat.",
           noUpdates: "There are no current service announcements.",
           guideBadge: "Guide",
           updateBadge: "Update",

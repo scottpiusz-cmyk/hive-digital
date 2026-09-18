@@ -23,11 +23,12 @@ export default function ZhHero() {
           <Link href="/zh/contact/" className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-hive-accent hover:bg-hive-accent-hover text-hive-bg text-sm font-semibold tracking-wide transition-all hover:shadow-glow">联系我们 <ArrowRight className="w-4 h-4" /></Link>
           <Link href="/zh/services/" className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-hive-border text-hive-muted hover:text-white hover:border-hive-accent hover:bg-hive-accent/10 text-sm font-semibold tracking-wide transition-all">探索服务 &rarr;</Link>
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }} className="mt-16 flex items-center gap-3">
-          <div className="flex items-center gap-1.5"><span className="text-green-400 text-sm">&#9733; 4.9</span><span className="text-hive-muted text-xs">/ 5</span></div>
-          <span className="text-hive-dim text-xs">Trustpilot</span>
-          <span className="text-hive-dim text-[10px]">&mdash; 300+ 真实评价</span>
-        </motion.div>
+        <a
+          href="https://www.trustpilot.com/review/www.hiverelo.com"
+          className="mt-5 mb-24 inline-flex min-h-11 items-center self-start rounded-sm text-sm text-white/80 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-hive-accent"
+        >
+          查看 Trustpilot 上的客户评价
+        </a>
       </div>
     </section>
   );

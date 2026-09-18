@@ -4,9 +4,11 @@ import {
   BookOpen,
   Calendar,
   Clock,
+  ExternalLink,
   Megaphone,
 } from "lucide-react";
 import type { KnowledgeArticle } from "@/lib/knowledge-centre";
+import type { ExternalArticle } from "@/lib/external-articles";
 import { getKnowledgeCategories } from "@/lib/knowledge-centre";
 
 export interface KnowledgeCentreIndexLabels {
@@ -62,8 +64,10 @@ export default function KnowledgeCentreIndex({
   articles,
   basePath,
   labels,
+  externalArticles = [],
 }: {
   articles: KnowledgeArticle[];
+  externalArticles?: ExternalArticle[];
   basePath: string;
   labels: KnowledgeCentreIndexLabels;
 }) {
@@ -200,8 +204,34 @@ export default function KnowledgeCentreIndex({
             </p>
           </div>
 
-          {updates.length > 0 ? (
+          {updates.length > 0 || externalArticles.length > 0 ? (
             <div className="grid gap-5 md:grid-cols-2">
+              {externalArticles.map((article) => (
+                <article
+                  key={article.href}
+                  className="group rounded-2xl border border-hive-border bg-hive-surface p-6 transition-colors hover:border-red-500/30"
+                >
+                  <span className="mb-4 inline-flex rounded-full border border-hive-border px-3 py-1 text-xs font-semibold text-hive-muted">
+                    {article.source}
+                  </span>
+                  <h3 className="mb-3 text-xl font-bold text-white transition-colors group-hover:text-red-400">
+                    {article.title}
+                  </h3>
+                  <p className="mb-5 text-sm leading-relaxed text-hive-muted">
+                    {article.excerpt}
+                  </p>
+                  <a
+                    href={article.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-red-400 transition-colors hover:text-red-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-400"
+                  >
+                    {article.linkLabel}
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </article>
+              ))}
               {updates.map((article) => (
                 <article
                   key={article.slug}

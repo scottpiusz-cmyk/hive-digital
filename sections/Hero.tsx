@@ -81,6 +81,13 @@ export default function Hero() {
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
+        <a
+          href="https://www.trustpilot.com/review/www.hiverelo.com"
+          lang="en"
+          className="mt-5 mb-24 inline-flex min-h-11 items-center self-start rounded-sm text-sm text-white/80 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-hive-accent"
+        >
+          Read our reviews on Trustpilot
+        </a>
       </div>
     </section>
   );

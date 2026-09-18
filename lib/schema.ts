@@ -94,7 +94,12 @@ export function generateArticleSchema(
 
 export function generateItemListSchema(
   articles: KnowledgeArticle[],
-  options?: { path?: string; name?: string; description?: string },
+  options?: {
+    path?: string;
+    name?: string;
+    description?: string;
+    externalArticles?: { title: string; excerpt: string; href: string }[];
+  },
 ): object {
   const basePath = options?.path ?? "/knowledge-centre/";
   return {
@@ -105,13 +110,22 @@ export function generateItemListSchema(
       options?.description ??
       "Expert guides covering background checks, fingerprinting, apostilles, authentication and international document preparation.",
     url: new URL(basePath, siteUrl).toString(),
-    itemListElement: articles.map((article, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: article.title,
-      description: article.excerpt,
-      url: new URL(`${basePath}${article.slug}/`, siteUrl).toString(),
-    })),
+    itemListElement: [
+      ...articles.map((article, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: article.title,
+        description: article.excerpt,
+        url: new URL(`${basePath}${article.slug}/`, siteUrl).toString(),
+      })),
+      ...(options?.externalArticles ?? []).map((article, index) => ({
+        "@type": "ListItem",
+        position: articles.length + index + 1,
+        name: article.title,
+        description: article.excerpt,
+        url: article.href,
+      })),
+    ],
   };
 }
 
