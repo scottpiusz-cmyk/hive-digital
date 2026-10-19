@@ -82,7 +82,7 @@ const englishContent = {
     { label: "Frequently Asked Questions", href: "/#faq" },
     {
       label: "FBI Background Check Processing Guide",
-      href: "/knowledge-centre/fbi-background-check-optimization-2026/",
+      href: "/knowledge-centre/fbi-background-check-china/",
     },
     { label: "Fingerprinting Guide", href: "/fingerprinting/" },
     { label: "Knowledge Centre Guides and Updates", href: "/knowledge-centre/" },

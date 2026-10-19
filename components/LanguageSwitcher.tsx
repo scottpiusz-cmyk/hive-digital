@@ -16,8 +16,6 @@ const englishToChineseRoutes: Record<string, string> = {
   "/shanghai-fingerprinting/": "/zh/shanghai-fingerprinting/",
   "/knowledge-centre/china-vietnam-document-legalization-2026/":
     "/zh/knowledge-centre/china-vietnam-document-legalization-2026/",
-  "/knowledge-centre/fbi-background-check-optimization-2026/":
-    "/zh/knowledge-centre/fbi-background-check-optimization-2026/",
   "/knowledge-centre/china-pcc-guide-2026/":
     "/zh/knowledge-centre/china-pcc-guide-2026/",
 };

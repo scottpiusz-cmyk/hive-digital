@@ -1,6 +1,26 @@
 {
   "redirects": [
     {
+      "source": "/knowledge-centre/fbi-background-check-optimization-2026/",
+      "destination": "/knowledge-centre/fbi-background-check-china/",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-centre/fbi-background-check-optimization-2026",
+      "destination": "/knowledge-centre/fbi-background-check-china/",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/fbi-background-check-optimization-2026/",
+      "destination": "/knowledge-centre/fbi-background-check-china/",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/fbi-background-check-optimization-2026",
+      "destination": "/knowledge-centre/fbi-background-check-china/",
+      "statusCode": 301
+    },
+    {
       "source": "/insights/",
       "destination": "/knowledge-centre/",
       "permanent": true

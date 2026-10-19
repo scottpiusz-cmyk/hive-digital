@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Clock, Shield, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "China Fingerprinting Solutions | Hive Digital",
+  title: "Shanghai Fingerprinting for FBI Background Checks | Hive Digital",
   description:
     "Fingerprinting solutions in Shanghai and selected cities across China for FBI, RCMP and other fingerprint-based background checks. Availability varies by location and service type.",
   alternates: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "China Fingerprinting Solutions | Hive Digital",
+    title: "Shanghai Fingerprinting for FBI Background Checks | Hive Digital",
     description:
       "Fingerprinting support in Shanghai and selected cities across China for FBI, RCMP and other fingerprint-based document requirements.",
   },
@@ -35,7 +35,7 @@ const useCases = [
   {
     title: "FBI Background Checks",
     description:
-      "Fingerprinting for FBI Identity History Summary Checks. Electronic submission directly to FBI CJIS.",
+      "Fingerprinting for FBI Identity History Summary Checks. Eligible submissions are coordinated through an FBI-approved channeler.",
   },
   {
     title: "RCMP / CPIC Background Checks",
@@ -45,7 +45,7 @@ const useCases = [
   {
     title: "China Visa & Work Permit",
     description:
-      "Fingerprinting required for Z-Visa applications, residence permits, and work authorization documentation. Some cities — including Suzhou, Kunshan, Ningbo, and Xiamen — may require fingerprint-based reports. HR departments may also enforce stricter internal due diligence policies.",
+      "Some China employment or work permit cases request a fingerprint-based federal report; others accept a state-level check. Confirm the report type, document age, apostille and translation requirements with the employer and receiving local authority before booking.",
   },
   {
     title: "PR Card: Permanent Residence",
@@ -79,7 +79,7 @@ export default function FingerprintingPage() {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
-            China Fingerprinting Solutions
+            Shanghai Fingerprinting for FBI Background Checks
           </h1>
           <p className="text-hive-muted text-lg max-w-3xl leading-relaxed mb-8">
             Shanghai is Hive&apos;s primary fingerprinting location. We also
@@ -87,6 +87,13 @@ export default function FingerprintingPage() {
             Kunming, and other cities across China. Available capture methods
             and appointment options vary by location and service type, so we
             confirm the requirements before scheduling.
+          </p>
+          <p className="mb-6 text-hive-muted leading-relaxed">
+            Need the complete FBI report rather than fingerprinting only? See our{" "}
+            <Link href="/knowledge-centre/fbi-background-check-china/" className="text-red-400 underline underline-offset-4 hover:text-red-300">
+              FBI Background Check in China
+            </Link>{" "}
+            guide for submission options and federal apostille guidance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -197,6 +204,18 @@ export default function FingerprintingPage() {
             ))}
           </div>
         </div>
+
+        <section className="mb-12 rounded-2xl border border-hive-border bg-hive-surface p-6 lg:p-8">
+          <h2 className="mb-3 text-2xl font-bold text-white">Using an FBI Report in China</h2>
+          <p className="leading-relaxed text-hive-muted">
+            Mainland China&apos;s Apostille Convention entry into force was November 7, 2023, as recorded by the{" "}
+            <a href="https://www.hcch.net/en/instruments/conventions/status-table/?cid=41" className="text-red-400 underline">HCCH status table</a>.
+            For a U.S. federal FBI report used in mainland China, confirm whether the recipient requires an apostille and translation.
+            When required, the federal apostille comes from the U.S. Department of State. Its{" "}
+            <a href="https://travel.state.gov/content/travel/en/replace-certify-docs/authenticate-your-document/apostille-requirements.html" className="text-red-400 underline">apostille instructions</a>{" "}
+            warn against notarizing the original federal document. Fingerprint collection and report legalization are separate steps.
+          </p>
+        </section>
 
         <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-3">

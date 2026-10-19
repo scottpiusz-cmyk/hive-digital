@@ -54,6 +54,18 @@ export default async function ServiceDetailPage({ params }: Props) {
           {service.description}
         </p>
 
+        {(slug === "background-checks" || slug === "apostille") && (
+          <p className="mb-10 leading-relaxed text-hive-muted">
+            {slug === "background-checks"
+              ? "Living in China and asked for a U.S. federal report? The guide to "
+              : "Preparing a U.S. federal report for a Chinese recipient? The guide to the "}
+            <Link href="/knowledge-centre/fbi-background-check-china/" className="text-hive-accent underline underline-offset-4">
+              {slug === "background-checks" ? "FBI Background Checks in China" : "FBI background check apostille for China"}
+            </Link>{" "}
+            explains the submission options and requirements to confirm before processing.
+          </p>
+        )}
+
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-hive-surface border border-hive-border rounded-2xl p-6">
             <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">

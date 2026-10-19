@@ -220,7 +220,11 @@ export default function ChinaWorkDocumentsPage() {
                   The right recommendation depends on the employer, application
                   city, applicant nationality and location, and current local
                   requirements. An FBI report should not be treated as
-                  universally required.
+                  universally required. See our guide to an{" "}
+                  <Link href="/knowledge-centre/fbi-background-check-china/" className="text-hive-accent underline underline-offset-4">
+                    FBI background check for a China work permit
+                  </Link>{" "}
+                  for the federal report process and requirements to confirm.
                 </p>
                 <p>
                   Confirm the requirement before spending time and money

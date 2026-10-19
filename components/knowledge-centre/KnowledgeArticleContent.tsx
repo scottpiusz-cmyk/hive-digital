@@ -1,3 +1,4 @@
+import FbiServiceCta from "./FbiServiceCta";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { slugifyKnowledgeHeading } from "@/lib/knowledge-centre";
@@ -73,6 +74,12 @@ export default function KnowledgeArticleContent({
     const trimmed = lines[index].trim();
 
     if (!trimmed) {
+      index += 1;
+      continue;
+    }
+
+    if (trimmed === "[FBI_SERVICE_CTA]") {
+      elements.push(<FbiServiceCta key={`cta-${key++}`} />);
       index += 1;
       continue;
     }
