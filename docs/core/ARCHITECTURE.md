@@ -27,7 +27,8 @@ deliberately changed.
 
 ```text
 app/                    App Router pages, layouts, metadata, and sitemap routes
-  zh/                   Chinese route tree
+  (en)/                 English route tree and root layout (no URL prefix)
+  zh/                   Chinese route tree and root layout
 components/             Shared interface components
 lib/                    Content data, schemas, and sitemap utilities
 public/                 Publicly served static assets and robots.txt
@@ -54,6 +55,18 @@ The current route families include:
 
 Korean (`/ko`) and Japanese (`/ja`) are reserved future locale trees. They do
 not currently have pages and must not appear as live alternates or placeholders.
+
+English and Chinese use separate root layouts under `app/(en)/layout.tsx` and
+`app/zh/layout.tsx`. Both render `components/SiteDocument.tsx`, which owns the
+single HTML/body pair, shared font, navigation, footer and Analytics component.
+The HTML language is `en` or `zh-CN` at build time. There is no top-level
+`app/layout.tsx`; adding one would nest these documents again. Language switches
+cross root layouts and therefore perform a full page load. Existing URLs stay
+unchanged because `(en)` is a route group.
+
+`scripts/verify-document-layout.mjs` checks every exported HTML document for one
+HTML/body pair and every site page for the correct language as part of
+`postbuild`. Next.js-generated global error documents are outside the locale roots.
 
 ## Content Sources
 

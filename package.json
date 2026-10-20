@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/verify-sitemap.mjs",
+    "postbuild": "node scripts/verify-sitemap.mjs && node scripts/verify-document-layout.mjs",
     "start": "next start",
     "lint": "eslint"
   },

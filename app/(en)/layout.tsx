@@ -1,11 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+import SiteDocument from "@/components/SiteDocument";
 
 export const metadata: Metadata = {
   title: "Hive Digital | Document Apostille & Authentication for 21+ Countries",
@@ -21,13 +15,6 @@ export const viewport: Viewport = { themeColor: "#0a0a0f" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body className="bg-hive-bg text-hive-text min-h-screen flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <GoogleAnalytics gaId="G-YC91XVBNGV" />
-      </body>
-    </html>
+    <SiteDocument language="en">{children}</SiteDocument>
   );
 }

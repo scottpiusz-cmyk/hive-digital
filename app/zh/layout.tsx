@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import "../globals.css";
-
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+import SiteDocument from "@/components/SiteDocument";
 
 export const metadata: Metadata = {
   title: "Hive Digital | 中国文件Apostille与认证服务",
@@ -16,6 +13,12 @@ export const metadata: Metadata = {
     siteName: "Hive Digital",
     locale: "zh_CN",
   },
+  // Preserve the shared Twitter defaults previously inherited from app/layout.tsx.
+  twitter: {
+    card: "summary_large_image",
+    title: "Hive Digital | Document Apostille & Authentication",
+    description: "Fast apostille, background check, and visa document services for 21+ countries.",
+  },
   other: {
     "baidu-site-verification": "NS8rtSj4ev",
   },
@@ -26,10 +29,6 @@ export const viewport: Viewport = { themeColor: "#0a0a0f" };
 
 export default function ChineseLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-CN" className={`${inter.variable}`}>
-      <body className="bg-hive-bg text-hive-text min-h-screen flex flex-col antialiased">
-        {children}
-      </body>
-    </html>
+    <SiteDocument language="zh-CN">{children}</SiteDocument>
   );
 }
