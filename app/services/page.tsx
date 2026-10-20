@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
+  Fingerprint,
   ShieldCheck,
   Stamp,
   FileText,
@@ -30,6 +31,19 @@ export const metadata: Metadata = {
 };
 
 const services = [
+  {
+    icon: Fingerprint,
+    title: "Shanghai Fingerprinting",
+    link: "/shanghai-fingerprinting/",
+    description:
+      "Fingerprinting support in Shanghai for FBI, RCMP and other fingerprint-based background checks. Confirm the required format and appointment availability before booking.",
+    features: [
+      "FBI and RCMP fingerprinting support",
+      "Ink or digital capture, depending on the confirmed service",
+      "Fingerprint card preparation guidance",
+      "Appointment and document requirements confirmed in advance",
+    ],
+  },
   {
     icon: ShieldCheck,
     title: "Federal & State Background Checks",

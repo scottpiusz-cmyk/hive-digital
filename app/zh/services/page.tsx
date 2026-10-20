@@ -16,6 +16,14 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    id: "fingerprinting",
+    icon: Fingerprint,
+    title: "上海指纹采集服务",
+    description: "在上海提供FBI、RCMP及其他指纹背景调查所需的指纹采集支持。预约前请确认所需格式及服务安排。",
+    features: ["FBI及RCMP指纹采集支持", "根据确认的服务采用墨水或数字采集", "指纹卡准备指导", "提前确认预约安排及所需材料"],
+    link: "/zh/shanghai-fingerprinting/",
+  },
+  {
     id: "background-checks",
     icon: ShieldCheck,
     title: "联邦与州背景调查",
@@ -38,14 +46,6 @@ const services = [
     description: "从北京、上海、深圳等中国城市的公安局获取无犯罪记录证明。",
     features: ["北京公安局无犯罪记录", "上海公安局无犯罪记录", "深圳公安局犯罪记录", "其他城市可咨询"],
     link: "/zh/services/#china-pcc",
-  },
-  {
-    id: "fingerprinting",
-    icon: Fingerprint,
-    title: "指纹采集服务",
-    description: "在上海、北京、成都等主要城市提供快速、便捷的指纹采集服务。",
-    features: ["FBI合规指纹采集", "传统墨水指纹", "24小时内数字交付", "安全快递纸质版"],
-    link: "/zh/shanghai-fingerprinting/",
   },
   {
     id: "china-visa",
